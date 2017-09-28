@@ -1,0 +1,46 @@
+ifconfig
+eth0      Link encap:Ethernet  HWaddr 38:d2:69:42:4c:fc  
+          UP BROADCAST MULTICAST DYNAMIC  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+          Interrupt:175 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:2478 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2478 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:191816 (187.3 KiB)  TX bytes:191816 (187.3 KiB)
+
+usb0      Link encap:Ethernet  HWaddr 38:d2:69:42:4c:f0  
+          inet addr:192.168.7.2  Bcast:192.168.7.3  Mask:255.255.255.252
+          inet6 addr: fe80::3ad2:69ff:fe42:4cf0/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:5405 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:4106 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:1096826 (1.0 MiB)  TX bytes:672003 (656.2 KiB)
+
+root@wasong-beagle:~# ping 192.168.7.1
+PING 192.168.7.1 (192.168.7.1) 56(84) bytes of data.
+64 bytes from 192.168.7.1: icmp_seq=1 ttl=64 time=1.45 ms
+64 bytes from 192.168.7.1: icmp_seq=2 ttl=64 time=1.35 ms
+64 bytes from 192.168.7.1: icmp_seq=3 ttl=64 time=1.95 ms
+64 bytes from 192.168.7.1: icmp_seq=4 ttl=64 time=1.40 ms
+64 bytes from 192.168.7.1: icmp_seq=5 ttl=64 time=1.46 ms
+64 bytes from 192.168.7.1: icmp_seq=6 ttl=64 time=1.72 ms
+64 bytes from 192.168.7.1: icmp_seq=7 ttl=64 time=2.58 ms
+64 bytes from 192.168.7.1: icmp_seq=8 ttl=64 time=1.58 ms
+64 bytes from 192.168.7.1: icmp_seq=9 ttl=64 time=1.60 ms
+64 bytes from 192.168.7.1: icmp_seq=10 ttl=64 time=1.06 ms
+64 bytes from 192.168.7.1: icmp_seq=11 ttl=64 time=0.696 ms
+64 bytes from 192.168.7.1: icmp_seq=12 ttl=64 time=1.69 ms
+^C
+--- 192.168.7.1 ping statistics ---
+12 packets transmitted, 12 received, 0% packet loss, time 11018ms
+rtt min/avg/max/mdev = 0.696/1.549/2.586/0.442 ms
+root@wasong-beagle:~# exit[K[K[K[K

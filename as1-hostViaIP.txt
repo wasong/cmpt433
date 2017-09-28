@@ -1,0 +1,96 @@
+andrew@andrew-virtual-machine:~/cmpt433/public$ ifconfig
+ens33     Link encap:Ethernet  HWaddr 00:0c:29:41:5e:78  
+          inet addr:172.16.51.130  Bcast:172.16.51.255  Mask:255.255.255.0
+          inet6 addr: fe80::b7a7:2f08:aa9a:19a7/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:28610 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:3252 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:40840497 (40.8 MB)  TX bytes:256584 (256.5 KB)
+
+enx38d269424cfe Link encap:Ethernet  HWaddr 38:d2:69:42:4c:fe  
+          inet addr:192.168.7.1  Bcast:192.168.7.255  Mask:255.255.255.0
+          inet6 addr: fe80::867c:a8d:d2c7:9305/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:146 errors:2 dropped:0 overruns:0 frame:2
+          TX packets:198 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:18704 (18.7 KB)  TX bytes:35014 (35.0 KB)
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:1160 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:1160 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1 
+          RX bytes:88841 (88.8 KB)  TX bytes:88841 (88.8 KB)
+
+andrew@andrew-virtual-machine:~/cmpt433/public$ ping 192.168.7.1
+PING 192.168.7.1 (192.168.7.1) 56(84) bytes of data.
+64 bytes from 192.168.7.1: icmp_seq=1 ttl=64 time=0.030 ms
+64 bytes from 192.168.7.1: icmp_seq=2 ttl=64 time=0.039 ms
+64 bytes from 192.168.7.1: icmp_seq=3 ttl=64 time=0.046 ms
+64 bytes from 192.168.7.1: icmp_seq=4 ttl=64 time=0.040 ms
+64 bytes from 192.168.7.1: icmp_seq=5 ttl=64 time=0.113 ms
+64 bytes from 192.168.7.1: icmp_seq=6 ttl=64 time=0.032 ms
+^C
+--- 192.168.7.1 ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5098ms
+rtt min/avg/max/mdev = 0.030/0.050/0.113/0.028 ms
+andrew@andrew-virtual-machine:~/cmpt433/public$ sudo ssh root@192.168.7.2
+Debian GNU/Linux 8
+
+BeagleBoard.org Debian Image 2016-05-13
+
+Support/FAQ: http://elinux.org/Beagleboard:BeagleBoneBlack_Debian
+
+default username:password is [debian:temppwd]
+
+Last login: Wed Sep 27 02:08:28 2017 from 192.168.7.1
+root@beaglebone:~# cd /
+bin/        home/       mnt/        run/        tmp/        
+boot/       lib/        opt/        sbin/       usr/        
+dev/        lost+found/ proc/       srv/        var/        
+etc/        media/      root/       sys/        
+root@beaglebone:~# cd /proc
+root@beaglebone:/proc# ls
+1    21   321  509  72	 890	      diskstats    loadavg	 swaps
+10   22   336  527  73	 899	      driver	   locks	 sys
+11   23   342  54   74	 9	      execdomains  meminfo	 sysrq-trigger
+12   24   354  55   75	 96	      fb	   misc		 sysvipc
+133  25   377  56   76	 apm	      filesystems  modules	 thread-self
+134  26   379  58   766  asound       fs	   mounts	 timer_list
+14   265  407  59   768  buddyinfo    interrupts   mtd		 timer_stats
+15   27   409  590  77	 bus	      iomem	   net		 tty
+16   28   424  6    770  cgroups      ioports	   pagetypeinfo  uptime
+17   29   444  60   78	 cmdline      irq	   partitions	 version
+176  298  445  61   79	 config.gz    kallsyms	   sched_debug	 vmallocinfo
+18   3	  447  668  8	 consoles     key-users    schedstat	 vmstat
+19   30   453  698  80	 cpu	      keys	   scsi		 zoneinfo
+192  308  456  7    815  cpuinfo      kmsg	   self
+197  31   496  701  835  crypto       kpagecgroup  slabinfo
+2    315  5    702  862  device-tree  kpagecount   softirqs
+20   32   507  71   888  devices      kpageflags   stat
+root@beaglebone:/proc# cat version
+Linux version 4.4.9-ti-r25 (root@b3-jetson-tk1-2gb) (gcc version 4.9.2 (Debian 4.9.2-10) ) #1 SMP Thu May 5 23:08:13 UTC 2016
+root@beaglebone:/proc# cat uptime
+2745.73 2702.20
+root@beaglebone:/proc# cat cpuinfo
+processor	: 0
+model name	: ARMv7 Processor rev 2 (v7l)
+BogoMIPS	: 298.59
+Features	: half thumb fastmult vfp edsp thumbee neon vfpv3 tls vfpd32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x3
+CPU part	: 0xc08
+CPU revision	: 2
+
+Hardware	: Generic AM33XX (Flattened Device Tree)
+Revision	: 0000
+Serial		: 0000000000000000
+root@beaglebone:/proc# exit
+logout
+Connection to 192.168.7.2 closed.
+
