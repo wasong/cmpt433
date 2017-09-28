@@ -14,9 +14,9 @@
 #define MAX_LENGTH 1024
 #define EXPORT_FILE "/sys/class/gpio/export"
 #define JSUP_FILE "/sys/class/gpio/gpio26/value"
-#define LED_TRIGGER_FILE "/sys/class/leds/beaglebone\\:green\\:usr0/trigger"
-#define LED_DELAY_ON_FILE "/sys/class/leds/beaglebone\\:green\\:usr0/delay_on"
-#define LED_DELAY_OFF_FILE "/sys/class/leds/beaglebone\\:green\\:usr0/delay_off"
+#define LED_TRIGGER_FILE "/sys/class/leds/beaglebone:green:usr0/trigger"
+#define LED_DELAY_ON_FILE "/sys/class/leds/beaglebone:green:usr0/delay_on"
+#define LED_DELAY_OFF_FILE "/sys/class/leds/beaglebone:green:usr0/delay_off"
 
 FILE* openFile(char* fileName, char* type) {
 	FILE *file = fopen(fileName, type);
@@ -35,7 +35,6 @@ void closeFile(FILE* file) {
 }
 
 void sleep(long sec, long nano) {
-	// Sleep 0.6 seconds
 	long seconds = sec;
 	long nanoseconds = nano;
 	struct timespec reqDelay = {seconds, nanoseconds};
@@ -43,7 +42,6 @@ void sleep(long sec, long nano) {
 }
 
 void exportGPIOFile(int pin) {
-	printf("Called %s, %d\n", EXPORT_FILE, pin);
 	FILE *pfile = fopen(EXPORT_FILE, "w");
 
 	if (pfile == NULL) {
@@ -51,40 +49,48 @@ void exportGPIOFile(int pin) {
 		exit(1);
 	}
 
-	fprintf(pfile, "%d\n", pin);
-
 	fclose(pfile);
 }
 
-void saveGPIOValue(char* buff, FILE* file) {
+void saveGPIOValue(char* buff) {
+	FILE* file = openFile(JSUP_FILE, "r");
 	// Save string (line)
 	fgets(buff, MAX_LENGTH, file);
+	closeFile(file);
 }
 
-void readGPIOValue(FILE* file) {
+void readGPIOValue() {
 	// Read string (line)
+	FILE* jsupFile = openFile(JSUP_FILE, "r");
+
+	printf("Reading: '%s'", JSUP_FILE);
 	char buff[MAX_LENGTH];
-	fgets(buff, MAX_LENGTH, file);
+	fgets(buff, MAX_LENGTH, jsupFile);
 	printf("Read: '%s'", buff);
+
+	closeFile(jsupFile);
 }
 
 _Bool checkIfPressed(char* buff) {
-	return strcmp("0\n", buff) != 0;
+	return strcmp("0", buff) == 0;
 }
 
 
-void writeToLED(FILE* triggerFile, char* value) {
-	int charWritten = fprintf(triggerFile, "%s", value);
+void writeToLED(char* fileName, char* value) {
+	FILE* file = openFile(fileName, "w");
+	int charWritten = fprintf(file, "%s", value);
 	if (charWritten <= 0) printf("ERROR WRITING DATA");
+	closeFile(file);
 }
 
-void flashNTimes(FILE* delayOn, FILE* delayOff, int times) {
+void flashNTimes(int times) {
 	// always delay_on 100, delay_off 100
-	printf("Flashing %d time(s): ", times);
+	
 	for (int i = 0; i < times; i++) {
-		writeToLED(delayOn, "100");
-		writeToLED(delayOff, "100");
-		sleep(0, 200000000);
+		writeToLED(LED_DELAY_ON_FILE, "100");
+		sleep(0, 100000000);
+		writeToLED(LED_DELAY_OFF_FILE, "100");
+		sleep(0, 100000000);
 	}
 }
 
@@ -93,36 +99,30 @@ int main() {
 	printf("Hello embedded world, from Andrew Song!\n");
 	exportGPIOFile(26);
 
-	// open files, set char array, counter
-	FILE* jsupFile = openFile(JSUP_FILE, "r");
-	FILE* LEDTriggerFile = openFile(LED_TRIGGER_FILE, "w");
-	FILE* LEDDelayOnFile = openFile(LED_DELAY_ON_FILE, "w");
-	FILE* LEDDelayOffFile = openFile(LED_DELAY_OFF_FILE, "w");
-
 	// write 'timer' to LED
-	writeToLED(LEDTriggerFile, "timer");
-	
+	writeToLED(LED_TRIGGER_FILE, "timer");
 	int counter = 0;
 	while (counter < 10) {
 		char buff[MAX_LENGTH];
-		saveGPIOValue(buff, jsupFile);
+		saveGPIOValue(buff);
+		buff[strcspn(buff, "\n")] = 0;
 		
-		if (checkIfPressed(buff)) {
-			flashNTimes(LEDDelayOnFile, LEDDelayOffFile, 3);
+		//readGPIOValue();
+		_Bool flag = checkIfPressed(buff);
+		int times = 1;
+		if (flag) times = 3;
+		if (flag) {
 			counter++;
-		} else if (counter == 0) {
-			flashNTimes(LEDDelayOnFile, LEDDelayOffFile, 1);
-			counter--;
+			flashNTimes(times);
+		} else {
+			counter = 0;
+			flashNTimes(times);
 		}
-		printf("Joystick = %s ", buff);
-		printf("& counter = %d\n", counter);
-
+		printf("Flashing %d time(s): Joystick = %s & counter = %d\n", times, buff, counter);
 		sleep(0, 600000000);
 	}
 
-	closeFile(jsupFile);
-	closeFile(LEDTriggerFile);
-	closeFile(LEDDelayOnFile);
-	closeFile(LEDDelayOffFile);
+	writeToLED(LED_TRIGGER_FILE, "heartbeat");
+
 	return 0;
 }
