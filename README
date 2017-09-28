@@ -1,0 +1,1 @@
+When calling `make` please do `make file=hello` to specify the .c file to target.
