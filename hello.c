@@ -17,6 +17,7 @@
 #define LED_TRIGGER_FILE "/sys/class/leds/beaglebone:green:usr0/trigger"
 #define LED_DELAY_ON_FILE "/sys/class/leds/beaglebone:green:usr0/delay_on"
 #define LED_DELAY_OFF_FILE "/sys/class/leds/beaglebone:green:usr0/delay_off"
+#define LED_BRIGHTNESS_FILE "/sys/class/leds/beaglebone:green:usr0/brightness"
 
 FILE* openFile(char* fileName, char* type) {
 	FILE *file = fopen(fileName, type);
@@ -43,6 +44,7 @@ void sleep(long sec, long nano) {
 
 void exportGPIOFile(int pin) {
 	FILE *pfile = fopen(EXPORT_FILE, "w");
+	fprintf(pfile, "%d", pin);
 
 	if (pfile == NULL) {
 		printf("ERROR: Unable to open the file.\n");
@@ -85,11 +87,10 @@ void writeToLED(char* fileName, char* value) {
 
 void flashNTimes(int times) {
 	// always delay_on 100, delay_off 100
-	
 	for (int i = 0; i < times; i++) {
-		writeToLED(LED_DELAY_ON_FILE, "100");
+		writeToLED(LED_BRIGHTNESS_FILE, "1");
 		sleep(0, 100000000);
-		writeToLED(LED_DELAY_OFF_FILE, "100");
+		writeToLED(LED_BRIGHTNESS_FILE, "0");
 		sleep(0, 100000000);
 	}
 }
@@ -97,16 +98,16 @@ void flashNTimes(int times) {
 
 int main() {
 	printf("Hello embedded world, from Andrew Song!\n");
-	exportGPIOFile(26);
+	exportGPIOFile(30);
 
-	// write 'timer' to LED
-	writeToLED(LED_TRIGGER_FILE, "timer");
+	// write 'none' to LED
+	writeToLED(LED_TRIGGER_FILE, "none");
 	int counter = 0;
 	while (counter < 10) {
 		char buff[MAX_LENGTH];
 		saveGPIOValue(buff);
 		buff[strcspn(buff, "\n")] = 0;
-		
+		int pinVal = atoi(buff);
 		//readGPIOValue();
 		_Bool flag = checkIfPressed(buff);
 		int times = 1;
@@ -118,11 +119,11 @@ int main() {
 			counter = 0;
 			flashNTimes(times);
 		}
-		printf("Flashing %d time(s): Joystick = %s & counter = %d\n", times, buff, counter);
+		printf("Flashing %d time(s): Joystick = %d & counter = %d\n", times, !pinVal, counter);
 		sleep(0, 600000000);
 	}
 
-	writeToLED(LED_TRIGGER_FILE, "heartbeat");
+	printf("Thank you for the blinks!\n");
 
 	return 0;
 }
