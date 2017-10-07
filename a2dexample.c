@@ -28,35 +28,27 @@ void binarySearch(int value) {
 	int found = 1;
 	while (found) {
 		int potVal = PIECEWISE_POT[mid];
-		// printf("Before: min: %d, mid: %d, max: %d, potVal: %d\n", min, mid, max, potVal);
 		if (value < potVal) {
 			// lower half
 			max = mid;
 			mid = floor((max - min) / 2) + min;
-			// printf("Lower: min: %d, mid: %d, max: %d, potVal: %d\n", min, mid, max, potVal);
 		} else if (value > potVal) {
 			// upper half
 			min = mid;
 			mid = floor((max - mid) / 2) + mid;
-			// printf("Upper: min: %d, mid: %d, max: %d, potVal: %d\n", min, mid, max, potVal);
 		} else {
 			// exactly the potVal
-			// printf("Exactly: min: %d, mid: %d, max: %d, potVal: %d\n", min, mid, max, potVal);
-			// printf("Between potValue: %d, %d\n", PIECEWISE_POT[mid], PIECEWISE_POT[max]);
 			break;
 			
 		}
-		// printf("After: min: %d, mid: %d, max: %d, potVal: %d\n", min, mid, max, potVal);
 
 		// find 2 adjacent points
 		
 		int difference = max - min;
-		// printf("difference: %d - %d = %d\n", max, mid, difference);
 		if (difference == 1) {
 			printf("Between potValue: %d, %d\n", PIECEWISE_POT[min], PIECEWISE_POT[max]);
 			found = 0;
 		}
-
 		// ...work
 	}
 }
@@ -87,7 +79,7 @@ int main() {
 	while (true) {
 		int reading = getVoltage0Reading();
 		double voltage = ((double)reading / A2D_MAX_READING) * A2D_VOLTAGE_REF_V;
-		// printf("Value %5d ==> %5.2fV\n", reading, voltage);
+		
 		printf("--------------------------------\n");
 		printf("Value %5d\n\n", reading);
 		binarySearch(reading);
