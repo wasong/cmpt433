@@ -21,7 +21,17 @@ void sleep(long sec, long nano) {
 	nanosleep(&reqDelay, (struct timespec *) NULL);
 }
 
-void binarySearch(int value) {
+int calcPieceWise(int value, int max, int min) {
+	double a = (double) PIECEWISE_POT[min];
+	double b = (double) PIECEWISE_POT[max];
+	double m = (double) PIECEWISE_ARR_SZ[min];
+	double n = (double) PIECEWISE_ARR_SZ[max];
+	double s = (double) value;
+
+	return (int) floor(((s - a) / (b - a)) * (n - m) + m);
+}
+
+double getArraySize(int value) {
 	int max = PIECEWISE_SZ - 1;
 	int mid = floor(max / 2);
 	int min = 0;
@@ -38,8 +48,7 @@ void binarySearch(int value) {
 			mid = floor((max - mid) / 2) + mid;
 		} else {
 			// exactly the potVal
-			break;
-			
+			max = mid;
 		}
 
 		// find 2 adjacent points
@@ -51,6 +60,8 @@ void binarySearch(int value) {
 		}
 		// ...work
 	}
+
+	return calcPieceWise(value, max, min);
 }
 
 int getVoltage0Reading() {
@@ -82,7 +93,8 @@ int main() {
 		
 		printf("--------------------------------\n");
 		printf("Value %5d\n\n", reading);
-		binarySearch(reading);
+		int arrSz = getArraySize(reading);
+		printf("Array Size: %d\n", arrSz);
 		printf("--------------------------------\n");
 		sleep(1, 0);
 
