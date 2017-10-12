@@ -12,16 +12,18 @@ int main() {
 	writeI2cReg(i2cFileDesc, REG_DIRA, 0x00);
 	writeI2cReg(i2cFileDesc, REG_DIRB, 0x00);
 
-	// Drive an hour-glass looking character (Like an X with a bar on top & bottom)
-	writeI2cReg(i2cFileDesc, REG_OUTA, 0xFF);
-	writeI2cReg(i2cFileDesc, REG_OUTB, 0xFF);
+	// clear
+	writeI2cReg(i2cFileDesc, REG_OUTA, 0x00);
+	writeI2cReg(i2cFileDesc, REG_OUTB, 0x00);
 
-	while (1) {
+	int counter;
+	for (counter = 0x00; counter <= 0xFF; counter++) {
+		printf("counter: %x\n", counter);
+		writeI2cReg(i2cFileDesc, REG_OUTA, counter);
+		writeI2cReg(i2cFileDesc, REG_OUTB, counter);
 		slip(1, 0);
-		hideLeft();
-		slip(1, 0);
-		showLeft();
 	}
+		
 
 	// Read a register:
 	unsigned char regVal = readI2cReg(i2cFileDesc, REG_OUTA);
