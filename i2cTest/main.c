@@ -17,11 +17,20 @@ int main() {
 	writeI2cReg(i2cFileDesc, REG_OUTB, 0x00);
 
 	int counter;
-	for (counter = 0x00; counter <= 0xFF; counter++) {
-		printf("counter: %x\n", counter);
-		writeI2cReg(i2cFileDesc, REG_OUTA, counter);
-		writeI2cReg(i2cFileDesc, REG_OUTB, counter);
-		slip(1, 0);
+	while (1) {
+		for (counter = 0x00; counter <= 0xFF; counter++) {
+			printf("counter: %x\n", counter);
+			hideLeft();
+			showRight();
+			writeI2cReg(i2cFileDesc, REG_OUTA, counter);
+			writeI2cReg(i2cFileDesc, REG_OUTB, counter);
+			slip(0, 5000000);
+			showLeft();
+			hideRight();
+			writeI2cReg(i2cFileDesc, REG_OUTA, 0xFF);
+			writeI2cReg(i2cFileDesc, REG_OUTB, 0xFF);
+			slip(0, 5000000);
+		}
 	}
 		
 
