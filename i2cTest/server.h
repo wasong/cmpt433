@@ -15,6 +15,7 @@
 #include <sys/types.h>
 
 #define SERVER_PORT 12345
+char stop;
 
 //concatenates premilinary messages that are to appear before desired result
 char* displayResponse(char* respond_to_msg, char* prelimMsg);

@@ -69,6 +69,7 @@ for(int i = 0; i < arrSize; i++)
 
 void* sorter_startSorting(void* arg)
 {
+	printf("Started Sorting\n");
 	char stopSort = ' ';     //flag
 
 	while(stopSort == ' ')
@@ -78,7 +79,7 @@ void* sorter_startSorting(void* arg)
 		free(globArray);
 		pthread_mutex_unlock(&mutex);
 	}
-	
+	printf("Exited sorter\n");
 	pthread_exit(0);
 
 }

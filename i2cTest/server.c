@@ -1,5 +1,7 @@
 #include "server.h"
 
+char stop = ' ';
+
 //display preliminary messages for each condition
 char* displayResponse(char* respond_to_msg, char* prelimMsg)
 {
@@ -142,10 +144,11 @@ char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 
 void* listen_for_command(void* arg)
 {
+	printf("Started Server\n");
 	int sock = socket(AF_INET, SOCK_DGRAM, 0);       //socket initailization
 	struct sockaddr_storage serverAddr;
 	char myMsg[1024];
-	char stop = ' ';
+	// char stop = ' ';
 	int b;
 
 	//binding 
@@ -188,5 +191,6 @@ void* listen_for_command(void* arg)
 	}
 	
 	close(sock);
+	printf("Exited server\n");
 	pthread_exit(0);
 }

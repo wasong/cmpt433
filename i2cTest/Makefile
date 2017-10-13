@@ -3,7 +3,7 @@ CFLAGS = -Wall -g -std=c99 -D _POSIX_C_SOURCE=200809L -Werror
 OUTFILE = i2c
 OUTDIR = $(HOME)/cmpt433/public/myApps
 
-SRC = sleep.c fileHandler.c display.c I2C.c reader.c run.c main.c
+SRC = sleep.c fileHandler.c display.c I2C.c reader.c sorter.c server.c run.c main.c
 OBJ = $(addsuffix .o, $(basename $(SRC)))
 
 all:
