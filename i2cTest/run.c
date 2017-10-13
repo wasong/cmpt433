@@ -7,38 +7,53 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <pthread.h>
+#include <sys/types.h>
+
+// TODO: fix globals?
+int arraySize = 1;
+
+// pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+// pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
+
+void* displayThread();
+void* arraySizeThread();
 
 void run() {
+	// initial setup
 	initDisplay();
-	int i2cFileDesc = initI2cBus(I2CDRV_LINUX_BUS1, I2C_DEVICE_ADDRESS);
+	
+	// execute thread switch
+	pthread_t displayThr;
+	pthread_t arraySizeThr;
 
-	// turn on displays
-	writeI2cReg(i2cFileDesc, REG_DIRA, 0x00);
-	writeI2cReg(i2cFileDesc, REG_DIRB, 0x00);
+	// create threads and run fn
+	pthread_create(&displayThr, NULL, displayThread, NULL);
+	pthread_create(&arraySizeThr, NULL, arraySizeThread, NULL);
 
-	// clear
-	writeI2cReg(i2cFileDesc, REG_OUTA, 0x00);
-	writeI2cReg(i2cFileDesc, REG_OUTB, 0x00);
+	pthread_join(displayThr, NULL);
+	pthread_join(arraySizeThr, NULL);
+}
 
-	// int counter;
+void* displayThread() {
+	initDisplay();
+	int i2cFileDesc = initI2C();
+
 	while (1) {
-		// for (counter = 0x00; counter <= 0xFF; counter++) {
-		hideLeft();
-		showRight();
-		writeI2cReg(i2cFileDesc, REG_OUTA, NINE_L);
-		writeI2cReg(i2cFileDesc, REG_OUTB, NINE_U);
-		slip(0, 5000000);
-		showLeft();
-		hideRight();
-		writeI2cReg(i2cFileDesc, REG_OUTA, TWO_L);
-		writeI2cReg(i2cFileDesc, REG_OUTB, TWO_U);
-		slip(0, 5000000);
-		// }
-		int arraySz = getArraySize();
-		printf("Size: %d\n", arraySz);
+		writeNumber(i2cFileDesc, arraySize);
 	}
 
-	// Cleanup I2C access;
-	close(i2cFileDesc);
+	endI2C(i2cFileDesc);
+	pthread_exit(0);
+}
+
+void* arraySizeThread() {
+	while (1) {
+		int arraySz = getArraySize();
+		arraySize = arraySz;
+		printf("Size: %d\n", arraySize);
+		slip(1, 0);
+	}
+	pthread_exit(0);
 }
 

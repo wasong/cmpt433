@@ -17,17 +17,11 @@ void initDisplay() {
 
 void showLeft() {
 	writeToFile(LEFT_DIGIT_VAL, "1");
-}
-
-void hideLeft() {
-	writeToFile(LEFT_DIGIT_VAL, "0");
+	writeToFile(RIGHT_DIGIT_VAL, "0");
 }
 
 void showRight() {
 	writeToFile(RIGHT_DIGIT_VAL, "1");
-}
-
-void hideRight() {
-	writeToFile(RIGHT_DIGIT_VAL, "0");
+	writeToFile(LEFT_DIGIT_VAL, "0");
 }
 

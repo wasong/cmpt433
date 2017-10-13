@@ -11,18 +11,13 @@ all:
 
 	cp $(file) $(OUTDIR)
 
-a2d:
-	$(CC_C) -std=c99 -D _POSIX_C_SOURCE=200809L $(file).c -lm -o $(file)
-	
-	cp $(file) $(OUTDIR)
-
 i2c:
-	make clean
-
-	$(CC_C) $(CFLAGS) $(SRC) -lm -o $(OUTFILE)
+	$(CC_C) $(CFLAGS) $(SRC) -lm -lpthread -o $(OUTFILE)
 	
 	cp $(OUTFILE) $(OUTDIR)
 
 clean:
 	rm -f $(OUTFILE)
 	rm -f $(OUTDIR)/$(OUTFILE)
+
+.PHONY: i2c clean
