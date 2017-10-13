@@ -12,11 +12,10 @@
 #include <pthread.h>
 #include <sys/types.h>
 
-// pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
-// pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
-
 void* displayThread();
 void* arraySizeThread();
+
+int numSorted;
 
 void run() {
 	// initial setup
@@ -49,7 +48,7 @@ void* displayThread() {
 	int i2cFileDesc = initI2C();
 
 	while (stop != 'T') {
-		writeNumber(i2cFileDesc, arrLength);
+		writeNumber(i2cFileDesc, numSorted);
 	}
 	printf("Stopped display thread\n");
 	endI2C(i2cFileDesc);
@@ -59,8 +58,11 @@ void* displayThread() {
 void* arraySizeThread() {
 	while (stop != 'T') {
 		int arraySz = getArraySize();
+		pthread_mutex_lock(&mutex);
 		arrLength = arraySz;
-
+		numSorted = numSortedArr;
+		numSortedArr = 0;
+		pthread_mutex_unlock(&mutex);
 		slip(1, 0);
 	}
 	printf("Stopped potentiometer thread\n");
