@@ -11,8 +11,6 @@ void initDisplay() {
 	exportGPIOPin(44);
 	writeToFile(LEFT_DIGIT_DIR, "out");
 	writeToFile(RIGHT_DIGIT_DIR, "out");
-	showLeft();
-	showRight();
 }
 
 void showLeft() {
