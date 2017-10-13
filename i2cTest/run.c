@@ -12,9 +12,6 @@
 #include <pthread.h>
 #include <sys/types.h>
 
-// TODO: fix globals?
-int arraySize = 1;
-
 // pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 // pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
 
@@ -52,7 +49,7 @@ void* displayThread() {
 	int i2cFileDesc = initI2C();
 
 	while (stop != 'T') {
-		writeNumber(i2cFileDesc, arraySize);
+		writeNumber(i2cFileDesc, arrLength);
 	}
 	printf("Stopped display thread\n");
 	endI2C(i2cFileDesc);
@@ -62,12 +59,7 @@ void* displayThread() {
 void* arraySizeThread() {
 	while (stop != 'T') {
 		int arraySz = getArraySize();
-		arraySize = arraySz;
-		
-		pthread_mutex_lock(&mutex);
-		createArray(arrLength);
-		free(globArray);
-		pthread_mutex_unlock(&mutex);
+		arrLength = arraySz;
 
 		slip(1, 0);
 	}
