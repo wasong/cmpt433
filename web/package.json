@@ -2,12 +2,13 @@
   "name": "some-boilerplate",
   "version": "0.0.1",
   "scripts": {
-    "start": "node tools/run.js",
-    "build": "NODE_ENV=production node tools/build.js",
-    "serve": "rm -rf public/dist/ && npm run build && npm run build:babel && node public/dist/index.js",
-    "serve:build": "node public/dist/index.js",
-    "build:babel": "babel index.js -d public/dist",
+    "start:client": "node tools/run.js",
+    "start": "npm run build:client && node public/dist/index.js",
+    "mount": "npm run build:client && npm run build:server && cp -r public/ ../../public",
+    "build:client": "NODE_ENV=production node tools/build.js",
+    "build:server": "babel index.js -d public/dist",
     "build:debug": "node tools/build.js --debug",
+    "serve": "rm -rf public/dist/ && npm run build && npm run build:babel && node public/dist/index.js",
     "test:lint": "eslint src test tools postcss.config.js webpack.config.js",
     "test:unit": "jest",
     "test:dependencies": "snyk auth $SNYK_TOKEN && snyk test && snyk monitor"
