@@ -4,7 +4,7 @@ import morgan from 'morgan'
 import path from 'path'
 
 const app = Express()
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 4000
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
