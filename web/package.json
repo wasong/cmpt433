@@ -4,8 +4,8 @@
   "scripts": {
     "start": "node tools/run.js",
     "build": "NODE_ENV=production node tools/build.js",
-    "serve": "rm -rf dist/ && npm run build && npm run build:babel && node dist/index.js",
-    "build:babel": "babel index.js -d dist",
+    "serve": "rm -rf public/dist/ && npm run build && npm run build:babel && node public/dist/index.js",
+    "build:babel": "babel index.js -d public/dist",
     "build:debug": "node tools/build.js --debug",
     "test:lint": "eslint src test tools postcss.config.js webpack.config.js",
     "test:unit": "jest",

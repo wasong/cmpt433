@@ -11,10 +11,11 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(morgan('combined'))
 
 // expose static files
-app.use(Express.static(path.resolve(__dirname, '..', 'public')))
+// dirname = '/public'
+app.use(Express.static(path.resolve(__dirname, '..')))
 
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'))
+  res.sendFile(path.resolve(__dirname, '..', 'index.html'))
 })
 
 app.listen(PORT, () => {
