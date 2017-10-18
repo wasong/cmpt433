@@ -4,6 +4,8 @@
   "scripts": {
     "start": "node tools/run.js",
     "build": "NODE_ENV=production node tools/build.js",
+    "serve": "rm -rf dist/ && npm run build && npm run build:babel && node dist/index.js",
+    "build:babel": "babel index.js -d dist",
     "build:debug": "node tools/build.js --debug",
     "test:lint": "eslint src test tools postcss.config.js webpack.config.js",
     "test:unit": "jest",
@@ -21,11 +23,14 @@
   "dependencies": {
     "apollo-client": "1.2.2",
     "babel-polyfill": "6.23.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
     "fastclick": "1.0.6",
     "graphql-tag": "2.1.0",
     "immutability-helper": "2.2.0",
     "jump.js": "^1.0.2",
     "moment": "2.18.1",
+    "morgan": "^1.9.0",
     "prop-types": "15.5.10",
     "radium": "0.18.3",
     "react": "15.5.4",
@@ -45,6 +50,7 @@
   "devDependencies": {
     "assets-webpack-plugin": "3.5.1",
     "autoprefixer": "7.1.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "6.24.1",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.1",
