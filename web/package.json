@@ -4,7 +4,7 @@
   "scripts": {
     "start:client": "node tools/run.js",
     "start": "npm run build:client && node public/dist/index.js",
-    "mount": "cp -r public/ ../../public/client/public && cp server/package.json ../../public/client",
+    "mount": "cp server/package.json ../../public/client && cp -r public/ ../../public/client/public",
     "mount:install" :"npm i ../../public/client",
     "build": "npm run build:client && npm run build:server",
     "build:client": "NODE_ENV=production node tools/build.js",
