@@ -4,14 +4,14 @@
   "scripts": {
     "start:client": "node tools/run.js",
     "start": "npm run build:client && node public/dist/index.js",
-    "mount": "cp server/package.json ../../public/client && cp -r public/ ../../public/client/public",
-    "mount:install" :"npm i ../../public/client",
+    "mount": "rm -rf ../../public/client && mkdir ../../public/client && cp server/package.json ../../public/client/ && cp -r public/ ../../public/client/public/",
+    "mount:install" :"cd ../../public/client/ && npm i",
     "build": "npm run build:client && npm run build:server",
     "build:client": "NODE_ENV=production node tools/build.js",
     "build:server": "babel index.js -d public/dist",
     "build:debug": "node tools/build.js --debug",
     "serve": "npm run build && npm run mount && npm run mount:install",
-    "serve:dev": "rm -rf public/dist/ && npm run build && npm run build:babel && node public/dist/index.js",
+    "serve:dev": "rm -rf public/dist/ && npm run build && node public/dist/index.js",
     "test:lint": "eslint src test tools postcss.config.js webpack.config.js",
     "test:unit": "jest",
     "test:dependencies": "snyk auth $SNYK_TOKEN && snyk test && snyk monitor"
