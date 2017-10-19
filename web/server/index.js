@@ -4,7 +4,7 @@ import http from 'http'
 import morgan from 'morgan'
 import path from 'path'
 
-import { socketListener } from './server/socket'
+import { socketListener } './socket'
 
 const app = Express()
 const PORT = process.env.PORT || 4000

@@ -2,7 +2,7 @@ import socketIO from 'socket.io'
 import dgram from 'dgram'
 
 export const handleCommand = (socket) => {
-  // Passed string of comamnd to relay
+  // Passed string of command to relay
   socket.on('prime', (data) => {
     console.log(`prime command: ${data}`)
 
@@ -45,6 +45,7 @@ export const socketListener = (server) => {
   io.set('log level 1')
 
   io.sockets.on('connection', (socket) => {
+    socket.emit('hello', { hello: 'world' })
     handleCommand(socket)
   })
 }
