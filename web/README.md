@@ -1,5 +1,5 @@
 *CMPT 433 Web App*
-
+* NEED TO UPDATE README * 
 **Instructions:**
 
 - always run `yarn` || `npm i` first
