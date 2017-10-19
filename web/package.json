@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "scripts": {
     "start:client": "node tools/run.js",
-    "start": "npm run build:client && node public/dist/index.js",
+    "start": "node public/dist/index.js",
     "mount": "rm -rf ../../public/client && mkdir ../../public/client && cp server/package.json ../../public/client/ && cp -r public/ ../../public/client/public/",
-    "mount:install" :"cd ../../public/client/ && npm i",
+    "mount:install": "cd ../../public/client/ && npm i",
     "build": "npm run build:client && npm run build:server",
     "build:client": "NODE_ENV=production node tools/build.js",
     "build:server": "babel index.js -d public/dist",
@@ -50,7 +50,9 @@
     "react-tap-event-plugin": "2.0.1",
     "redux": "3.6.0",
     "redux-logger": "3.0.1",
-    "redux-thunk": "2.2.0"
+    "redux-thunk": "2.2.0",
+    "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3"
   },
   "devDependencies": {
     "assets-webpack-plugin": "3.5.1",
