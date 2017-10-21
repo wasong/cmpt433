@@ -4,7 +4,7 @@ import morgan from 'morgan'
 import path from 'path'
 import http from 'http'
 
-import { socketListener } from './socket'
+import { socketListener } from './lib/socket'
 
 const app = Express()
 const PORT = process.env.PORT || 4000
@@ -14,9 +14,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(morgan('combined'))
 
 // expose static files
-// dirname = '/public'
-app.use(Express.static(path.resolve(__dirname)))
-app.use(Express.static(path.resolve(__dirname, '..', 'socket.js')))
+// dirname = '/public/dist'
+app.use(Express.static(path.resolve(__dirname, '..')))
+app.use(Express.static(path.resolve(__dirname, '..', 'index.html')))
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'index.html'))

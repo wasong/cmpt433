@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "start:client": "node tools/run.js",
+    "start:server": "node public/dist/index.js",
     "start": "npm run build:client && node public/dist/index.js",
     "mount": "rm -rf ../../public/client && mkdir ../../public/client && cp server/package.json ../../public/client/ && cp -r public/ ../../public/client/public/",
     "mount:install": "cd ../../public/client/ && npm i",
