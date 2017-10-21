@@ -5,10 +5,10 @@
     "start:client": "node tools/run.js",
     "start": "npm run build:client && node public/dist/index.js",
     "mount": "rm -rf ../../public/client && mkdir ../../public/client && cp server/package.json ../../public/client/ && cp -r public/ ../../public/client/public/",
-    "mount:install" :"cd ../../public/client/ && npm i",
+    "mount:install": "cd ../../public/client/ && npm i",
     "build": "npm run build:client && npm run build:server",
     "build:client": "NODE_ENV=production node tools/build.js",
-    "build:server": "babel index.js -d public/dist",
+    "build:server": "babel socket.js -d public/dist/lib && babel index.js -d public/dist",
     "build:debug": "node tools/build.js --debug",
     "serve": "npm run build && npm run mount && npm run mount:install",
     "serve:dev": "rm -rf public/dist/ && npm run build && node public/dist/index.js",
@@ -50,7 +50,9 @@
     "react-tap-event-plugin": "2.0.1",
     "redux": "3.6.0",
     "redux-logger": "3.0.1",
-    "redux-thunk": "2.2.0"
+    "redux-thunk": "2.2.0",
+    "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3"
   },
   "devDependencies": {
     "assets-webpack-plugin": "3.5.1",

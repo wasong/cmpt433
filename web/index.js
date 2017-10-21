@@ -12,7 +12,8 @@ app.use(morgan('combined'))
 
 // expose static files
 // dirname = '/public'
-app.use(Express.static(path.resolve(__dirname, '..')))
+app.use(Express.static(path.resolve(__dirname)))
+app.use(Express.static(path.resolve(__dirname, '..', 'socket.js')))
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'index.html'))
