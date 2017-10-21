@@ -2,6 +2,9 @@ import Express from 'express'
 import bodyParser from 'body-parser'
 import morgan from 'morgan'
 import path from 'path'
+import http from 'http'
+
+import { socketListener } from './socket'
 
 const app = Express()
 const PORT = process.env.PORT || 4000
@@ -19,6 +22,12 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'index.html'))
 })
 
-app.listen(PORT, () => {
+// separate http server but also maintain express routes and middleware
+app.server = http.createServer(app)
+
+// start socket listener
+socketListener(app.server)
+
+app.server.listen(PORT, () => {
   console.log(`Listening on PORT: ${PORT}`)
 })
