@@ -6,6 +6,8 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 
 import App from './App'
 import { configureStore } from './store'
+import './app.css'
+import './normalize.css'
 
 // socket
 // import './utils/socket'

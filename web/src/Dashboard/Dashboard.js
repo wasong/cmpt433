@@ -3,9 +3,15 @@ import PropTypes from 'prop-types'
 import Radium from 'radium'
 import { Route, Redirect, Switch } from 'react-router-dom'
 
+import Navbar from 'components/Navbar'
+
 const styles = {
   root: {
     flex: 10,
+    backgroundColor: '#f6f6f6',
+  },
+  navbarRoot: {
+    backgroundColor: '#fff',
   },
 }
 
@@ -15,7 +21,10 @@ class Dashboard extends Component {
   render() {
     return (
       <div style={styles.root}>
-        Dashboard
+        <Navbar
+          title="Project Kubernetes"
+          rootStyles={styles.navbarRoot}
+        />
       </div>
     )
   }

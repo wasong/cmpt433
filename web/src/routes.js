@@ -6,6 +6,7 @@ import Sidebar from './Sidebar'
 
 const styles = {
   display: 'flex',
+  minHeight: '100vh',
 }
 
 export default Radium(() => (
