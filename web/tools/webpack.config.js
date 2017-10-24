@@ -20,6 +20,13 @@ const config = {
     './main.js',
   ],
 
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, '../src/components/'),
+      theme: path.resolve(__dirname, '../src/styles/theme.js'),
+    },
+  },
+
   // Options affecting the output of the compilation
   output: {
     path: path.resolve(__dirname, '../public/dist'),
