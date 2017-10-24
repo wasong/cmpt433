@@ -6,6 +6,8 @@ import { Grid } from 'react-feather'
 
 import Navbar from 'components/Navbar'
 
+import Home from './Home'
+
 const styles = {
   root: {
     flex: 12,
@@ -31,6 +33,7 @@ class Dashboard extends Component {
           icon={<Grid color="#e8e8ea" size={30} style={styles.gridIcon} />}
           rootStyles={styles.navbarRoot}
         />
+        <Route path="/" component={Home} />
       </div>
     )
   }
