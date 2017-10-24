@@ -6,15 +6,20 @@ const styles = {
   root: {
     display: 'flex',
     justifyContent: 'flex-start',
-    fontSize: 16,
-    padding: 15,
+    alignItems: 'center',
+    fontSize: 14,
+    padding: '0 25px',
+    height: 80,
+  },
+  label: {
+    padding: '0 0 0 25px',
   },
 }
 
-const ListItem = ({ avatar, label }) => (
+const ListItem = ({ avatar, label, labelStyle }) => (
   <div style={styles.root}>
-    <div>{avatar}</div>
-    <div>{label}</div>
+    {avatar}
+    <div style={[styles.label, labelStyle]}>{label}</div>
   </div>
 )
 
