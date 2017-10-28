@@ -1,7 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Radium from 'radium'
-import { Chrome, Box, Activity, Server } from 'react-feather'
+import Chrome from 'react-feather/dist/icons/chrome'
+import Box from 'react-feather/dist/icons/box'
+import Activity from 'react-feather/dist/icons/activity'
+import Server from 'react-feather/dist/icons/server'
 
 import ListItem from './ListItem'
 

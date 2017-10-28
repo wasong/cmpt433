@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Radium from 'radium'
 import { Route, Redirect, Switch } from 'react-router-dom'
-import { Grid } from 'react-feather'
+import Grid from 'react-feather/dist/icons/grid'
 
 import Navbar from 'components/Navbar'
 

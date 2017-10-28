@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const AssetsPlugin = require('assets-webpack-plugin')
+const WebpackAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const pkg = require('../package.json')
 
 const isDebug = global.DEBUG === false ? false : !process.argv.includes('--release')
@@ -121,6 +122,11 @@ const config = {
       },
     ],
   },
+}
+
+// show Webpack Analyzer
+if (process.env.ANALYZER) {
+  config.plugins.push(new WebpackAnalyzer())
 }
 
 // Optimize the bundle in release (production) mode
