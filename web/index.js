@@ -4,7 +4,7 @@ import morgan from 'morgan'
 import path from 'path'
 import http from 'http'
 
-// import { socketListener } from './lib/socket'
+import { socketListener } from './lib/socket' // eslint-disable-line
 
 const app = Express()
 const PORT = process.env.PORT || 4000
@@ -26,7 +26,7 @@ app.get('*', (req, res) => {
 app.server = http.createServer(app)
 
 // start socket listener
-// socketListener(app.server)
+socketListener(app.server)
 
 app.server.listen(PORT, () => {
   console.log(`Listening on PORT: ${PORT}`)
