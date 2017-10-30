@@ -6,6 +6,11 @@ import injectTapEventPlugin from 'react-tap-event-plugin'
 
 import App from './App'
 import { configureStore } from './store'
+import './app.css'
+import './normalize.css'
+
+// socket
+import './utils/socket'
 
 // Eliminates the 300ms delay between a physical tap
 // and the firing of a click event on mobile browsers

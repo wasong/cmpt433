@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel src -d dist",
     "build:client": "cd ./client && yarn && yarn build",
-    "start": "nodemon src/index.js --exec babel-node",
-    "serve": "node dist/index.js"
+    "start": "yarn build:client && nodemon src/index.js --exec babel-node",
+    "serve": "yarn build:client && yarn build && node dist/index.js"
   },
   "author": "Andrew Song",
   "license": "ISC",
