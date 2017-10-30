@@ -5,7 +5,7 @@ import path from 'path'
 
 import io from './socket'
 
-const PORT = 3000
+const PORT = 8088
 const app = express()
 const httpServer = http.createServer(app)
 

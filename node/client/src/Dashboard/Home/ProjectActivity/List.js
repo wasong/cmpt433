@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Radium from 'radium'
+import RaisedButton from 'material-ui/RaisedButton'
 
-import Activity from './Activity'
+import socket from '../../../utils/socket'
 
 const styles = {
   root: {
@@ -11,12 +12,13 @@ const styles = {
   },
 }
 
+const handleSendData = () => {
+  socket.emit('message', 'Sent from list!')
+}
+
 const List = props => (
   <div style={styles.root}>
-    <Activity label="Lights" value={70} />
-    <Activity label="Temperature (Celsius)" value={35} />
-    <Activity label="Measurement 3" value={70} />
-    <Activity label="Analytic 4" value={70} />
+    <RaisedButton label="Primary" onClick={handleSendData} primary />
   </div>
 )
 
