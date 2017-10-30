@@ -1,8 +1,9 @@
 {
-  "name": "some-boilerplate",
-  "version": "0.0.1",
+  "name": "react-client",
+  "version": "1.0.0",
   "scripts": {
     "start": "node tools/run.js",
+    "build": "node tools/build.js",
     "build:debug": "node tools/build.js --debug",
     "test:lint": "eslint src test tools postcss.config.js webpack.config.js",
     "test:unit": "jest",
