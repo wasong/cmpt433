@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import Radium from 'radium'
 
 import ProjectActivity from './ProjectActivity'
-import Team from './Team'
 
 const styles = {
   root: {
@@ -18,7 +17,6 @@ class Home extends Component {
   render() {
     return (
       <div style={styles.root}>
-        <Team />
         <ProjectActivity />
       </div>
     )
