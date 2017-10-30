@@ -1,32 +1,41 @@
 // ------------------------------------
 // Constants
 // ------------------------------------
-const TEST_REDUCER = 'TEST_REDUCER'
+const SAVE_MESSAGE = 'SAVE_MESSAGE'
 
 // ------------------------------------
 // Actions
 // ------------------------------------
-export const testReducer = () => ({
-  type: TEST_REDUCER,
+
+export const saveMessageSuccess = message => ({
+  type: SAVE_MESSAGE,
+  message,
 })
 
+export const saveMessage = message => (dispatch) => {
+  dispatch(saveMessageSuccess(message))
+}
+
 export const actions = {
-  testReducer,
+  saveMessage,
 }
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [TEST_REDUCER]: state => ({
+  [SAVE_MESSAGE]: (state, { message }) => ({
     ...state,
+    message,
   }),
 }
 
 // ------------------------------------
 // Reducer
 // ------------------------------------
-const initialState = {}
+const initialState = {
+  message: null,
+}
 
 export default function reducer(state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]

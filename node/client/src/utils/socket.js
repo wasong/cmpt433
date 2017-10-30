@@ -1,3 +1,10 @@
-import io from 'socket.io-client'
+import socketClient from 'socket.io-client'
+// import { actions } from '../app.module'
 
-export default io('http://localhost:8088/')
+const io = socketClient('http://localhost:8088/')
+
+// io.on('message', (msg) => {
+//   saveMessage(msg)
+// })
+
+export default io

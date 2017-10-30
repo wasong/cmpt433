@@ -7,6 +7,7 @@ const listener = (server) => {
 
     socket.on('message', (msg) => {
       console.log(`message: ${msg}`)
+      io.emit('message', 'hi')
     })
 
     socket.on('disconnect', function(){
