@@ -3,6 +3,9 @@ import bodyParser from 'body-parser'
 import http from 'http'
 import morgan from 'morgan'
 import path from 'path'
+import http from 'http'
+
+import { socketListener } from './lib/socket' // eslint-disable-line
 
 import { socketListener } './socket'
 
@@ -14,8 +17,9 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(morgan('combined'))
 
 // expose static files
-// dirname = '/public'
+// dirname = '/public/dist'
 app.use(Express.static(path.resolve(__dirname, '..')))
+app.use(Express.static(path.resolve(__dirname, '..', 'index.html')))
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'index.html'))

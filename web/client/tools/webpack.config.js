@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const AssetsPlugin = require('assets-webpack-plugin')
+const WebpackAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const pkg = require('../package.json')
 
 const isDebug = global.DEBUG === false ? false : !process.argv.includes('--release')
@@ -19,6 +20,13 @@ const config = {
   entry: [
     './main.js',
   ],
+
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, '../src/components/'),
+      theme: path.resolve(__dirname, '../src/styles/theme.js'),
+    },
+  },
 
   // Options affecting the output of the compilation
   output: {
@@ -114,6 +122,11 @@ const config = {
       },
     ],
   },
+}
+
+// show Webpack Analyzer
+if (process.env.ANALYZER) {
+  config.plugins.push(new WebpackAnalyzer())
 }
 
 // Optimize the bundle in release (production) mode

@@ -2,7 +2,14 @@
   "name": "some-boilerplate",
   "version": "0.0.1",
   "scripts": {
-    "start": "node tools/run.js",
+    "start:client": "node tools/run.js",
+    "start:server": "node public/dist/index.js",
+    "start": "npm run build:client && node public/dist/index.js",
+    "mount": "rm -rf ../../public/client && mkdir ../../public/client && cp server/package.json ../../public/client/ && cp -r public/ ../../public/client/public/",
+    "mount:install": "cd ../../public/client/ && npm i",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "NODE_ENV=production node tools/build.js",
+    "build:server": "babel socket.js -d public/dist/lib && babel index.js -d public/dist",
     "build:debug": "node tools/build.js --debug",
     "test:lint": "eslint src test tools postcss.config.js webpack.config.js",
     "test:unit": "jest",
@@ -26,6 +33,7 @@
     "graphql-tag": "2.1.0",
     "immutability-helper": "2.2.0",
     "jump.js": "^1.0.2",
+    "material-ui": "^0.19.4",
     "moment": "2.18.1",
     "morgan": "^1.9.0",
     "prop-types": "15.5.10",
@@ -34,6 +42,7 @@
     "react-apollo": "1.2.0",
     "react-collapsible": "^1.4.0",
     "react-dom": "15.5.4",
+    "react-feather": "^1.0.7",
     "react-helmet": "5.0.3",
     "react-hot-loader": "3.0.0-beta.2",
     "react-modal": "1.7.7",
@@ -54,6 +63,7 @@
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.1",
     "babel-loader": "7.0.0",
+    "babel-plugin-transform-remove-strict-mode": "0.0.2",
     "babel-plugin-transform-runtime": "6.23.0",
     "babel-preset-env": "1.4.0",
     "babel-preset-latest": "6.24.1",
@@ -98,6 +108,7 @@
     "url-loader": "0.5.8",
     "webp-loader": "0.1.1",
     "webpack": "2.5.1",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-middleware": "1.10.2",
     "webpack-hot-middleware": "2.18.0"
   },
@@ -108,7 +119,8 @@
       "react"
     ],
     "plugins": [
-      "transform-runtime"
+      "transform-runtime",
+      "transform-remove-strict-mode"
     ]
   },
   "eslintConfig": {
