@@ -1,0 +1,10 @@
+
+#box1, #box2, #box3, #box4{
+	border: thin black solid;
+	background-color: yellow;
+	margin: 2px;
+	padding: 5px;
+	float: left;
+	width: 100px;
+	text-align: center;
+}

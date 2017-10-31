@@ -1,0 +1,9 @@
+{
+	"name": "demo-dynamic-server",
+	"version": "0.0.1",
+	"description": "Demo webserver some dynamic content.",
+	"dependencies": {
+		"socket.io": "~0.9.6",
+		"mime": "~1.2.7"
+	}
+}

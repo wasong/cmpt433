@@ -1,0 +1,9 @@
+{
+	"name": "https-proc-timer",
+	"version": "0.0.1",
+	"description": "Demo HTTPS server accessing /proc info using a client-side timer.",
+	"dependencies": {
+		"socket.io": "~0.9.6",
+		"mime": "~1.2.7"
+	}
+}
