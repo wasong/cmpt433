@@ -8,9 +8,6 @@ import io from './socket'
 const PORT = 8088
 const app = express()
 const httpServer = http.createServer(app)
-
-// start socket server
-io(httpServer)
 app.use(express.static(path.resolve(__dirname, '..', 'client', 'public')))
 
 app.use('/', (req, res) => {
@@ -20,3 +17,6 @@ app.use('/', (req, res) => {
 httpServer.listen(PORT, (req, res) => {
   console.log(`Listening on PORT ${PORT}`)
 })
+
+// start socket server
+io(httpServer)
