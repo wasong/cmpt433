@@ -10,7 +10,6 @@ var dgram = require('dgram');
 
 exports.listen = function(server) {
 	io = socketio.listen(server);
-	io.set('log level 1');
 	
 	io.sockets.on('connection', function(socket) {
 		handleCommand(socket);
@@ -47,6 +46,7 @@ function handleUDPConnection(socket, command, replyCommand) {
 		    client.close();
 
 		});
+		console.log('end call')
 		client.on("UDP Client: close", function() {
 		    console.log("closed");
 		});

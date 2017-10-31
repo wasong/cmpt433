@@ -4,37 +4,37 @@
 // Make connection to server when web page is fully loaded.
 var socket = io.connect();
 var monitors = setInterval(function() {
-	sendPrimeCommand("getVolume\n");
-	sendPrimeCommand("getVolume\n");
-	sendPrimeCommand("getVolume\n");
+	sendCommand("volume_monitor", "getVolume\n");
+	sendCommand("tempo_monitor", "getTempo\n");
+	sendCommand("beat_monitor", "getBeat\n");
 }, 1000)
 
 
 $(document).ready(function() {
 
 	$('#help').click(function(){
-		sendPrimeCommand("help\n");
+		sendCommand("prime", "help\n");
 	});
 	$('#volUp').click(function(){
-		sendPrimeCommand("volumeI\n");
+		sendCommand("prime", "volumeI\n");
 	});
 	$('#volDown').click(function(){
-		sendPrimeCommand("volumeD\n");
+		sendCommand("prime", "volumeD\n");
 	});
 	$('#tempoUp').click(function(){
-		sendPrimeCommand("tempoI\n");
+		sendCommand("prime", "tempoI\n");
 	});
 	$('#tempoDown').click(function(){
-		sendPrimeCommand("tempoD\n");
+		sendCommand("prime", "tempoD\n");
 	});
 	$('#beatNext').click(function(){
-		sendPrimeCommand("beatN\n");
+		sendCommand("prime", "beatN\n");
 	});
 	$('#beatPrev').click(function(){
-		sendPrimeCommand("beatP\n");
+		sendCommand("prime", "beatP\n");
 	});
 	$('#btnStop').click(function(){
-		sendPrimeCommand("stop\n");
+		sendCommand("prime", "stop\n");
 	});
 	
 	/*socket.on('commandReply', function(result) {
@@ -43,17 +43,18 @@ $(document).ready(function() {
 		$('#console.').scrollTop($('#console').prop('scrollHeight'));
 	});*/
 	socket.on('volume_monitor_reply', function(result) {
-			updateMonitor("currentVolume", result);
+			updateMonitor("#currentVolume", result);
 		});
 	socket.on('tempo_monitor_reply', function(result) {
-			updateMonitor("currentTempo", result);
+			updateMonitor("#currentTempo", result);
 		});
 });
 
 function updateMonitor(key, value) {
-	$(key).text(value);
+	var newDiv = $('<span></span>').text(value);
+	$(key).html(newDiv);
 }
 
-function sendPrimeCommand(message) {
-	socket.emit('prime', message);
+function sendCommand(command, message) {
+	socket.emit(command, message);
 };

@@ -12,9 +12,9 @@
 	<div id='content'>
 		<h3>Node.js to C App via UDP</h3>
 		<div id='messages'>
-			<div>Current Mode: <span id="currentBeatMode" /></div>
-			<div>Current Tempo: <span id="currentTempo" /></div>
-			<div>Current Volume: <span id="currentVolume" /></div>
+			<div>Current Mode: <span id="currentBeatMode"></span></div>
+			<div>Current Tempo: <span id="currentTempo"></span></div>
+			<div>Current Volume: <span id="currentVolume"></span></div>
 			<div>Uptime: <span id="uptime" /></div>
 		</div>
 		<div id='console'></div>
@@ -36,8 +36,8 @@
 				</div>
 				<div class="control">
 					<p class="controlTitle">Tempo Control</p>
-					<a class="btn-floating btn-sm waves-effect waves-light red"><i class="material-icons">add</i></a>
-					<a class="btn-floating btn-sm waves-effect waves-light red"><i class="material-icons">remove</i></a>
+					<a id="tempoUp" class="btn-floating btn-sm waves-effect waves-light red"><i class="material-icons">add</i></a>
+					<a id="tempoDown" class="btn-floating btn-sm waves-effect waves-light red"><i class="material-icons">remove</i></a>
 				</div>
 			</div>
 			<div>
