@@ -1,14 +1,14 @@
 #include "server.h"
 
-#define SIZE 512
+#define SIZE 1024
 
 //display preliminary messages for each condition
-char* displayResponse(char* respond_to_msg, char* prelimMsg)
-{
-	memset(respond_to_msg, 0, 1024);
-	strcat(respond_to_msg, prelimMsg);
-	return respond_to_msg;
-}
+// char* displayResponse(char* respond_to_msg, char* prelimMsg)
+// {
+// 	memset(respond_to_msg, 0, 1024);
+// 	strcat(respond_to_msg, prelimMsg);
+// 	return respond_to_msg;
+// }
 
 char* displayError(char* respond_to_msg)
 {
@@ -97,10 +97,11 @@ char* previous_beat()
 char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 {
 	char* respond_to_msg = (char*)malloc(sizeof(char)*SIZE);
-	
+	printf("drdjdrd\n");
 	//conditionals for all commands
 	if(strcmp(myMsg, "help\n") == 0)
 	{
+		printf("djdt7ut7t7t7\n");
 		memset(respond_to_msg, 0, sizeof(char)*SIZE);
 		strcat(respond_to_msg, "Accepted command examples:\n");
 		strcat(respond_to_msg, "volumeI  -- Increase the volume.\n");
@@ -132,14 +133,9 @@ char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 		return decrease_tempo();
 	}
 
-
-	else if(strcmp(myMsg, "stop\n") == 0)
-	{
-		return displayResponse(respond_to_msg, "Program Terminating\n");
-	}
-
 	else
 	{
+		printf("11111111111111\n");
 		return displayError(respond_to_msg);
 	}
 
@@ -175,8 +171,10 @@ void* listen_for_command(void* arg)
 	while((b = recvfrom(sock, myMsg, 1024, 0, (struct sockaddr *)&serverAddr, &serverAddrSize)) > 0 && !stopping)
 	{
 		myMsg[b] = '\0';
-		char* respond_to_msg = verifyCommand(respond_to_msg, sock, serverAddr);
-		if (strcmp(respond_to_msg, "Program Terminating\n") == 0)
+		printf("%d\n", myMsg[b]);
+		char* msgsss = verifyCommand(myMsg, sock, serverAddr);
+		printf("8888888888888888\n");
+		if (strcmp(msgsss, "stop\n") == 0)
 		{
 		// 	stop = 'T';
 		// 	sendto(sock, respond_to_msg, 1024, 0, (struct sockaddr *)&serverAddr, serverAddrSize);
@@ -193,8 +191,8 @@ void* listen_for_command(void* arg)
 			break;
 		}
 
-		sendto(sock, respond_to_msg, 1024, 0, (struct sockaddr *)&serverAddr, serverAddrSize);
-		free(respond_to_msg);
+		sendto(sock, msgsss, 1024, 0, (struct sockaddr *)&serverAddr, serverAddrSize);
+		free(msgsss);
 	}
 	
 	close(sock);
