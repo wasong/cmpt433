@@ -22,7 +22,7 @@ class List extends Component {
       message: null,
     }
 
-    io.on('message', (message) => {
+    io.on('commandReply', (message) => {
       this.setState({
         message,
       })
@@ -30,7 +30,7 @@ class List extends Component {
   }
 
   handleSendData = () => {
-    io.emit('message', 'Sent from list!')
+    io.emit('help', 'help')
   }
 
   render() {

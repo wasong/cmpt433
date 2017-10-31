@@ -9,9 +9,9 @@ const listener = (server) => {
 
     handleCommand(server)
 
-    socket.on('message', (msg) => {
+    socket.on('help', (msg) => {
       console.log(`message: ${msg}`)
-      io.emit('message', 'hi')
+      io.emit('help', 'sent from esrver')
     })
 
     socket.on('disconnect', function(){
