@@ -5,14 +5,26 @@
 var socket = io.connect();
 $(document).ready(function() {
 
-	$('#btnCount').click(function(){
+	$('#help').click(function(){
 		sendPrimeCommand("help\n");
 	});
-	$('#btnFirst').click(function(){
-		sendPrimeCommand("volume+\n");
+	$('#volUp').click(function(){
+		sendPrimeCommand("volumeI\n");
 	});
-	$('#btnLast').click(function(){
-		sendPrimeCommand("volume-\n");
+	$('#volDown').click(function(){
+		sendPrimeCommand("volumeD\n");
+	});
+	$('#tempoUp').click(function(){
+		sendPrimeCommand("tempoI\n");
+	});
+	$('#tempoDown').click(function(){
+		sendPrimeCommand("tempoD\n");
+	});
+	$('#beatNext').click(function(){
+		sendPrimeCommand("beatN\n");
+	});
+	$('#beatPrev').click(function(){
+		sendPrimeCommand("beatP\n");
 	});
 	$('#btnStop').click(function(){
 		sendPrimeCommand("stop\n");
@@ -20,8 +32,8 @@ $(document).ready(function() {
 	
 	socket.on('commandReply', function(result) {
 		var newDiv = $('<div></div>').text(result);
-		$('#messages').append(newDiv);
-		$('#messages').scrollTop($('#messages').prop('scrollHeight'));
+		$('#console').append(newDiv);
+		$('#console.').scrollTop($('#messages').prop('scrollHeight'));
 	});
 	
 });

@@ -16,20 +16,22 @@
 			<div>Current Volume: <span id="currentVolume" /></div>
 			<div>Uptime: <span id="uptime" /></div>
 		</div>
+		<div id='console'></div>
+		<a id="help" class="waves-effect waves-light btn">Help</a>
 		<div class="card blue-grey">
 			<div class="card-content white-text">
 				<span class="card-title">Select Beat</span>
 				</div>
 				<div class="card-action">
-					<a class="waves-effect waves-light btn">BEAT 1</a>
-					<a class="waves-effect waves-light btn">BEAT 2</a>
+					<a id="beatNext" class="waves-effect waves-light btn">Previous</a>
+					<a id="bestPrev" class="waves-effect waves-light btn">Next</a>
 				</div>
 			</div>
 			<div class="mainControl">
 				<div class="control">
 					<p class="controlTitle">Volume Control</p>
-					<a class="btn-floating btn-sm waves-effect waves-light red"><i class="material-icons">add</i></a>
-					<a class="btn-floating btn-sm waves-effect waves-light red"><i class="material-icons">remove</i></a>
+					<a id="volUp" class="btn-floating btn-sm waves-effect waves-light red"><i class="material-icons">add</i></a>
+					<a id="volDown" class="btn-floating btn-sm waves-effect waves-light red"><i class="material-icons">remove</i></a>
 				</div>
 				<div class="control">
 					<p class="controlTitle">Tempo Control</p>

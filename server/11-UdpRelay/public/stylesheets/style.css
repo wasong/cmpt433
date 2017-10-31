@@ -5,13 +5,17 @@
 	margin-right: auto;
 }
 
-#messages {
+#messages, #console {
 	height: 150px;
 	overflow: auto;
 	padding: 20px;
 	background-color: #eee;
 	margin-bottom: 1em;
 	margin-right: 10px;
+}
+
+#messages {
+	height: 100px;
 }
 
 .mainControl {
