@@ -6,9 +6,21 @@
 }
 
 #messages {
-	height: 300px;
+	height: 150px;
 	overflow: auto;
+	padding: 20px;
 	background-color: #eee;
 	margin-bottom: 1em;
 	margin-right: 10px;
+}
+
+.mainControl {
+	display: flex;
+	justify-content: space-between;
+}
+
+.control {
+	display: flex;
+	width: 40%;
+	justify-content: space-between;
 }
