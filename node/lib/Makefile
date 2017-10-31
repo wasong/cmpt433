@@ -23,7 +23,7 @@ CFLAGS = -Wall -g -std=c99 -D _POSIX_C_SOURCE=200809L -Werror
 #      to host  ~/public/asound_lib_BBB/libasound.so
 # Copy to just base library:
 
-LFLAGS = -L$(HOME)/cmpt433/public/asound_lib_BBG
+LFLAGS = -L$(HOME)/cmpt433/public/asound_lib_BBB
 
 
 # -pg for supporting gprof profiling.

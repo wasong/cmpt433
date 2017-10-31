@@ -2,9 +2,8 @@ import dgram from 'dgram'
 
 const handleCommand = (socket) => {
   // Passed string of command to relay
-  console.log('socket start', socket)
-  socket.on('prime', (data) => {
-    console.log(`prime command: ${data}`)
+  socket.on('help', (data) => {
+    console.log(`help command: ${data}`)
 
     // Info for connecting to the local process via UDP
     const PORT = 12345

@@ -15,7 +15,7 @@ static snd_pcm_t *handle;
 // Sample size note: This works for mono files because each sample ("frame') is 1 value.
 // If using stereo files then a frame would be two samples.
 
-#define SOUND "wave-files/100066__menegass__gui-drum-tom-mid-hard.wav"
+#define SOUND "beatbox-wav-files/100066__menegass__gui-drum-tom-mid-hard.wav"
 static unsigned long playbackBufferSize = 0;
 static short *playbackBuffer = NULL;
 _Bool stopping = false;
