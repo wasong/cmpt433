@@ -3,6 +3,7 @@
 	JSRT  Joystick Right P8 #15 47
 	JSDN  Joystick Down  P8 #16 46
 	JSLFT Joystick Left  P8 #18 65
+	JSPUSH  Joystick Push P8 #16 27
 */
 
 #include <stdlib.h>
