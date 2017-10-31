@@ -24,14 +24,14 @@ function handleCommand(socket) {
 		
 		// Info for connecting to the local process via UDP
 		var PORT = 12345;
-		var HOST = '127.0.0.1';
+		var HOST = '192.168.7.2';
 		var buffer = new Buffer(data);
 
 		var client = dgram.createSocket('udp4');
 		client.send(buffer, 0, buffer.length, PORT, HOST, function(err, bytes) {
 		    if (err) 
 		    	throw err;
-		    console.log('UDP message sent to ' + HOST +':'+ PORT);
+		    console.log('UDP message sent to ' + HOST +':'+ PORT + buffer);
 		});
 		
 		client.on('listening', function () {

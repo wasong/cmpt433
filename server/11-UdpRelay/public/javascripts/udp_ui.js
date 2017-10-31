@@ -6,16 +6,16 @@ var socket = io.connect();
 $(document).ready(function() {
 
 	$('#btnCount').click(function(){
-		sendPrimeCommand("count");
+		sendPrimeCommand("help\n");
 	});
 	$('#btnFirst').click(function(){
-		sendPrimeCommand("first 5");
+		sendPrimeCommand("volume+\n");
 	});
 	$('#btnLast').click(function(){
-		sendPrimeCommand("last 5");
+		sendPrimeCommand("volume-\n");
 	});
 	$('#btnStop').click(function(){
-		sendPrimeCommand("stop");
+		sendPrimeCommand("stop\n");
 	});
 	
 	socket.on('commandReply', function(result) {

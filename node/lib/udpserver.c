@@ -111,6 +111,7 @@ char* command_invalid()
 
 char* command_controller(char* command)
 {	
+	printf("%s", command);
 	if(strcmp(command, "help\n") == 0)
 	{
 		return command_help();
