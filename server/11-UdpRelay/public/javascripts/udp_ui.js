@@ -3,6 +3,13 @@
 
 // Make connection to server when web page is fully loaded.
 var socket = io.connect();
+var monitors = setInterval(function() {
+	sendPrimeCommand("getVolume\n");
+	sendPrimeCommand("getVolume\n");
+	sendPrimeCommand("getVolume\n");
+}, 1000)
+
+
 $(document).ready(function() {
 
 	$('#help').click(function(){
@@ -30,13 +37,22 @@ $(document).ready(function() {
 		sendPrimeCommand("stop\n");
 	});
 	
-	socket.on('commandReply', function(result) {
+	/*socket.on('commandReply', function(result) {
 		var newDiv = $('<div></div>').text(result);
 		$('#console').append(newDiv);
-		$('#console.').scrollTop($('#messages').prop('scrollHeight'));
-	});
-	
+		$('#console.').scrollTop($('#console').prop('scrollHeight'));
+	});*/
+	socket.on('volume_monitor_reply', function(result) {
+			updateMonitor("currentVolume", result);
+		});
+	socket.on('tempo_monitor_reply', function(result) {
+			updateMonitor("currentTempo", result);
+		});
 });
+
+function updateMonitor(key, value) {
+	$(key).text(value);
+}
 
 function sendPrimeCommand(message) {
 	socket.emit('prime', message);

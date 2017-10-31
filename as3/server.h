@@ -27,10 +27,13 @@ char* displayResponse(char* respond_to_msg, char* prelimMsg);
 //Display errors for invalid entries
 char* displayError(char* respond_to_msg);
 
+char* get_volume();
+
 char* increase_volume();
 
-
 char* decrease_volume();
+
+char* get_tempo();
 
 char* increase_tempo();
 

@@ -17,10 +17,9 @@ exports.listen = function(server) {
 	});
 };
 
-function handleCommand(socket) {
-	// Pased string of comamnd to relay
-	socket.on('prime', function(data) {
-		console.log('prime command: ' + data);
+function handleUDPConnection(socket, command, replyCommand) {
+	socket.on(command, function(data) {
+		console.log('command: ' + data);
 		
 		// Info for connecting to the local process via UDP
 		var PORT = 12345;
@@ -43,7 +42,7 @@ function handleCommand(socket) {
 		    console.log("UDP Client: message Rx" + remote.address + ':' + remote.port +' - ' + message);
 		    
 		    var reply = message.toString('utf8')
-		    socket.emit('commandReply', reply);
+		    socket.emit(replyCommand, reply);
 		    
 		    client.close();
 
@@ -55,4 +54,12 @@ function handleCommand(socket) {
 		    console.log("error: ",err);
 		});
 	});
+}
+
+function handleCommand(socket) {
+	// Passed string of command to relay
+	handleUDPConnection(socket, "prime", "commandReply");
+	handleUDPConnection(socket, "volume_monitor", "volume_monitor_reply");
+	handleUDPConnection(socket, "tempo_monitor", "tempo_monitor_reply");
+	handleUDPConnection(socket, "beat_monitor", "beat_monitor_reply");
 };
