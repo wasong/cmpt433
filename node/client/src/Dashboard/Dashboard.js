@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import Radium from 'radium'
 import { Route } from 'react-router-dom'
-import Grid from 'react-feather/dist/icons/grid'
-
-import Navbar from 'components/Navbar'
 
 import Home from './Home'
 
@@ -28,11 +24,6 @@ class Dashboard extends Component {
   render() {
     return (
       <div style={styles.root}>
-        <Navbar
-          title="Project Kubernetes"
-          icon={<Grid color="#e8e8ea" size={30} style={styles.gridIcon} />}
-          rootStyles={styles.navbarRoot}
-        />
         <Route path="/" component={Home} />
       </div>
     )

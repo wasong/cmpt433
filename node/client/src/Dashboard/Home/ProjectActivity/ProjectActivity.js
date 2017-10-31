@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Radium from 'radium'
 
-import FlatCard from 'components/FlatCard'
 import Divider from 'material-ui/Divider'
 
 import List from './List'
@@ -20,11 +19,10 @@ const styles = {
 }
 
 const ProjectActivity = props => (
-  <FlatCard rootStyles={styles.projectCard}>
+  <div>
     <div style={styles.title}>PROJECT ACTIVITY</div>
-    <Divider />
     <List />
-  </FlatCard>
+  </div>
 )
 
 ProjectActivity.propTypes = {}

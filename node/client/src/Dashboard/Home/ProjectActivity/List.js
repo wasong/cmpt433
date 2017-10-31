@@ -30,7 +30,7 @@ class List extends Component {
   }
 
   handleSendData = () => {
-    io.emit('help', 'help')
+    io.emit('prime', 'help')
   }
 
   render() {
