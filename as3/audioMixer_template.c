@@ -34,9 +34,11 @@ typedef struct {
 } playbackSound_t;
 static playbackSound_t soundBites[MAX_SOUND_BITES];
 
+int state = 1;
+
 // Playback threading
-//void* playbackThread(void* arg);
-static _Bool stopping = false;
+void* playbackThread(void* arg);
+_Bool stopping = false;
 static pthread_mutex_t audioMutex = PTHREAD_MUTEX_INITIALIZER;
 
 static int volume = 0;
@@ -53,6 +55,24 @@ void nanoSleepFunc(int x, int y)
 	}
 }
 
+void BeatBoxInit()
+{
+	wavedata_t base;
+	AudioMixer_readWaveFileIntoMemory(BASE, &base);
+
+	wavedata_t snare;
+	AudioMixer_readWaveFileIntoMemory(SNARE, &snare);
+
+	wavedata_t hihat;
+	AudioMixer_readWaveFileIntoMemory(HIHAT, &hihat);
+
+	beatArr[0] = base;
+	beatArr[1] = snare;
+	beatArr[2] = hihat;
+}
+	
+
+
 void AudioMixer_init(void)
 {
 	AudioMixer_setVolume(DEFAULT_VOLUME);
@@ -64,7 +84,7 @@ void AudioMixer_init(void)
 for(int i = 0; i < MAX_SOUND_BITES; i++)
 {
 	//soundBites[i].pSound = (wavedata_t *)malloc(sizeof(wavedata_t));
-	soundBites[i].pSound = NULL;  //cause of snc_pcm error
+	soundBites[i].pSound = NULL;  //possible cause of snc_pcm error?
 	soundBites[i].location = 0;
 }
 
@@ -255,14 +275,17 @@ int AudioMixer_getBPM()
 	return bpm;
 }
 
+long sleepTime()
+{
+	return (60/AudioMixer_getBPM()/2)*1000;
+}
+
+
 // Fill the playbackBuffer array with new PCM values to output.
 //    playbackBuffer: buffer to fill with new PCM data from sound bites.
 //    size: the number of values to store into playbackBuffer
 static void fillPlaybackBuffer(short *playbackBuffer, int size)
 {
-	
-
-//clear PCM buffer
 	memset(playbackBuffer, 0, size*sizeof(*playbackBuffer));
 
 	pthread_mutex_lock(&audioMutex);
@@ -289,8 +312,9 @@ static void fillPlaybackBuffer(short *playbackBuffer, int size)
 				}
 
 				playbackBuffer[j] = (short)data;
-				j++;
 				offset++;
+				j++;
+				
 				
 			}
 			soundBites[i].location = offset;
@@ -302,15 +326,6 @@ static void fillPlaybackBuffer(short *playbackBuffer, int size)
 	}
 	pthread_mutex_unlock(&audioMutex);
 }
-
-void AudioMixer_reset()
-{
-	for(int i = 0; i < MAX_SOUND_BITES; i++)
-	{
-		soundBites[i].pSound = NULL;
-	}
-}
-
 
 
 void* playbackThread(void* arg)
@@ -343,7 +358,6 @@ void* playbackThread(void* arg)
 
 	return NULL;
 }
-
 
 
 

@@ -10,8 +10,9 @@
 #include <alloca.h> // needed for mixer
 
 #define BASE "wave-files/100051__menegass__gui-drum-bd-hard.wav"
-#define SNARE "wave-files/100058__menegass__gui-drum-snare-hard.wav"
+#define SNARE "wave-files/100059__menegass__gui-drum-snare-soft.wav"
 #define HIHAT "wave-files/100053__menegass__gui-drum-cc.wav"
+
 
 typedef struct {
 	int numSamples;
