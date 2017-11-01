@@ -27,13 +27,10 @@ char* displayResponse(char* respond_to_msg, char* prelimMsg);
 //Display errors for invalid entries
 char* displayError(char* respond_to_msg);
 
-char* get_volume();
-
 char* increase_volume();
 
-char* decrease_volume();
 
-char* get_tempo();
+char* decrease_volume();
 
 char* increase_tempo();
 
@@ -51,6 +48,7 @@ void* listen_for_command(void* arg);
 
 void* playbackThread(void* arg);
 #endif
+
 
 
 

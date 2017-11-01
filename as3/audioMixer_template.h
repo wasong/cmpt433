@@ -3,15 +3,31 @@
 #ifndef AUDIO_MIXER_H
 #define AUDIO_MIXER_H
 
+#include <alsa/asoundlib.h>
+#include <stdbool.h>
+#include <pthread.h>
+#include <limits.h>
+#include <alloca.h> // needed for mixer
+
+#define BASS "wave-files/100051__menegass__gui-drum-bd-hard.wav"
+#define SNARE "wave-files/100059__menegass__gui-drum-snare-soft.wav"
+#define HIHAT "wave-files/100053__menegass__gui-drum-cc.wav"
+
+
 typedef struct {
 	int numSamples;
 	short *pData;
 } wavedata_t;
 
+wavedata_t beatArr[3];
+
 #define AUDIOMIXER_MAX_VOLUME 100
+
+void nanoSleepFunc(int x, int y);
 
 // init() must be called before any other functions,
 // cleanup() must be called last to stop playback threads and free memory.
+void BeatBoxInit();
 void AudioMixer_init(void);
 void AudioMixer_cleanup(void);
 
@@ -32,3 +48,4 @@ void AudioMixer_setVolume(int newVolume);
 void AudioMixer_setBPM(int newBPM);
 int AudioMixer_getBPM();
 #endif
+

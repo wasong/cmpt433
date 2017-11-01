@@ -1,0 +1,17 @@
+# Enter directory with root makefile and execute:
+	$ make
+
+# Note: I included node_modules in the aforementioned directory
+# but you can (and should for testing purposes) GO TO your corresponding
+# ../public/node/BeagleBone-Beat-Box-copy and execute (ON HOST):
+	$ node server.js
+
+# Then on Beaglebone run appropriate networking steps to enable internet access with BeagleBone
+# then once mounted via mount shell...execute (ON TARGET):
+	1) Change to public shared directory:
+		# cd /mnt/remote/myApps
+	2) Run the created executable (should be named audio):
+		# ./audio
+
+# Now open up a web-browser and type in url:
+	localhost:8088		--OR--		127.0.0.1:8088

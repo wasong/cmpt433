@@ -4,7 +4,7 @@
 # Edit this file to compile extra C files into their own programs.
 TARGET= beatbox
 
-SOURCES= audioMixer_template.h audioMixer_template.c main.c
+SOURCES= audioMixer_template.h server.h audioMixer_template.c server.c main.c
 
 PUBDIR = $(HOME)/cmpt433/public/myApps
 OUTDIR = $(PUBDIR)

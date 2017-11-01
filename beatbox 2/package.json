@@ -1,0 +1,9 @@
+{
+	"name": "beaglebone-beatbox-demo",
+	"version": "0.0.1",
+	"description": "Relay commands between the client web browser and the C beat-box application.",
+	"dependencies": {
+		"socket.io": "~0.9.6",
+		"mime": "~1.2.7"
+	}
+}

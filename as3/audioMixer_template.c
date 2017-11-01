@@ -2,11 +2,6 @@
 // which are left as incomplete.
 // Note: Generates low latency audio on BeagleBone Black; higher latency found on host.
 #include "audioMixer_template.h"
-#include <alsa/asoundlib.h>
-#include <stdbool.h>
-#include <pthread.h>
-#include <limits.h>
-#include <alloca.h> // needed for mixer
 
 
 static snd_pcm_t *handle;
@@ -15,7 +10,6 @@ static snd_pcm_t *handle;
 #define DEFAULT_BPM 120
 #define MAX_BPM 300
 #define MIN_BPM 40
-#define WAVE_FILE "wave-files/100051__menegass__gui-drum-bd-hard.wav"
 #define SAMPLE_RATE 44100
 #define NUM_CHANNELS 1
 #define SAMPLE_SIZE (sizeof(short)) 			// bytes per sample
@@ -41,13 +35,23 @@ typedef struct {
 static playbackSound_t soundBites[MAX_SOUND_BITES];
 
 // Playback threading
-void* playbackThread(void* arg);
-_Bool stopping = false;
-static pthread_t playbackThreadId;
+//void* playbackThread(void* arg);
+static _Bool stopping = false;
 static pthread_mutex_t audioMutex = PTHREAD_MUTEX_INITIALIZER;
 
 static int volume = 0;
 static int bpm = DEFAULT_BPM;
+
+void nanoSleepFunc(int x, int y)
+{
+	for (int i = 0; i < 1; i++) {
+		long seconds = x;
+		long nanoseconds = y;
+		struct timespec reqDelay = {seconds, nanoseconds};
+		nanosleep(&reqDelay, (struct timespec *) NULL);
+		
+	}
+}
 
 void AudioMixer_init(void)
 {
@@ -57,6 +61,12 @@ void AudioMixer_init(void)
 	// REVISIT:- Implement this. Hint: set the pSound pointer to NULL for each
 	//     sound bite.
 
+for(int i = 0; i < MAX_SOUND_BITES; i++)
+{
+	//soundBites[i].pSound = (wavedata_t *)malloc(sizeof(wavedata_t));
+	soundBites[i].pSound = NULL;  //cause of snc_pcm error
+	soundBites[i].location = 0;
+}
 
 
 
@@ -89,9 +99,8 @@ void AudioMixer_init(void)
 	playbackBuffer = malloc(playbackBufferSize * sizeof(*playbackBuffer));
 
 	// Launch playback thread:
-	pthread_create(&playbackThreadId, NULL, playbackThread, NULL);
+	//pthread_create(&playbackThreadId, NULL, playbackThread, NULL);
 }
-
 
 // Client code must call AudioMixer_freeWaveFileData to free dynamically allocated data.
 void AudioMixer_readWaveFileIntoMemory(char *fileName, wavedata_t *pSound)
@@ -146,51 +155,32 @@ void AudioMixer_queueSound(wavedata_t *pSound)
 	assert(pSound->numSamples > 0);
 	assert(pSound->pData);
 
-	// Insert the sound by searching for an empty sound bite spot
-	/*
-	 * REVISIT: Implement this:
-	 * 1. Since this may be called by other threads, and there is a thread
-	 *    processing the soundBites[] array, we must ensure access is threadsafe.
-	 * 2. Search through the soundBites[] array looking for a free slot.
-	 * 3. If a free slot is found, place the new sound file into that slot.
-	 *    Note: You are only copying a pointer, not the entire data of the wave file!
-	 * 4. After searching through all slots, if no free slot is found then print
-	 *    an error message to the console (and likely just return vs asserting/exiting
-	 *    because the application most likely doesn't want to crash just for
-	 *    not being able to play another wave file.
-	 */
-
+int counter = 0;
 pthread_mutex_lock(&audioMutex);
-	int i = 0;
-	while(soundBites[i].pSound != NULL)
-	{
-		i++;
-	}
-	if(i < MAX_SOUND_BITES)
+for(int i = 0; i < MAX_SOUND_BITES; i++)
+{
+	if(soundBites[i].pSound == NULL)
 	{
 		soundBites[i].pSound = pSound;
+		soundBites[i].location = 0;
+		pthread_mutex_unlock(&audioMutex);
+		break;
 	}
-	else
-	{
-		printf("No slots available\n");
-	}
-	pthread_mutex_unlock(&audioMutex);
-
-	return;
+	counter++;
 }
-
-
-
-
-
+if(counter == MAX_SOUND_BITES)
+	{
+		printf("ERROR: No free slots\n");
+	}
+}
 
 void AudioMixer_cleanup(void)
 {
 	printf("Stopping audio...\n");
 
 	// Stop the PCM generation thread
-	stopping = true;
-	pthread_join(playbackThreadId, NULL);
+	//stopping = true;
+	//pthread_join(playbackThreadId, NULL);
 
 	// Shutdown the PCM output, allowing any pending sound to play out (drain)
 	snd_pcm_drain(handle);
@@ -248,14 +238,15 @@ void AudioMixer_setVolume(int newVolume)
     snd_mixer_close(handle);
 }
 
+
 void AudioMixer_setBPM(int currentBPM)
 {
 	//check if within parameters
-	if (currentBPM < MIN_BPM || currentBPM > MAX_BPM) {
-		printf("ERROR: BPM must be between 40 and 300.\n");
+	if(currentBPM < MIN_BPM || currentBPM > MAX_BPM)
+	{
+		printf("ERROR: BPM must be between 40 and 300\n");
 		return;
 	}
-
 	bpm = currentBPM;
 }
 
@@ -264,110 +255,66 @@ int AudioMixer_getBPM()
 	return bpm;
 }
 
-
 // Fill the playbackBuffer array with new PCM values to output.
 //    playbackBuffer: buffer to fill with new PCM data from sound bites.
 //    size: the number of values to store into playbackBuffer
 static void fillPlaybackBuffer(short *playbackBuffer, int size)
 {
-	/*
-	 * REVISIT: Implement this
-	 * 1. Wipe the playbackBuffer to all 0's to clear any previous PCM data.
-	 *    Hint: use memset()
-	 * 2. Since this is called from a background thread, and soundBites[] array
-	 *    may be used by any other thread, must synchronize this.
-	 * 3. Loop through each slot in soundBites[], which are sounds that are either
-	 *    waiting to be played, or partially already played:
-	 *    - If the sound bite slot is unused, do nothing for this slot.
-	 *    - Otherwise "add" this sound bite's data to the play-back buffer
-	 *      (other sound bites needing to be played back will also add to the same data).
-	 *      * Record that this portion of the sound bite has been played back by incrementing
-	 *        the location inside the data where play-back currently is.
-	 *      * If you have now played back the entire sample, free the slot in the
-	 *        soundBites[] array.
-	 *
-	 * Notes on "adding" PCM samples:
-	 * - PCM is stored as signed shorts (between SHRT_MIN and SHRT_MAX).
-	 * - When adding values, ensure there is not an overflow. Any values which would
-	 *   greater than SHRT_MAX should be clipped to SHRT_MAX; likewise for underflow.
-	 * - Don't overflow any arrays!
-	 * - Efficiency matters here! The compiler may do quite a bit for you, but it doesn't
-	 *   hurt to keep it in mind. Here are some tips for efficiency and readability:
-	 *   * If, for each pass of the loop which "adds" you need to change a value inside
-	 *     a struct inside an array, it may be faster to first load the value into a local
-	 *      variable, increment this variable as needed throughout the loop, and then write it
-	 *     back into the struct inside the array after. For example:
-	 *           int offset = myArray[someIdx].value;
-	 *           for (int i =...; i < ...; i++) {
-	 *               offset ++;
-	 *           }
-	 *           myArray[someIdx].value = offset;
-	 *   * If you need a value in a number of places, try loading it into a local variable
-	 *          int someNum = myArray[someIdx].value;
-	 *          if (someNum < X || someNum > Y || someNum != Z) {
-	 *              someNum = 42;
-	 *          }
-	 *          ... use someNum vs myArray[someIdx].value;
-	 *
-	 */
+	
 
-
-// clear PCM buffer
-	memset(playbackBuffer,0,size*sizeof(*playbackBuffer));
+//clear PCM buffer
+	memset(playbackBuffer, 0, size*sizeof(*playbackBuffer));
 
 	pthread_mutex_lock(&audioMutex);
 	for(int i = 0; i < MAX_SOUND_BITES; i++)
 	{
-		if(soundBites[i].pSound == NULL)
-			continue;
-
-		if(soundBites[i].location == soundBites[i].pSound->numSamples)
-		{
-			soundBites[i].pSound = NULL;
-		}
-
-		if(soundBites[i].location < soundBites[i].pSound->numSamples)
+		if(soundBites[i].pSound != NULL)
 		{
 			int offset = soundBites[i].location;
 			int data = 0;
 			int j = 0;
-			while(j < soundBites[i].pSound->numSamples)
+			
+			while (j < playbackBufferSize && offset < soundBites[i].pSound->numSamples)
 			{
-				for(j = offset; j < size; j++ )
+				int data_offset = (int)soundBites[i].pSound->pData[offset];
+				data = ((int)playbackBuffer[j]) + data_offset;
+				
+				if(data < SHRT_MIN)
 				{
-					int data_location = (int) soundBites[i].pSound->pData[offset];
-					data = ((int) playbackBuffer[j]) + data_location;
-
-					if(data < SHRT_MIN)
-						data = SHRT_MIN;
-					if(data > SHRT_MAX)
-						data = SHRT_MAX;
-					playbackBuffer[j] = (short) data;
-
-					offset++;
-
+					data = SHRT_MIN;
 				}
+				if(data > SHRT_MAX)
+				{
+					data = SHRT_MAX;
+				}
+
+				playbackBuffer[j] = (short)data;
+				j++;
+				offset++;
+				
 			}
 			soundBites[i].location = offset;
-		}
-
-		if(soundBites[i].location >= soundBites[i].pSound->numSamples)
-		{
-			soundBites[i].pSound = NULL;
+			if(soundBites[i].location >= soundBites[i].pSound->numSamples)
+			{
+				soundBites[i].pSound = NULL;
+			}
 		}
 	}
 	pthread_mutex_unlock(&audioMutex);
-	return;
+}
+
+void AudioMixer_reset()
+{
+	for(int i = 0; i < MAX_SOUND_BITES; i++)
+	{
+		soundBites[i].pSound = NULL;
+	}
 }
 
 
 
 void* playbackThread(void* arg)
 {
-	wavedata_t sound;
-	AudioMixer_readWaveFileIntoMemory(WAVE_FILE, &sound);
-	AudioMixer_queueSound(&sound);
-	sleep(1);
 
 	while (!stopping) {
 		// Generate next block of audio
@@ -375,7 +322,8 @@ void* playbackThread(void* arg)
 
 
 		// Output the audio
-		snd_pcm_sframes_t frames = snd_pcm_writei(handle, playbackBuffer, playbackBufferSize);
+		snd_pcm_sframes_t frames = snd_pcm_writei(handle,
+				playbackBuffer, playbackBufferSize);
 
 		// Check for (and handle) possible error conditions on output
 		if (frames < 0) {
@@ -395,6 +343,7 @@ void* playbackThread(void* arg)
 
 	return NULL;
 }
+
 
 
 

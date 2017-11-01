@@ -16,18 +16,6 @@ char* displayError(char* respond_to_msg)
 	sprintf(respond_to_msg, "Invalid command: Please see \"help\" for list of valid commands.\n");
 	return respond_to_msg;
 }
-
-char* get_volume() {
-	char* respond_to_msg = (char*)malloc(sizeof(char)*SIZE);
-	memset(respond_to_msg,0,sizeof(char)*SIZE);
-
-	char buffer[512];
-	//get volume and increment
-	sprintf(buffer, "%d\n", AudioMixer_getVolume());
-	strcat(respond_to_msg, "Volume: ");
-	strcat(respond_to_msg, buffer);
-	return respond_to_msg;
-}
  
  
 char* increase_volume()
@@ -55,18 +43,6 @@ char* decrease_volume()
 		AudioMixer_setVolume(AudioMixer_getVolume()- 5); 
 		sprintf(buffer, "%d\n", AudioMixer_getVolume());
 		strcat(respond_to_msg, "Volume: ");
-		strcat(respond_to_msg, buffer);
-		return respond_to_msg;
-}
-
-char* get_tempo() {
-	char* respond_to_msg = (char*)malloc(sizeof(char)*SIZE);
-	memset(respond_to_msg,0,sizeof(char)*SIZE);
-
-		char buffer[512];
-		//get volume and increment 
-		sprintf(buffer, "%d\n", AudioMixer_getBPM());
-		strcat(respond_to_msg, "Tempo: ");
 		strcat(respond_to_msg, buffer);
 		return respond_to_msg;
 }
@@ -121,6 +97,7 @@ char* previous_beat()
 char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 {
 	char* respond_to_msg = (char*)malloc(sizeof(char)*SIZE);
+	printf("Listening...\n");
 	//conditionals for all commands
 	if(strcmp(myMsg, "help\n") == 0)
 	{
@@ -135,10 +112,6 @@ char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 		strcat(respond_to_msg, "stop  -- cause the server program to end.\n");
 		return respond_to_msg;
 	}
-	if(strcmp(myMsg, "getVolume\n") == 0)
-	{
-		return get_volume();
-	}
 	if(strcmp(myMsg, "volumeI\n") == 0)
 	{
 		return increase_volume();
@@ -147,12 +120,6 @@ char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 	else if(strcmp(myMsg, "volumeD\n") == 0)
 	{
 		return decrease_volume();
-	}
-
-
-	else if(strcmp(myMsg, "getTempo\n") == 0)
-	{
-		return get_tempo();
 	}
 
 	else if(strcmp(myMsg, "tempoI\n") == 0)
@@ -165,6 +132,20 @@ char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 		return decrease_tempo();
 	}
 
+	else if(strcmp(myMsg, "beatN\n") == 0)
+	{
+		return next_beat();
+	}
+
+	else if(strcmp(myMsg, "beatP\n") == 0)
+	{
+		return previous_beat();
+	}
+
+	// else if(strcmp(myMsg, "stop\n") == 0)
+	// {
+	// 	return stop();
+	// }
 	else
 	{
 		return displayError(respond_to_msg);
@@ -202,10 +183,21 @@ void* listen_for_command(void* arg)
 	while((b = recvfrom(sock, myMsg, 1024, 0, (struct sockaddr *)&serverAddr, &serverAddrSize)) > 0 && !stopping)
 	{
 		myMsg[b] = '\0';
-		printf("%d\n", myMsg[b]);
+		printf("Message break: %d\n", myMsg[b]);
 		char* msgsss = verifyCommand(myMsg, sock, serverAddr);
 		if (strcmp(msgsss, "stop\n") == 0)
 		{
+		// 	stop = 'T';
+		// 	sendto(sock, respond_to_msg, 1024, 0, (struct sockaddr *)&serverAddr, serverAddrSize);
+		// 	free(respond_to_msg);
+		// 	break;
+		// } 
+		// else if(strcmp(respond_to_msg, " \n") == 0)
+		// {
+		// 	free(respond_to_msg);
+		// }
+		// else
+		// {
 			stopping = true;
 			break;
 		}

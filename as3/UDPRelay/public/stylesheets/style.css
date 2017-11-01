@@ -1,0 +1,30 @@
+
+#content {
+	width: 550px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#messages, #console {
+	height: 150px;
+	overflow: auto;
+	padding: 20px;
+	background-color: #eee;
+	margin-bottom: 1em;
+	margin-right: 10px;
+}
+
+#messages {
+	height: 100px;
+}
+
+.mainControl {
+	display: flex;
+	justify-content: space-between;
+}
+
+.control {
+	display: flex;
+	width: 40%;
+	justify-content: space-between;
+}

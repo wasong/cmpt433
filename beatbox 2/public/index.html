@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>BeagleBone Beat-Box</title>
+	<meta charset="UTF-8">
+	<link rel='stylesheet' href='/stylesheets/style.css'></link>
+</head>
+
+<body>
+<form>
+	<h1>BeagleBone Beat-Box</h1>
+	<div>by Andre and Bryan</div>
+
+	<!-- <p>This page is a partial solution to what's needed. You'll need to add some extra sections for tempo and triggering sounds via buttons.</p> -->
+	
+	<div id='content'>
+		<div class='status-box'>
+			<h2>BeatBox's Status</h2>
+			<!-- <div id='status'>None yet...</div> -->
+			<p> Device up for:
+				<span id="uptimeId"></span> (H:M:S)
+			</p>
+		</div>
+		
+		<div id='left-box'>
+			<div id='modediv'>			
+				<h2>Drum Beat Selection</h2>
+				<p>Current drum beat mode is: <strong><span id="modeid"></span></strong></p>
+				<p>
+					<input type="button" id="modeNone"  value="None"/>
+					<input type="button" id="modeRock1" value="Rock #1"/>
+					<input type="button" id="modeRock2" value="Rock #2"/>
+				</p>
+				<h3>Volume</h3>
+				<p>
+					<form id='send-form'>
+					<input type="button" id="volumeDown" value=" - "/>
+					<input type="text"   id="volumeid" value="???" size="3" autocomplete = 'off' readonly/>
+					<input type="button" id="volumeUp" value=" + "/>
+					(0 - 100)
+					
+				</p>
+				<h3>Tempo</h3>
+				<p>
+					<input type="button" id="tempoDown" value=" - "/>
+					<input type="text"   id="tempoid" value="???" size="3" autocomplete = 'off' readonly/>
+					<input type="button" id="tempoUp" value=" + "/>
+					(40 - 300)
+					</form>
+				</p>
+				<h2>Play Drum Sounds</h2>
+				<p>
+					<input type="button" id="hi-hat"  value="Hi-Hat"/>
+					<input type="button" id="snare" value="Snare"/>
+					<input type="button" id="bass" value="Bass"/>
+				</p>
+			</div>
+			
+		</div>
+		<div id='error-box'>
+			<h2>Server Error</h2>
+			<p>Server error detected. Please resolve error before continuing.</p>
+			<div><code id='error-text'>No error yet... did you hide this div correctly via Javascript? :)</code></div>
+		</div>
+
+	</div>
+</form>
+	
+	<script src='/socket.io/socket.io.js' type='text/javascript'></script>
+	<!--  // HTTPS CHANGE #5: Load the HTTPS version of jquery -->
+	<script src='https://code.jquery.com/jquery-1.11.1.min.js' type='text/javascript'></script>
+
+	<script src='javascripts/beat_ui.js' type='text/javascript'></script>
+</body>
+</html>
