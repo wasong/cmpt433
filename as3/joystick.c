@@ -24,11 +24,16 @@ void closeFile(FILE* file) {
 	fclose(file);
 }
 
-void nanoslip(long sec, long nano) {
-	long seconds = sec;
-	long nanoseconds = nano;
-	struct timespec reqDelay = {seconds, nanoseconds};
-	nanosleep(&reqDelay, (struct timespec *) NULL);
+void nanoslip(int sec, long nano) {
+	// long seconds = sec;
+	// long nanoseconds = nano;
+	// struct timespec reqDelay = {seconds, nanoseconds};
+	// nanosleep(&reqDelay, (struct timespec *) NULL);
+
+	struct timespec delay;
+	delay.tv_sec = sec;
+	delay.tv_nsec = nano;
+	nanosleep(&delay, NULL);
 }
 
 void exportGPIOFile(int pin) {

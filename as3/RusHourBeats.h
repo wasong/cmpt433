@@ -1,5 +1,6 @@
 #ifndef BEATS_H
 #define BEATS_H
+#include <time.h>
 
 //Prototypes
 void noBeat();						//returns nothing

@@ -6,7 +6,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
-#include <time.h>
 #include <string.h>
 
 #define MAX_LENGTH 512
@@ -30,7 +29,7 @@ void exportGPIOFile(int pin);
 
 void closeFile(FILE* file);
 
-void nanoslip(long sec, long nano);
+void nanoslip(int sec, long nano);
 
 void exportGPIOFile(int pin);
 

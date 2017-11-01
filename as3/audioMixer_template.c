@@ -277,7 +277,7 @@ int AudioMixer_getBPM()
 
 long sleepTime()
 {
-	return (60/AudioMixer_getBPM()/2)*1000;
+	return ((double) 60 / AudioMixer_getBPM() / 2) * 100000000;
 }
 
 

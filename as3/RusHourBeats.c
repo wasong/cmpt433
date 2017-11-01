@@ -5,22 +5,23 @@
 void rock()
 {
 	int tempo = AudioMixer_getBPM();
-	long timeNano = ((double) 60 / tempo / 2) * 100000000;
-	int timeSeconds = timeNano / 100000000;
+	long timeNano = ((double) 60 / tempo / 2) * 1000000000;
 
+	printf("%li\n", timeNano);
+	
 	AudioMixer_queueSound(&beatArr[2]);
 	AudioMixer_queueSound(&beatArr[0]);
-	nanoslip(timeSeconds, timeNano);
+	nanoSleepFunc(0, timeNano);
 
 	AudioMixer_queueSound(&beatArr[2]);
-	nanoslip(timeSeconds, timeNano);
+	nanoSleepFunc(0, timeNano);
 
 	AudioMixer_queueSound(&beatArr[2]);
 	AudioMixer_queueSound(&beatArr[1]);
-	nanoslip(timeSeconds, timeNano);
+	nanoSleepFunc(0, timeNano);
 
 	AudioMixer_queueSound(&beatArr[2]);
-	nanoslip(timeSeconds, timeNano);
+	nanoSleepFunc(0, timeNano);
 }
 
 void rockSequence() {
@@ -55,7 +56,7 @@ void* beatThread(void* arg)
 		{
 			custom();
 		}
-		nanoSleepFunc(1, 0);
+		// nanoSleepFunc(1, 0);
 	}
 	pthread_exit(0);
 }
