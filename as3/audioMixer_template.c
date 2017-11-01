@@ -44,6 +44,21 @@ static pthread_mutex_t audioMutex = PTHREAD_MUTEX_INITIALIZER;
 static int volume = 0;
 static int bpm = DEFAULT_BPM;
 
+void AudioMixer_nextState() {
+	if (state < 3) {
+		state += 1;
+	} else {
+		state = 0;
+	}
+};
+void AudioMixer_prevState() {
+	if (state == 0) {
+		state = 2;
+	} else {
+		state -= 1;
+	}
+};
+
 void nanoSleepFunc(int x, int y)
 {
 	for (int i = 0; i < 1; i++) {

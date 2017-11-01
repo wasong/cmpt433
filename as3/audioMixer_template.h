@@ -49,5 +49,7 @@ int  AudioMixer_getVolume();
 void AudioMixer_setVolume(int newVolume);
 void AudioMixer_setBPM(int newBPM);
 int AudioMixer_getBPM();
+void AudioMixer_nextState();
+void AudioMixer_prevState();
 long sleepTime();
 #endif

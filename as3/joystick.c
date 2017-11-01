@@ -116,7 +116,11 @@ void* startJoystickThread(void* arg) {
 			printf("BPM: %d\n", AudioMixer_getBPM());
 			nanoslip(0, 100000000);
 		} 
-		if (PUSHED) printf("Pushed\n");
+		if (PUSHED) {
+			AudioMixer_nextState();
+			printf("State: %d\n", state);
+			nanoslip(0, 100000000);
+		}
 	}
 	printf("Ending joystick thread\n");
 	pthread_exit(0);
