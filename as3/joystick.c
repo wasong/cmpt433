@@ -85,11 +85,8 @@ void* startJoystickThread(void* arg) {
 	printf("Starting joystick thread\n");
 	// stopping bool from audioMixer
 	while (1) {
-		int tempo = AudioMixer_getBPM();
-		long timeNano = ((double) 60 / tempo / 2) * 100000000;
-		int timeSeconds = timeNano / 100000000;
-		nanoslip(timeSeconds, timeNano);
-
+		long debounce = 200000000;
+		
 		_Bool UP = checkIfPressed(JSUP_FILE);
 		_Bool DOWN = checkIfPressed(JSDN_FILE);
 		_Bool LEFT = checkIfPressed(JSLFT_FILE);
@@ -99,27 +96,27 @@ void* startJoystickThread(void* arg) {
 		if (UP) {
 			AudioMixer_setVolume(AudioMixer_getVolume() + 5);
 			printf("VOL: %d\n", AudioMixer_getVolume());
-			nanoslip(0, 100000000);
+			nanoslip(0, debounce);
 		}
 		if (DOWN)  {
 			AudioMixer_setVolume(AudioMixer_getVolume() - 5);
 			printf("VOL: %d\n", AudioMixer_getVolume());
-			nanoslip(0, 100000000);
+			nanoslip(0, debounce);
 		}
 		if (LEFT) {
 			AudioMixer_setBPM(AudioMixer_getBPM() + 5);
 			printf("BPM: %d\n", AudioMixer_getBPM());
-			nanoslip(0, 100000000);
+			nanoslip(0, debounce);
 		} 
 		if (RIGHT) {
 			AudioMixer_setBPM(AudioMixer_getBPM() - 5);
 			printf("BPM: %d\n", AudioMixer_getBPM());
-			nanoslip(0, 100000000);
+			nanoslip(0, debounce);
 		} 
 		if (PUSHED) {
 			AudioMixer_nextState();
 			printf("State: %d\n", state);
-			nanoslip(0, 100000000);
+			nanoslip(0, debounce);
 		}
 	}
 	printf("Ending joystick thread\n");
