@@ -5,6 +5,7 @@
 
 
 #include "audioMixer_template.h"
+#include "RusHourBeats.h"
 #include <errno.h>
 #include <string.h>
 #include <stdio.h>
@@ -44,6 +45,8 @@ char* get_beat();
 char* next_beat();
 
 char* previous_beat();
+
+char* playBeat(int i);
 
 // Facilitates specific response messages for each valid command  
 char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr);

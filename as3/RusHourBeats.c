@@ -91,6 +91,13 @@ void noBeat()
 	return;
 }
 
+void playSingleBeat(int beat) {
+	nanoSleepFunc(0, 500000000);
+
+	AudioMixer_queueSound(&beatArr[beat]);
+	nanoSleepFunc(0, 500000000);
+}
+
 void* beatThread(void* arg)
 {
 	BeatBoxInit();

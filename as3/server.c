@@ -134,6 +134,17 @@ char* previous_beat()
 	return respond_to_msg;
 }
 
+char* playBeat(int num)
+{
+	playSingleBeat(num);
+	char* respond_to_msg = (char*)malloc(sizeof(char)*SIZE);
+	memset(respond_to_msg,0,sizeof(char)*SIZE);
+	
+	strcat(respond_to_msg, "Playing a beat\n");
+	return respond_to_msg;
+}
+
+
 char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 {
 	char* respond_to_msg = (char*)malloc(sizeof(char)*SIZE);
@@ -194,6 +205,21 @@ char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 	else if(strcmp(myMsg, "beatP\n") == 0)
 	{
 		return previous_beat();
+	}
+
+	else if(strcmp(myMsg, "beat1\n") == 0)
+	{
+		return playBeat(0);
+	}
+
+	else if(strcmp(myMsg, "beat2\n") == 0)
+	{
+		return playBeat(1);
+	}
+
+	else if(strcmp(myMsg, "beat3\n") == 0)
+	{
+		return playBeat(2);
 	}
 
 	// else if(strcmp(myMsg, "stop\n") == 0)

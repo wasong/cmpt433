@@ -7,5 +7,6 @@ void noBeat();						//returns nothing
 void rock();						//plays standard rock beat
 void custom();						//plays custom beat
 void* beatThread(void* arg);				//Beat threading	
+void playSingleBeat(int i);
 
 #endif

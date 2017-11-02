@@ -33,8 +33,14 @@ $(document).ready(function() {
 	$('#beatPrev').click(function(){
 		sendCommand("prime", "beatP\n");
 	});
-	$('#btnStop').click(function(){
-		sendCommand("prime", "stop\n");
+	$('#beat1').click(function(){
+		sendCommand("prime", "beat1\n");
+	});
+	$('#beat2').click(function(){
+		sendCommand("prime", "beat2\n");
+	});
+	$('#beat3').click(function(){
+		sendCommand("prime", "beat3\n");
 	});
 	
 	socket.on('commandReply', function(result) {
