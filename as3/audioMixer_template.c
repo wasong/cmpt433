@@ -45,7 +45,7 @@ static int volume = 0;
 static int bpm = DEFAULT_BPM;
 
 void AudioMixer_nextState() {
-	if (state < 3) {
+	if (state < 2) {
 		state += 1;
 	} else {
 		state = 0;
