@@ -6,15 +6,20 @@
 var PORT_NUMBER = 8088;
 
 
-var http = require('http');
+var http = require('https');
 var fs   = require('fs');
 var path = require('path');
 var mime = require('mime');
 
+var options = {
+	key:  fs.readFileSync('./key.pem'),
+	cert: fs.readFileSync('./key-cert.pem')
+}
+
 /* 
  * Create the static web server
  */
-var server = http.createServer(function(request, response) {
+var server = http.createServer(options, function(request, response) {
 	var filePath = false;
 	
 	if (request.url == '/') {
@@ -63,8 +68,10 @@ function sendFile(response, filePath, fileContents) {
 
 
 /*
- * Create the Userver to listen for the websocket
+ * Create the servers to listen for the websocket
  */
 var udpServer = require('./lib/udp_server');
+var procServer = require('./lib/proc_uptime');
 udpServer.listen(server);
+procServer.listen(server);
 
