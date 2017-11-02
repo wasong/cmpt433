@@ -39,6 +39,8 @@ char* increase_tempo();
 
 char* decrease_tempo();
 
+char* get_beat();
+
 char* next_beat();
 
 char* previous_beat();

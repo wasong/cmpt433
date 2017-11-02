@@ -44,6 +44,10 @@ static pthread_mutex_t audioMutex = PTHREAD_MUTEX_INITIALIZER;
 static int volume = 0;
 static int bpm = DEFAULT_BPM;
 
+int AudioMixer_getBeat() {
+	return state;
+}
+
 void AudioMixer_nextState() {
 	if (state < 2) {
 		state += 1;

@@ -48,6 +48,9 @@ $(document).ready(function() {
 	socket.on('tempo_monitor_reply', function(result) {
 			updateMonitor("#currentTempo", result);
 		});
+	socket.on('beat_monitor_reply', function(result) {
+		updateMonitor("#currentBeatMode", result);
+	});
 });
 
 function updateMonitor(key, value) {

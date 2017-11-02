@@ -1,5 +1,7 @@
 #include "server.h"
 
+char* beatNames[3] = { "none", "rock", "custom" }; 
+
 #define SIZE 1024
 
 //display preliminary messages for each condition
@@ -102,8 +104,19 @@ char* decrease_tempo()
 		return respond_to_msg;
 }
 
+char* get_beat() {
+	int beat = AudioMixer_getBeat();
+
+	char* respond_to_msg = (char*)malloc(sizeof(char)*SIZE);
+	memset(respond_to_msg,0,sizeof(char)*SIZE);
+	
+	strcat(respond_to_msg, beatNames[beat]);
+	return respond_to_msg;
+}
+
 char* next_beat()
 {
+	AudioMixer_nextState();
 	char* respond_to_msg = (char*)malloc(sizeof(char)*SIZE);
 	memset(respond_to_msg,0,sizeof(char)*SIZE);
 	
@@ -113,6 +126,7 @@ char* next_beat()
 
 char* previous_beat()
 {
+	AudioMixer_prevState();
 	char* respond_to_msg = (char*)malloc(sizeof(char)*SIZE);
 	memset(respond_to_msg,0,sizeof(char)*SIZE);
 	
@@ -165,6 +179,11 @@ char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 	else if(strcmp(myMsg, "tempoD\n") == 0)
 	{
 		return decrease_tempo();
+	}
+
+	else if(strcmp(myMsg, "getBeat\n") == 0)
+	{
+		return get_beat();
 	}
 
 	else if(strcmp(myMsg, "beatN\n") == 0)
