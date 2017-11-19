@@ -1,0 +1,10 @@
+kernel//home/andrew/cmpt433/work/12-drivers-demo/testdriver.ko
+kernel//home/andrew/cmpt433/work/12-drivers-demo/demo_printk.ko
+kernel//home/andrew/cmpt433/work/12-drivers-demo/demo_miscdrv.ko
+kernel//home/andrew/cmpt433/work/12-drivers-demo/demo_miscdrv_sol.ko
+kernel//home/andrew/cmpt433/work/12-drivers-demo/demo_paramdrv.ko
+kernel//home/andrew/cmpt433/work/12-drivers-demo/demo_procdrv.ko
+kernel//home/andrew/cmpt433/work/12-drivers-demo/demo_seqfile_procdrv.ko
+kernel//home/andrew/cmpt433/work/12-drivers-demo/demo_ledtrig.ko
+kernel//home/andrew/cmpt433/work/12-drivers-demo/echo.ko
+kernel//home/andrew/cmpt433/work/12-drivers-demo/demo_misc_template.ko
