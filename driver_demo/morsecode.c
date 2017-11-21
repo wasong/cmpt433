@@ -7,7 +7,7 @@
 #include <linux/kfifo.h>
 #include <linux/leds.h>
 
-#define DEVICE_FILE "morse_code"
+#define DEVICE_FILE "morse-code"
 #define DOTTIME 200
 
 // driver parameter dot time
@@ -137,6 +137,7 @@ static void process_hex(unsigned short hex) {
   sleep_time = dottime;
   msleep(sleep_time);
  }
+ if (!kfifo_put(&echo_fifo, ' ')) return -EFAULT;
  msleep(sleep_time * 2); // inbetween letters
 }
 
