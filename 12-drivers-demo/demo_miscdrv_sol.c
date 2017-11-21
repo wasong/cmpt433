@@ -89,18 +89,10 @@ static ssize_t my_write(struct file *file,
 			continue;
 		}
 
-		// Process the character
-		if (buff_idx == 0 || ch < min_char) {
-			min_char = ch;
-		}		
+		// processing
+				
 	}
 
-	// Print out the message
-	if (count >= 0) {
-		printk(KERN_INFO "    Min character is %c (#%d).\n", min_char, min_char);
-	} else {
-		printk(KERN_INFO "    No characters in buffer to analyze.\n");
-	}
 
 	// Return # bytes actually written.
 	*ppos += count;
