@@ -153,15 +153,11 @@ int main(int argc, char **argv)
                 fprintf(fout, "P6\n%d %d 255\n",
                         fmt.fmt.pix.width, fmt.fmt.pix.height);
                 fwrite(buffers[buf.index].start, buf.bytesused, 1, fout);
+                fclose(fout);
 		char cmd[128];
-		char pathToJpeg[128];
-		char pathToPpm[128];
-		sprintf(pathToJpeg, "/root/mnt/remote/myApps/pictures/grabber%03d.jpeg", i);
-		sprintf(pathToPpm, "/root/mnt/remote/myApps/%s", out_name);
-		sprintf(cmd, "convert %s %s", pathToPpm, pathToJpeg);
+		sprintf(cmd, "convert /mnt/remote/myApps/%s /mnt/remote/myApps/pictures/grabber%03d.jpeg", out_name, i);
 		printf("\nkappa %s\n", cmd);
 		system(cmd);
-                fclose(fout);
 
                 xioctl(fd, VIDIOC_QBUF, &buf);
         }
