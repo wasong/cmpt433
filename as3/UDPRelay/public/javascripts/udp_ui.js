@@ -14,7 +14,7 @@ $(document).ready(function() {
 });
 
 function showImages() {
-	if (imagePos < 20) {
+	if (imagePos < 19) {
 		imagePos += 1
 		setImage()
 	} else {
