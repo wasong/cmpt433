@@ -11,68 +11,9 @@
 <body>
 	<div id='content'>
 		<h3>Node.js to C App via UDP</h3>
-		<a id="help" class="waves-effect waves-light btn">Help</a>
-		<div id='messages'>
-			<div>Current Mode: <span id="currentBeatMode"></span></div>
-			<div>Current Tempo: <span id="currentTempo"></span></div>
-			<div>Current Volume: <span id="currentVolume"></span></div>
-			<div id='content'>				
-				<div class="box" id="right_bar">
-					<div>CPU Info</div>
-					<code><span id="cpuinfoId"></span></code>
-				</div>
-				<div class="box">
-					<div>Linux version</div>
-					<code><span id="versionId"></span></code>
-				</div>
-				<div class="box">
-					<div>Command Line</div>
-					<code><span id="cmdlineId"></span></code>
-				</div>
-				<div class="box">
-					<div>BBB Uptime</div>
-					<p>Current up time [s], and time in idle process [s]: 
-						<code><span id="uptimeId"></span></code>
-					</p>
-				</div>
-			</div>
-			
-		</div>
-		<div id='console'></div>
-		<div class="card blue-grey">
-			<div class="card-content white-text">
-				<span class="card-title">Select Beat</span>
-				</div>
-				<div class="card-action">
-					<a id="beatPrev" class="waves-effect waves-light btn">Previous</a>
-					<a id="beatNext" class="waves-effect waves-light btn">Next</a>
-				</div>
-			</div>
-			<div class="mainControl">
-				<div class="control">
-					<p class="controlTitle">Volume Control</p>
-					<a id="volUp" class="btn-floating btn-sm waves-effect waves-light red"><i class="material-icons">add</i></a>
-					<a id="volDown" class="btn-floating btn-sm waves-effect waves-light red"><i class="material-icons">remove</i></a>
-				</div>
-				<div class="control">
-					<p class="controlTitle">Tempo Control</p>
-					<a id="tempoUp" class="btn-floating btn-sm waves-effect waves-light red"><i class="material-icons">add</i></a>
-					<a id="tempoDown" class="btn-floating btn-sm waves-effect waves-light red"><i class="material-icons">remove</i></a>
-				</div>
-			</div>
-			<div>
-				<h4>Click to play</h4>
-				<a id="beat1" class="waves-effect waves-light btn">
-			    Bass
-			  </a>
-				<a id="beat2" class="waves-effect waves-light btn">
-			    Snare
-			  </a>
-				<a id="beat3" class="waves-effect waves-light btn">
-			    HiHat
-			  </a>
-			</div>
-			<div id='errors' />
+		<img src="https://localhost:8088/grabber001.jpeg" id="webcam" alt="webcam image" />
+		<a id="getImage" class="waves-effect waves-light btn">Get Image</a>
+		
 	</div>
 	<script src='https://code.jquery.com/jquery-1.8.0.min.js' type='text/javascript'></script>
   <!-- Compiled and minified JavaScript -->
