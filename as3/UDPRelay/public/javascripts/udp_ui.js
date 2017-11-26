@@ -11,6 +11,11 @@ var monitors = setInterval(function() {
 
 
 $(document).ready(function() {
+	setInterval(function()	{
+		var newTimestamp = new Date();
+		var newImageSrc	= "/images/<DA_IMG_NAME>.jpg?time=" + newTimestamp.getTime();
+		$DA_IMG_TAG.removeAttr("src").attr("src", newImageSrc);
+	}, 1000);
 
 	$('#help').click(function(){
 		sendCommand("prime", "help\n");

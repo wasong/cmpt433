@@ -1,0 +1,1 @@
+cmd_/home/andrew/cmpt433/work/driver_demo/built-in.o :=  rm -f /home/andrew/cmpt433/work/driver_demo/built-in.o; /home/andrew/cmpt433/work/bb-kernel/dl/gcc-linaro-5.4.1-2017.05-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-ar rcsD /home/andrew/cmpt433/work/driver_demo/built-in.o
