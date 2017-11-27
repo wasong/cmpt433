@@ -29,6 +29,12 @@ const config = {
     sourcePrefix: '  ',
   },
 
+  resolve: {
+    alias: {
+      components: path.resolve(__dirname, '../src/components/'),
+    },
+  },
+
   // Developer tool to enhance debugging, source maps
   // http://webpack.github.io/docs/configuration.html#devtool
   devtool: isDebug ? 'source-map' : false,
