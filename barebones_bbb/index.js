@@ -11,7 +11,7 @@ const PORT = 8088
 // html/images dirs
 const html = path.join(__dirname, 'public', 'index.html')
 const publicDir = path.join(__dirname, 'public')
-const images = path.join(__dirname, '..', '..', '..', 'public', 'myApps', 'pictures')
+const images = path.join(__dirname, '..', '..', 'public', 'myApps', 'pictures')
 
 // https keys
 const options = {
