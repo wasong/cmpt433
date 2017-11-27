@@ -27,7 +27,9 @@ app.get('*', (req, res) => {
   res.sendFile(html)
 })
 
-const server = https.createServer(options, app).listen(PORT)
+const server = https.createServer(options, app).listen(PORT, () => {
+  console.log(`Listening on ${PORT}`)
+})
 
 // const udpServer = require('./lib/udp_server');
 // const procServer = require('./lib/proc_uptime');
