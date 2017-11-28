@@ -1,0 +1,14 @@
+version: v1.5.0
+ignore:
+  'npm:qs:20170213':
+    - '* > qs':
+        reason: 'No remediation available'
+        expires: '2017-07-01T00:00:00.000Z'
+  'npm:ms:20170412':
+    - '* > ms':
+        reason: 'No remediation available'
+        expires: '2017-07-01T00:00:00.000Z'
+  'npm:brace-expansion:20170302':
+    - '* > brace-expansion':
+        reason: 'No remediation available'
+        expires: '2017-07-01T00:00:00.000Z'
