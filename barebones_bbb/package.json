@@ -28,6 +28,7 @@
     "graphql-tag": "2.1.0",
     "immutability-helper": "2.2.0",
     "jump.js": "^1.0.2",
+    "material-ui": "^0.19.4",
     "mime": "^1.6.0",
     "moment": "2.18.1",
     "prop-types": "15.5.10",

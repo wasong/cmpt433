@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Radium from 'radium'
 
+import RoundedButton from 'components/Button/RoundedButton'
 import Image from './Image'
 
 const defaultUrl = 'https://localhost:8088/grabber0'
@@ -35,12 +37,17 @@ class Gallery extends Component {
     })
   }
 
-
-  stopImages = () => clearInterval(this.state.intervalId)
+  stopImages = () => {
+    clearInterval(this.state.intervalId)
+    this.setState({
+      intervalId: null,
+    })
+  }
 
   render() {
     return (
       <div>
+        <Link to="/"><RoundedButton label="Home" /></Link>
         <Image image={this.state.imageUrl} />
         <button onClick={this.showImages}>Show</button>
         <button onClick={this.stopImages}>Stop</button>

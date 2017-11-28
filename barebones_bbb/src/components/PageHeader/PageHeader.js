@@ -4,7 +4,8 @@ import Radium from 'radium'
 
 const styles = {
   root: {
-    fontSize: 36,
+    width: '100%',
+    fontSize: 18,
   },
 }
 
