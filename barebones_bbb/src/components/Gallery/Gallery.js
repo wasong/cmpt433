@@ -7,6 +7,9 @@ import Image from './Image'
 
 const defaultUrl = 'https://localhost:8088/grabber0'
 
+const styles = {
+}
+
 class Gallery extends Component {
   state = {
     position: 1,
@@ -46,7 +49,7 @@ class Gallery extends Component {
 
   render() {
     return (
-      <div>
+      <div style={styles.root}>
         <Link to="/"><RoundedButton label="Home" /></Link>
         <Image image={this.state.imageUrl} />
         <button onClick={this.showImages}>Show</button>
