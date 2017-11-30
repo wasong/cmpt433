@@ -2,8 +2,9 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 
 import NavBar from 'components/NavBar'
-import Gallery from 'components/Gallery'
 import Home from 'components/Home'
+import Webcam from 'components/Webcam'
+import Dashboard from 'components/Dashboard'
 
 const styles = {
   root: {
@@ -25,7 +26,8 @@ export default () => (
     <NavBar />
     <div style={styles.content}>
       <Route exact path="/" component={Home} />
-      <Route path="/gallery" component={Gallery} />
+      <Route path="/webcam" component={Webcam} />
+      <Route path="/dashboard" component={Dashboard} />
     </div>
   </div>
 )

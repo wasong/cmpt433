@@ -35,7 +35,8 @@ class NavBar extends Component {
         iconElementRight={(
           <div>
             <Link to="/"><RoundedButton label="Home" /></Link>
-            <Link to="/gallery"><RoundedButton label="Gallery" /></Link>
+            <Link to="/dashboard"><RoundedButton label="Dashboard" /></Link>
+            <Link to="/webcam"><RoundedButton label="Webcam" /></Link>
           </div>
         )}
       />

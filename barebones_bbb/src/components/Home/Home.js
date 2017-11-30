@@ -3,13 +3,12 @@ import Radium from 'radium'
 
 const styles = {
   root: {
-    marginTop: 150,
   },
   title: {
     fontFamily: "'Oswald', sans-serif",
     fontSize: 46,
     fontWeight: 'bold',
-    margin: '10px 0',
+    margin: '150px 0 10px',
   },
 }
 
