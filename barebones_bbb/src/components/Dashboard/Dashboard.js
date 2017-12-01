@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import Radium from 'radium'
 
 import Monitors from './Monitors'
 import Featured from './Featured'
+import { actions } from './dashboard.module'
 
 const styles = {
   root: {
@@ -16,11 +19,16 @@ class Dashboard extends Component {
   render() {
     return (
       <div style={styles.root}>
-        <Monitors />
+        <Monitors onClick={this.props.actions.selectMonitor} />
         <Featured />
       </div>
     )
   }
 }
 
-export default Radium(Dashboard)
+const mapStateToProps = state => ({})
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators({ ...actions }, dispatch),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Radium(Dashboard))

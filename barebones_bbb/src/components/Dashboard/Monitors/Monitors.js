@@ -20,6 +20,7 @@ const styles = {
     flex: 1,
     margin: 5,
     position: 'relative',
+    cursor: 'pointer',
   },
 }
 
@@ -27,15 +28,16 @@ class Monitors extends Component {
   state = {}
 
   render() {
+    const { onClick } = this.props
     return (
       <div style={styles.wrapper}>
-        <Paper style={styles.paper} zDepth={1}>
+        <Paper onClick={() => onClick('door')} style={styles.paper} zDepth={1}>
           <Card><Door /></Card>
         </Paper>
-        <Paper style={styles.paper} zDepth={1}>
+        <Paper onClick={() => onClick('alarm')} style={styles.paper} zDepth={1}>
           <Card statusType="success"><Alarm /></Card>
         </Paper>
-        <Paper style={styles.paper} zDepth={1}>
+        <Paper onClick={() => onClick('keypad')} style={styles.paper} zDepth={1}>
           <Card><Keypad /></Card>
         </Paper>
       </div>
