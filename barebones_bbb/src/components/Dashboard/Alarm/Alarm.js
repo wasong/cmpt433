@@ -2,9 +2,7 @@ import React from 'react'
 import Radium from 'radium'
 
 const Alarm = props => (
-  <div>
-    Alarm
-  </div>
+  <div>Audio Alarm</div>
 )
 
 export default Radium(Alarm)

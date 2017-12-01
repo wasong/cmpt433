@@ -2,9 +2,7 @@ import React from 'react'
 import Radium from 'radium'
 
 const Keypad = props => (
-  <div>
-    Keypad
-  </div>
+  <div>Door Keypad</div>
 )
 
 export default Radium(Keypad)

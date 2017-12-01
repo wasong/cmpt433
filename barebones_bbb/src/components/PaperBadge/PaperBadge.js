@@ -6,7 +6,7 @@ const styles = {
   position: 'absolute',
   borderRadius: 25,
   top: '10px',
-  left: '-15px',
+  left: '-10px',
 }
 
 const PaperBadge = ({ title, color }) => (
