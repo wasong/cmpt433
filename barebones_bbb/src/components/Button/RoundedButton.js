@@ -4,6 +4,7 @@ import Radium from 'radium'
 
 const styles = {
   borderRadius: 50,
+  boxShadow: 'none',
 }
 
 const RoundedButton = props => (

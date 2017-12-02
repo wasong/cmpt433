@@ -1,17 +1,29 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import Radium from 'radium'
 
+import Slider from 'material-ui/Slider'
 import RoundedButton from 'components/Button/RoundedButton'
 import Image from './Image'
 
 const defaultUrl = 'https://localhost:8088/grabber0'
+
+const styles = {
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  slider: {
+    width: '100%',
+  },
+}
 
 class Gallery extends Component {
   state = {
     position: 1,
     imageUrl: null,
     intervalId: null,
+    showing: false,
   }
 
   setImage = (position) => {
@@ -31,26 +43,39 @@ class Gallery extends Component {
   }
 
   showImages = () => {
-    const intervalId = setInterval(this.setPosition, 500)
-    this.setState({
-      intervalId,
-    })
+    if (!this.state.showing) {
+      const intervalId = setInterval(this.setPosition, 500)
+      this.setState({
+        intervalId,
+        showing: true,
+      })
+    }
   }
 
   stopImages = () => {
     clearInterval(this.state.intervalId)
     this.setState({
       intervalId: null,
+      showing: false,
     })
   }
 
   render() {
     return (
-      <div>
-        <Link to="/"><RoundedButton label="Home" /></Link>
+      <div style={styles.root}>
         <Image image={this.state.imageUrl} />
-        <button onClick={this.showImages}>Show</button>
-        <button onClick={this.stopImages}>Stop</button>
+        <Slider
+          min={1}
+          max={19}
+          step={1}
+          value={this.state.position}
+          onChange={(e, pos) => this.setImage(pos)}
+          style={styles.slider}
+        />
+        <div>
+          <RoundedButton onClick={this.showImages} primary label="Show" />
+          <RoundedButton onClick={this.stopImages} primary label="Stop" />
+        </div>
       </div>
     )
   }
