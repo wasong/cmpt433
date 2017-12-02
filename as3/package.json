@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd ./UDPRelay && node server.js",
-    "start:express": "cd ./UDPRelay && node expressServer.js"
+    "start": "cd ./UDPRelay && node server.js"
   },
   "author": "Andrew Song, Vaanyi Igiri",
   "license": "ISC"

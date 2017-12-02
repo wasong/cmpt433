@@ -59,4 +59,7 @@ function handleUDPConnection(socket, command, replyCommand) {
 function handleCommand(socket) {
 	// Passed string of command to relay
 	handleUDPConnection(socket, "prime", "commandReply");
+	handleUDPConnection(socket, "volume_monitor", "volume_monitor_reply");
+	handleUDPConnection(socket, "tempo_monitor", "tempo_monitor_reply");
+	handleUDPConnection(socket, "beat_monitor", "beat_monitor_reply");
 };

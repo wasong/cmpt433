@@ -8,17 +8,15 @@ Purpose: Runs all threads
 ********************/
 #include <stdlib.h>
 #include <stdio.h>
-#include "grabber.h"
 #include "wave_player.h"
+
 
 int main(){
 	
-	webcam_init();
 	sound_init();
+	//keypad_init();
 
-	
-	webcam_join();
 	sound_join();
-	
+	//keypad_join();
 	return 0;
 }

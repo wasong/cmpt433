@@ -71,7 +71,7 @@ function sendFile(response, filePath, fileContents) {
  * Create the servers to listen for the websocket
  */
 var udpServer = require('./lib/udp_server');
-// var procServer = require('./lib/proc_uptime');
+var procServer = require('./lib/proc_uptime');
 udpServer.listen(server);
-// procServer.listen(server);
+procServer.listen(server);
 

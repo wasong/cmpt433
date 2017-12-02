@@ -3,9 +3,7 @@
 	"version": "0.0.1",
 	"description": "Demo relaying UDP messages from Node.js to a C app.",
 	"dependencies": {
-		"express": "^4.16.2",
-		"mime": "~1.2.7",
-		"serve-static": "^1.13.1",
-		"socket.io": "~0.9.6"
+		"socket.io": "~0.9.6",
+		"mime": "~1.2.7"
 	}
 }
