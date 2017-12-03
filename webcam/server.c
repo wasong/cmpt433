@@ -17,16 +17,15 @@ char* displayError(char* respond_to_msg)
 	return respond_to_msg;
 }
 
-
 /*
 char* base_function() {
 	char* respond_to_msg = (char*)malloc(sizeof(char)*SIZE);
 	memset(respond_to_msg,0,sizeof(char)*SIZE);
 
-	char buffer[512];
+	char buffer[512]; // data
 	//get volume and increment
 	sprintf(buffer, "%d\n", <data>);
-	strcat(respond_to_msg, "Volume: ");
+	strcat(respond_to_msg, "someLabel: ");
 	strcat(respond_to_msg, buffer);
 	return respond_to_msg;
 }
