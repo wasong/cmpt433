@@ -10,6 +10,8 @@
 // 	return respond_to_msg;
 // }
 
+static pthread_t serverThreadID;
+
 char* displayError(char* respond_to_msg)
 {
 	memset(respond_to_msg, 0, sizeof(char)*SIZE);
@@ -107,4 +109,12 @@ void* listen_for_command(void* arg)
 	
 	close(sock);
 	pthread_exit(0);
+}
+
+void server_init(void){
+    pthread_create(&serverThreadID, NULL, listen_for_command, NULL);
+}
+
+void server_join(){
+    pthread_join(serverThreadID, NULL);
 }

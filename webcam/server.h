@@ -17,10 +17,14 @@
 #include <sys/uio.h>
 #include <sys/types.h>
 
+
 #define SERVER_PORT 12345
 
 //concatenates premilinary messages that are to appear before desired result
 // char* displayResponse(char* respond_to_msg, char* prelimMsg);
+
+void server_init(void);
+void server_join(void);
 
 //Display errors for invalid entries
 char* displayError(char* respond_to_msg);
