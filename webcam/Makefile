@@ -5,7 +5,8 @@ AFLAGS = -L$(HOME)/cmpt433/public/asound_lib_BBB
 OUTFILE = main
 OUTDIR = $(HOME)/cmpt433/public/myApps
 
-SRC = main.c grabber.c keypad.c door_sensor.c audioMixer.c
+SRC = main.c grabber.c keypad.c door_sensor.c audioMixer.c server.c
+
 OBJ = $(addsuffix .o, $(basename $(SRC)))
 
 all: wav

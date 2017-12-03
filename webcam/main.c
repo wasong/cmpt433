@@ -15,11 +15,12 @@ Purpose: Runs all threads
 #include "keypad.h"
 #include "door_sensor.h"
 #include "audioMixer.h"
+#include "server.h"
 
 int main(){
 
   AudioMixer_init();
-  
+  server_init()
   webcam_init();
   Keypad_init();
   Door_init();
@@ -28,6 +29,7 @@ int main(){
   Keypad_setCode(6, code);
 	
   webcam_join();
-  
-	return 0;
+  server_join();
+
+  return 0;
 }
