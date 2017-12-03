@@ -9,14 +9,14 @@ SRC = main.c grabber.c wave_player.c
 OBJ = $(addsuffix .o, $(basename $(SRC)))
 
 all: wav
-	$(CC_C) $(CFLAGS) $(LFLAGS) $(AFLAGS) $(SRC) -o $(OUTFILE) -lv4l2 -lv4lconvert -ljpeg -lpthread -lasound
+	$(CC_C) $(CFLAGS) $(SRC) -o $(OUTFILE) -lpthread $(LFLAGS) -lv4l2 -lv4lconvert -ljpeg $(AFLAGS) -lasound
 
 	cp $(OUTFILE) $(OUTDIR)
 
 # Copy wave files to the shared folder
 wav:
-	mkdir -p $(PUBDIR)/wave-files/
-	cp wave-files/* $(PUBDIR)/wave-files/ 
+	mkdir -p $(OUTDIR)/wave-files/
+	cp wave-files/* $(OUTDIR)/wave-files/ 
 
 %.o: %c
 	$(CC_C) $(CFLAGS) -c $< -o $@
