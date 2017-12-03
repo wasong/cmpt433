@@ -28,6 +28,7 @@
 #define CLEAR(x) memset(&(x), 0, sizeof(x))
 
 #define PATH_TO_JPEG "/pictures"
+#define NUM_PHOTOS 60
 
 static pthread_t webcamThreadId;
 void* webcamThread(void* arg);
@@ -140,7 +141,7 @@ void* webcamThread(void* arg)
             type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 
             xioctl(fd, VIDIOC_STREAMON, &type);
-            for (i = 0; i < 20; i++) {
+            for (i = 0; i < NUM_PHOTOS; i++) {
                     do {
                             FD_ZERO(&fds);
                             FD_SET(fd, &fds);
@@ -172,12 +173,18 @@ void* webcamThread(void* arg)
                             fmt.fmt.pix.width, fmt.fmt.pix.height);
                     fwrite(buffers[buf.index].start, buf.bytesused, 1, fout);
                     fclose(fout);
-            char cmd[128];
-            sprintf(cmd, "convert /mnt/remote/myApps/%s /mnt/remote/myApps/pictures/grabber%03d.jpeg", out_name, i);
-            printf("\nkappa %s\n", cmd);
-            system(cmd);
 
                     xioctl(fd, VIDIOC_QBUF, &buf);
+            }
+
+            for (int i = 0; i < NUM_PHOTOS; i++) {
+                char file_name[256];
+                sprintf(file_name, "grabber%03d.ppm", i);
+
+                char cmd[128];
+                sprintf(cmd, "convert /mnt/remote/myApps/%s /mnt/remote/myApps/pictures/grabber%03d.jpeg", file_name, i);
+                printf("\nkappa %s\n", cmd);
+                system(cmd);
             }
 
             type = V4L2_BUF_TYPE_VIDEO_CAPTURE;

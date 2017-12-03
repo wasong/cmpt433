@@ -6,6 +6,8 @@ import RoundedButton from 'components/Button/RoundedButton'
 import Image from './Image'
 
 const defaultUrl = 'https://localhost:8088/grabber0'
+const maxImages = 59
+const intervalTime = 150
 
 const styles = {
   root: {
@@ -37,14 +39,14 @@ class Gallery extends Component {
 
   setPosition = () => {
     const { position } = this.state
-    const newPosition = position < 19 ? position + 1 : 1
+    const newPosition = position < maxImages ? position + 1 : 1
 
     this.setImage(newPosition)
   }
 
   showImages = () => {
     if (!this.state.showing) {
-      const intervalId = setInterval(this.setPosition, 500)
+      const intervalId = setInterval(this.setPosition, intervalTime)
       this.setState({
         intervalId,
         showing: true,
@@ -66,7 +68,7 @@ class Gallery extends Component {
         <Image image={this.state.imageUrl} />
         <Slider
           min={1}
-          max={19}
+          max={maxImages}
           step={1}
           value={this.state.position}
           onChange={(e, pos) => this.setImage(pos)}
