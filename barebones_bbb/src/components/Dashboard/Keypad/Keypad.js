@@ -5,10 +5,26 @@ import TextField from 'material-ui/TextField'
 import RoundedButton from 'components/Button/RoundedButton'
 import socket from 'utils/socket'
 
+const styles = {
+  root: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    marginTop: 20,
+  },
+  key: {
+    textAlign: 'center',
+    fontSize: 30,
+    fontWeight: 'bold',
+    margin: '30px 0 50px',
+  },
+}
+
 class Keypad extends Component {
   state = {
     keypadIntervalID: null,
-    keypad: null,
+    keypad: 111111,
     value: '',
   }
 
@@ -38,8 +54,9 @@ class Keypad extends Component {
   }
 
   handleOnChange = (e) => {
+    const value = e.target.value.replace(/[^0-9]/g, '')
     this.setState({
-      value: e.target.value,
+      value,
     })
   }
 
@@ -55,10 +72,12 @@ class Keypad extends Component {
 
   render() {
     return (
-      <div>
-        {this.state.keypad}
-        <TextField hintText="Enter new passcode" value={this.state.value} onChange={this.handleOnChange} />
-        <RoundedButton onClick={this.handleOnClick} label="Change" />
+      <div style={styles.root}>
+        <div style={styles.key}>{this.state.keypad}</div>
+        <div>
+          <TextField hintText="Enter new passcode" value={this.state.value} onChange={this.handleOnChange} />
+          <RoundedButton onClick={this.handleOnClick} label="Change" />
+        </div>
       </div>
     )
   }
