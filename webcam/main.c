@@ -32,7 +32,7 @@ void test_keypad() {
 int main(){
 
   AudioMixer_init();
-  //server_init();
+  server_init();
   //webcam_init();
   Keypad_init();
   Door_init();
@@ -43,7 +43,7 @@ int main(){
   //Keypad_setCode(6, code);
 	
   //webcam_join();
-  //server_join();
+  server_join();
   Keypad_unInit();
   AudioMixer_cleanup();
 

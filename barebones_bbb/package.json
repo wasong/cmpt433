@@ -4,7 +4,7 @@
   "scripts": {
     "start": "node tools/run.js",
     "start:server": "node index.js",
-    "serve": "yarn build && node index.js",
+    "serve": "npm run build && node index.js",
     "build": "NODE_ENV=production node tools/build.js",
     "build:debug": "node tools/build.js --debug",
     "test:lint": "eslint src test tools postcss.config.js webpack.config.js",

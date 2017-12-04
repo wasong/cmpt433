@@ -90,11 +90,14 @@ char* isCamActive() {
 // param should be of the format "size code" ie. "4 7890"
 void setPasscode(char *code)
 {
-  char *token = strtok(code, " ");
-  int length = atoi(token);
-  token = strtok(NULL, " ");
-  char *code_val = NULL;
-  strcpy(code_val, token);
+  code = strtok(NULL, " ");
+  printf("1: %s\n",code);
+  int length = atoi(code);
+  code = strtok(NULL, " ");
+  printf("2: %s\n", code);
+  char code_val[32] = "";
+  strcpy(code_val, code);
+  printf("3: %s\n", code_val);
 
   Keypad_setCode(length, code_val);
 }
@@ -129,6 +132,7 @@ char* tryCode(char *code)
 
 char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 {
+  printf("received: '%s'\n", myMsg);
 	char* respond_to_msg = (char*)malloc(sizeof(char)*SIZE);
 	printf("Listening...\n");
 	//conditionals for all commands
@@ -147,28 +151,25 @@ char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 	  return isCamActive();
 	} else {
 	  char *token = strtok(myMsg, " ");
-	  token = strtok(NULL, " ");
 
 	  if (token == NULL)
 	    return displayError(respond_to_msg);
 	  
 	  if (strcmp(token, "setCode") == 0) {
 	    // set passcode
-	    token = strtok(NULL, " ");
 	    if (token != NULL) {
+	      printf("am i here\n");
 	      setPasscode(token);
 	      return displayOk(respond_to_msg);
 	    }
 	  } else if (strcmp(token, "setSound") == 0) {
 	    // set alarm sound
-	    token = strtok(NULL, " ");
 	    if (token != NULL) {
 	      setAlarm(token);
 	      return displayOk(respond_to_msg);
 	    }
 	  } else if (strcmp(token, "tryCode") == 0) {
 	    // try code
-	    token = strtok(NULL, " ");
 	    if (token != NULL) {
 	      return tryCode(token);
 	    }
