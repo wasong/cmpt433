@@ -27,7 +27,7 @@ const styles = {
 
 class Monitors extends Component {
   state = {
-    alarm: 'error',
+    alarm: 'success',
     alarmIntervalID: null,
   }
 
@@ -51,9 +51,8 @@ class Monitors extends Component {
   }
 
   handleGetAlarm = (res) => {
-    console.log(res)
     this.setState({
-      alarm: res ? 'error' : 'success',
+      alarm: res,
     })
   }
 
