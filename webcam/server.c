@@ -20,6 +20,8 @@
 
 static pthread_t serverThreadID;
 
+int isNumber(char *code);
+
 char* displayError(char* respond_to_msg)
 {
 	memset(respond_to_msg, 0, sizeof(char)*SIZE);
@@ -90,9 +92,12 @@ void setPasscode(char *code)
   printf("1: %s\n",code);
   int length = atoi(code);
   code = strtok(NULL, " ");
-  printf("2: %s\n", code);
-
-  Keypad_setCode(length, code);
+  if (isNumber(code)) {
+    printf("2: %s\n", code);
+    Keypad_setCode(length, code);
+  } else
+    printf("Invalid code given to setPasscode()\n");
+  
 }
 
 // param should be an int as a string
@@ -123,11 +128,25 @@ char* tryCode(char *code)
   return response;
 }
 
+int isNumber(char *code)
+{
+  int good = 1;
+  for (int i = 0; i < strlen(code); ++i) {
+    char c = code[i];
+    if (c > 57 && c < 48)
+      ;
+    else
+      good = 0;
+  }
+
+  return good;
+}
+
 char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 {
   printf("received: '%s'\n", myMsg);
 	char* respond_to_msg = (char*)malloc(sizeof(char)*SIZE);
-	printf("Listening...\n");
+	//printf("Listening...\n");
 	//conditionals for all commands
 	if (strcmp(myMsg, "help\n") == 0)
 	{
@@ -205,7 +224,7 @@ void* listen_for_command(void* arg)
 	while((b = recvfrom(sock, myMsg, 1024, 0, (struct sockaddr *)&serverAddr, &serverAddrSize)) > 0 && !stopping)
 	{
 		myMsg[b] = '\0';
-		printf("Message break: %d\n", myMsg[b]);
+		//printf("Message break: %d\n", myMsg[b]);
 		char* msgsss = verifyCommand(myMsg, sock, serverAddr);
 		if (strcmp(msgsss, "stop\n") == 0)
 		{

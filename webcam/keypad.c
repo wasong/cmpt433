@@ -8,6 +8,7 @@
 #include "keypad.h"
 #include "audioMixer.h"
 #include "grabber.h"
+#include "door_sensor.h"
 
 #define NS_DELAY 50000000L // 50ms in ns
 #define _2S_IN_NS 2000000000L
@@ -114,7 +115,9 @@ void Keypad_setAlarm(int value)
   if (value == 0) {
     k_alarm = value;
     printf("No alarm\n");
-  } else if (value == 1) {
+    Door_setOpen(0);
+    Keypad_setCodeEntered(0);
+  } else if (value == 1 && !working) {
     k_alarm = value;
     printf("ALARM!!\n");
     webcam_init();
@@ -136,6 +139,7 @@ void Keypad_setCodeEntered(int value)
 {
   if (value == 0 || value == 1)
     code_entered = value;
+  printf("new code_entered = %d\n", code_entered);
 }
 
 int Keypad_tryCode(char *try)
@@ -168,7 +172,6 @@ static int try_code(char *try)
     
     errors = 0;
     Keypad_setAlarm(0);
-    code_entered = 1;
     
     return 1;
   } else {

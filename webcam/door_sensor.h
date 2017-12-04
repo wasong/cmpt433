@@ -11,5 +11,6 @@ void Door_unInit();
 
 // Gets the status of the door
 int Door_isOpen();
+void Door_setOpen(int value);
 
 #endif

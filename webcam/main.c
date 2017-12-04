@@ -33,7 +33,6 @@ int main(){
 
   AudioMixer_init();
   server_init();
-  //webcam_init();
   Keypad_init();
   Door_init();
 
@@ -41,8 +40,7 @@ int main(){
   
   //char code[] = "123456";
   //Keypad_setCode(6, code);
-	
-  //webcam_join();
+  
   server_join();
   Keypad_unInit();
   AudioMixer_cleanup();

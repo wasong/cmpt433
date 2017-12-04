@@ -19,6 +19,7 @@ static int run = 0;
 static pthread_t door_id;
 static const int _30s = (int) (_30S_IN_NS / _250MS_IN_NS);
 static int open = 0;
+static int opened_once = 0;
 
 void *doorReader();
 int getVal();
@@ -61,7 +62,13 @@ void Door_unInit()
 
 int Door_isOpen()
 {
-  return open;
+  return opened_once;
+}
+
+void Door_setOpen(int value)
+{
+  if (value == 0 || value == 1)
+    opened_once = value;
 }
 
 void *doorReader()
@@ -80,17 +87,22 @@ void *doorReader()
     if (value == 0) {
       //printf("DOOR: OPEN!\n");
       open = 1;
-
-      if (!Keypad_getCodeEntered()) {
-	++count;
-	if (count >= _30s) {
-	  // activate the alarm
-	  Keypad_setAlarm(1);
-	}
-      }
+      opened_once = 1;
     } else {
       //printf("DOOR: CLOSED!\n");
       open = 0;
+    }
+
+    //printf("codeEntered = %d | opened_once = %d\n", Keypad_getCodeEntered(), opened_once);
+    if (!Keypad_getCodeEntered() && opened_once) {
+      ++count;
+      printf("counting\n");
+      if (count >= _30s) {
+	Keypad_setAlarm(1);
+	open = 0;
+	count = 0;
+	opened_once = 0;
+      }
     }
     
   }
