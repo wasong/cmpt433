@@ -7,7 +7,34 @@ import socket from 'utils/socket'
 
 class Keypad extends Component {
   state = {
+    keypadIntervalID: null,
+    keypad: null,
     value: '',
+  }
+
+  componentDidMount = () => {
+    if (!this.state.keypadIntervalID) {
+      const keypadIntervalID = setInterval(() => {
+        socket.emit('getCode', 'getCode')
+      }, 2500)
+
+      this.setState({
+        keypadIntervalID,
+      })
+
+      socket.on('getCodeResponse', this.handleGetCodeRes)
+    }
+  }
+
+  componentWillUnmount = () => {
+    clearInterval(this.state.keypadIntervalID)
+    socket.removeListener('getCodeResponse', this.handleGetCodeRes)
+  }
+
+  handleGetCodeRes = (res) => {
+    this.setState({
+      keypad: res,
+    })
   }
 
   handleOnChange = (e) => {

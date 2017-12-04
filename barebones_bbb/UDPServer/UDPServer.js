@@ -52,6 +52,7 @@ const listen = (server) => {
     // Passed string of command to relay
     handleUDPConnection(socket, 'prime', 'default')
     handleUDPConnection(socket, 'setCode', 'setCodeResponse')
+    handleUDPConnection(socket, 'getCode', 'getCodeResponse')
   })
 }
 
