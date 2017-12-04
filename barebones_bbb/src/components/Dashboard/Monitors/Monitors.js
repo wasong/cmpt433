@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Radium from 'radium'
 
 import Paper from 'material-ui/Paper'
+import socket from 'utils/socket'
 
 import Card from '../Card'
 import Door from '../Door'
@@ -25,20 +26,49 @@ const styles = {
 }
 
 class Monitors extends Component {
-  state = {}
+  state = {
+    alarm: 'error',
+    alarmIntervalID: null,
+  }
+
+  componentDidMount = () => {
+    if (!this.state.alarmIntervalID) {
+      const alarmIntervalID = setInterval(() => {
+        socket.emit('getAlarm', 'getAlarm')
+      }, 2500)
+
+      this.setState({
+        alarmIntervalID,
+      })
+
+      socket.on('getAlarmResponse', this.handleGetAlarm)
+    }
+  }
+
+  componentWillUnmount = () => {
+    clearInterval(this.state.alarmIntervalID)
+    socket.removeListener('getAlarmResponse', this.handleGetAlarm)
+  }
+
+  handleGetAlarm = (res) => {
+    console.log(res)
+    this.setState({
+      alarm: res ? 'error' : 'success',
+    })
+  }
 
   render() {
     const { onClick } = this.props
     return (
       <div style={styles.wrapper}>
         <Paper onClick={() => onClick('door')} style={styles.paper} zDepth={1}>
-          <Card><Door /></Card>
+          <Card statusType={this.state.alarm}><Door /></Card>
         </Paper>
         <Paper onClick={() => onClick('alarm')} style={styles.paper} zDepth={1}>
-          <Card statusType="success"><Alarm /></Card>
+          <Card statusType={this.state.alarm}><Alarm /></Card>
         </Paper>
         <Paper onClick={() => onClick('keypad')} style={styles.paper} zDepth={1}>
-          <Card>Keypad</Card>
+          <Card statusType={this.state.alarm}>Keypad</Card>
         </Paper>
       </div>
     )
