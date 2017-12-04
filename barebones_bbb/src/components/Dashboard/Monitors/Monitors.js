@@ -27,7 +27,9 @@ const styles = {
 
 class Monitors extends Component {
   state = {
-    alarm: 'success',
+    door: 'success',
+    audio: 'success',
+    key: 'success',
     alarmIntervalID: null,
   }
 
@@ -51,9 +53,13 @@ class Monitors extends Component {
   }
 
   handleGetAlarm = (res) => {
-    console.log(res.slice(0, 1))
+    const door = res.slice(0, 1)
+    const audio = res.slice(1, 2)
+    const key = res.slice(2, 3)
     this.setState({
-      alarm: parseInt(res.slice(0, 1), 10) ? 'error' : 'success',
+      door: parseInt(door, 10) ? 'error' : 'success',
+      audio: parseInt(audio, 10) ? 'error' : 'success',
+      key: parseInt(key, 10) ? 'error' : 'success',
     })
   }
 
@@ -62,13 +68,13 @@ class Monitors extends Component {
     return (
       <div style={styles.wrapper}>
         <Paper onClick={() => onClick('door')} style={styles.paper} zDepth={1}>
-          <Card statusType={this.state.alarm}><Door /></Card>
+          <Card statusType={this.state.door}><Door /></Card>
         </Paper>
         <Paper onClick={() => onClick('alarm')} style={styles.paper} zDepth={1}>
-          <Card statusType={this.state.alarm}><Alarm /></Card>
+          <Card statusType={this.state.audio}><Alarm /></Card>
         </Paper>
         <Paper onClick={() => onClick('keypad')} style={styles.paper} zDepth={1}>
-          <Card statusType={this.state.alarm}>Keypad</Card>
+          <Card statusType={this.state.key}>Keypad</Card>
         </Paper>
       </div>
     )
