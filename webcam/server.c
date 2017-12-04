@@ -49,7 +49,6 @@ char* getPasscode()
   char buffer[512];
   code_t code = Keypad_getCode();
   sprintf(buffer, "%s\n", code.code);
-  strcat(response, "passCode: ");
   strcat(response, buffer);
   return response;
 }
@@ -60,7 +59,6 @@ char* getAlarm() {
 
   char buffer[512];
   sprintf(buffer, "%d\n", Keypad_getAlarm());
-  strcat(response, "alarm: ");
   strcat(response, buffer);
   return response;
 }
@@ -71,7 +69,6 @@ char* isDoorOpen() {
 
   char buffer[512];
   sprintf(buffer, "%d\n", Door_isOpen());
-  strcat(response, "door: ");
   strcat(response, buffer);
   return response;
 }
@@ -82,7 +79,6 @@ char* isCamActive() {
 
   char buffer[512];
   sprintf(buffer, "%d\n", working);
-  strcat(response, "webcam: ");
   strcat(response, buffer);
   return response;
 }
@@ -95,11 +91,8 @@ void setPasscode(char *code)
   int length = atoi(code);
   code = strtok(NULL, " ");
   printf("2: %s\n", code);
-  char code_val[32] = "";
-  strcpy(code_val, code);
-  printf("3: %s\n", code_val);
 
-  Keypad_setCode(length, code_val);
+  Keypad_setCode(length, code);
 }
 
 // param should be an int as a string
@@ -141,13 +134,14 @@ char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 		memset(respond_to_msg, 0, sizeof(char)*SIZE);
 		strcat(respond_to_msg, "Accepted command examples:\n");
 		return respond_to_msg;
-	} else if (strcmp(myMsg, "getCode\n") == 0) {
+	} else if (strcmp(myMsg, "getCode") == 0) {
+	  printf("doing getCode\n");
 	  return getPasscode();
-	} else if (strcmp(myMsg, "getAlarm\n") == 0) {
+	} else if (strcmp(myMsg, "getAlarm") == 0) {
 	  return getAlarm();
-	} else if (strcmp(myMsg, "getDoor\n") == 0) {
+	} else if (strcmp(myMsg, "getDoor") == 0) {
 	  return isDoorOpen();
-	} else if (strcmp(myMsg, "getCam\n") == 0) {
+	} else if (strcmp(myMsg, "getCam") == 0) {
 	  return isCamActive();
 	} else {
 	  char *token = strtok(myMsg, " ");
