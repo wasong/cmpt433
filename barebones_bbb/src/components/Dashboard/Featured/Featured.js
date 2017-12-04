@@ -4,6 +4,8 @@ import Radium from 'radium'
 import Paper from 'material-ui/Paper'
 import { Tabs, Tab } from 'material-ui/Tabs'
 
+import Logger from '../Logger'
+
 const styles = {
   root: {
     marginLeft: 25,
@@ -26,8 +28,10 @@ class Featured extends Component {
         <Tabs
           tabItemContainerStyle={styles.tabsContainer}
         >
+          <Tab buttonStyle={styles.tabBtn} label="Logs">
+            <Logger logs={this.props.logs} />
+          </Tab>
           <Tab buttonStyle={styles.tabBtn} label="Analytics">Analytics</Tab>
-          <Tab buttonStyle={styles.tabBtn} label="Logs">Logs</Tab>
         </Tabs>
       </Paper>
     )

@@ -32,6 +32,7 @@ const config = {
   resolve: {
     alias: {
       components: path.resolve(__dirname, '../src/components/'),
+      utils: path.resolve(__dirname, '../src/utils/'),
     },
   },
 
@@ -57,6 +58,7 @@ const config = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: isDebug ? '"development"' : '"production"',
+        SOCKET_API: JSON.stringify(process.env.SOCKET_API || 'http://localhost:8088'),
       },
       __DEV__: isDebug,
     }),

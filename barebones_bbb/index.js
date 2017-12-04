@@ -4,6 +4,8 @@ const https = require('https')
 const path = require('path')
 const fs = require('fs')
 
+const UDPServer = require('./UDPServer')
+
 const app = express()
 
 const PORT = 8088
@@ -31,6 +33,4 @@ const server = https.createServer(options, app).listen(PORT, () => {
   console.log(`Listening on ${PORT}`)
 })
 
-// const udpServer = require('./lib/udp_server');
-// const procServer = require('./lib/proc_uptime');
-// udpServer.listen(server);
+UDPServer.listen(server)

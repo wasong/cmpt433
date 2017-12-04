@@ -13,6 +13,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     flex: 1,
+    height: '100%',
     margin: -5,
   },
   paper: {

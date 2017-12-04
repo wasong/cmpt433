@@ -75,7 +75,7 @@ class Gallery extends Component {
           style={styles.slider}
         />
         <div>
-          <RoundedButton onClick={this.showImages} primary label="Show" />
+          <RoundedButton onClick={this.showImages} primary label="Start" />
           <RoundedButton onClick={this.stopImages} primary label="Stop" />
         </div>
       </div>
