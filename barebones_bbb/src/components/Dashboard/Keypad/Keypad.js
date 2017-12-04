@@ -16,9 +16,14 @@ class Keypad extends Component {
     })
   }
 
+  handleSetCodeRes = (res) => {
+    console.log(res)
+    socket.removeListener('setCodeResponse', this.handleSetCodeRes)
+  }
+
   handleOnClick = () => {
-    console.log('click')
     socket.emit('setCode', 'setCode', this.state.value)
+    socket.on('setCodeResponse', this.handleSetCodeRes)
   }
 
   render() {
