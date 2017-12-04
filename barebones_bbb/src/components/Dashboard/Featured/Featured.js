@@ -6,6 +6,7 @@ import { Tabs, Tab } from 'material-ui/Tabs'
 
 import Logger from '../Logger'
 import Keypad from '../Keypad'
+import Alarm from '../Alarm'
 
 const styles = {
   root: {
@@ -32,8 +33,9 @@ class Featured extends Component {
           <Tab buttonStyle={styles.tabBtn} label="Logs">
             <Logger logs={this.props.logs} />
           </Tab>
-          <Tab buttonStyle={styles.tabBtn} label="Keypad">
+          <Tab buttonStyle={styles.tabBtn} label="Configuration">
             <Keypad />
+            <Alarm />
           </Tab>
         </Tabs>
       </Paper>
