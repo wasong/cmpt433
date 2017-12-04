@@ -6,7 +6,7 @@ import RoundedButton from 'components/Button/RoundedButton'
 import Image from './Image'
 
 const defaultUrl = 'https://localhost:8088/grabber0'
-const maxImages = 20
+const maxImages = 19
 const intervalTime = 125
 
 const styles = {
