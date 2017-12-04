@@ -53,7 +53,7 @@ class Monitors extends Component {
   handleGetAlarm = (res) => {
     console.log(res)
     this.setState({
-      alarm: String(res),
+      alarm: res.replace(/\0/g, ''),
     })
   }
 
