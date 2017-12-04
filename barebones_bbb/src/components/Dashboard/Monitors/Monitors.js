@@ -51,6 +51,7 @@ class Monitors extends Component {
   }
 
   handleGetAlarm = (res) => {
+    console.log(res)
     this.setState({
       alarm: res,
     })
