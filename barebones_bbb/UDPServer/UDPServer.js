@@ -61,6 +61,7 @@ const listen = (server) => {
     handleUDPConnection(socket, 'prime', 'default')
     handleUDPConnection(socket, 'setCode', 'setCodeResponse')
     handleUDPConnection(socket, 'getCode', 'getCodeResponse')
+    handleUDPConnection(socket, 'getAlarm', 'getAlarmResponse')
   })
 }
 
