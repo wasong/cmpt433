@@ -10,6 +10,8 @@
 #include <pthread.h>
 
 #include "wave_player.h"
+#include "keypad.h"
+
 // File used for play-back:
 // If cross-compiling, must have this file available, via this relative path,
 // on the target when the application is run. This example's Makefile copies the wave-files/
@@ -184,17 +186,10 @@ void* soundThread(void* arg)
 	Audio_readWaveFileIntoMemory(SOURCE_FILE, &sampleFile);
 
 	// Play Audio
-	_Bool intruderAlert = true;
-	int count = 0;
 
 	while(1){
-		if(intruderAlert){
+	  if(Keypad_getAlarm()){
 			Audio_playFile(handle, &sampleFile);
-			count++;
-
-			if(count >=2){
-				intruderAlert = false;
-			}
 		}
 	}
 

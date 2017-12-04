@@ -25,15 +25,18 @@
 #include <pthread.h>
 #include <stdbool.h>
 
+#include "keypad.h"
+
 #define CLEAR(x) memset(&(x), 0, sizeof(x))
 
 #define PATH_TO_JPEG "/pictures"
-#define NUM_PHOTOS 60
+#define NUM_PHOTOS 20
 
 static pthread_t webcamThreadId;
 void* webcamThread(void* arg);
 
 _Bool intruderAlert = true;
+int working = 0;
 
 struct buffer {
         void   *start;
@@ -67,8 +70,10 @@ void* webcamThread(void* arg)
 {
 
    while(1){
-
-        if(intruderAlert){
+     // printf("\n");
+     sleep(1);
+     if(Keypad_getAlarm()){
+       working = 1;
 
             struct v4l2_format              fmt;
             struct v4l2_buffer              buf;
@@ -182,7 +187,7 @@ void* webcamThread(void* arg)
                 sprintf(file_name, "grabber%03d.ppm", i);
 
                 char cmd[128];
-                sprintf(cmd, "convert /mnt/remote/myApps/%s /mnt/remote/myApps/pictures/grabber%03d.jpeg", file_name, i);
+                sprintf(cmd, "convert /mnt/remote/myApps/%s /mnt/remote/myApps/pictures/grabber%03d.jpeg &", file_name, i);
                 printf("\nkappa %s\n", cmd);
                 system(cmd);
             }
@@ -194,7 +199,8 @@ void* webcamThread(void* arg)
             v4l2_close(fd);
         }
 
-        intruderAlert = false;
+     working = 0;
+     Keypad_setAlarm(0);
     }
 
     return NULL;
