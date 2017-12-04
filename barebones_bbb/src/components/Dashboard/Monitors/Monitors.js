@@ -6,7 +6,6 @@ import Paper from 'material-ui/Paper'
 import Card from '../Card'
 import Door from '../Door'
 import Alarm from '../Alarm'
-import Keypad from '../Keypad'
 
 const styles = {
   wrapper: {
@@ -39,7 +38,7 @@ class Monitors extends Component {
           <Card statusType="success"><Alarm /></Card>
         </Paper>
         <Paper onClick={() => onClick('keypad')} style={styles.paper} zDepth={1}>
-          <Card><Keypad /></Card>
+          <Card>Keypad</Card>
         </Paper>
       </div>
     )
