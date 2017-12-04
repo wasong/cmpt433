@@ -19,18 +19,18 @@ const styles = {
 class Dashboard extends Component {
   state = {}
 
-  componentDidMount = () => {
-    if (!this.props.logIntervalID) {
-      const logIntervalID = setInterval(() => {
-        socket.emit('prime', 'help')
-      }, 1000)
-
-      this.props.actions.saveLogIntervalID(logIntervalID)
-
-      if (!this.props.logging) socket.on('default', this.handleLogger)
-      this.props.actions.startLogging()
-    }
-  }
+  // componentDidMount = () => {
+  //   if (!this.props.logIntervalID) {
+  //     const logIntervalID = setInterval(() => {
+  //       socket.emit('prime', 'help')
+  //     }, 1000)
+  //
+  //     this.props.actions.saveLogIntervalID(logIntervalID)
+  //
+  //     if (!this.props.logging) socket.on('default', this.handleLogger)
+  //     this.props.actions.startLogging()
+  //   }
+  // }
 
   // componentWillUnmount = () => {
   //   socket.close()
