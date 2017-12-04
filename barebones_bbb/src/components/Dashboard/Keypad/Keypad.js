@@ -54,7 +54,7 @@ class Keypad extends Component {
   }
 
   handleOnChange = (e) => {
-    const value = e.target.value.replace(/[^0-9]/g, '').slice(0, 6)
+    const value = e.target.value.replace(/[^0-9]/g, '')
     this.setState({
       value,
     })
