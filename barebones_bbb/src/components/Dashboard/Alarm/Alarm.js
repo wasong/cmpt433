@@ -69,7 +69,6 @@ class Audio extends Component {
   render() {
     return (
       <div style={styles.root}>
-        <div style={styles.key}>{this.state.audio}</div>
         <div>
           <div style={styles.title}>Select Alarm</div>
           <RoundedButton onClick={() => this.handleOnClick(0)} label="First" />
