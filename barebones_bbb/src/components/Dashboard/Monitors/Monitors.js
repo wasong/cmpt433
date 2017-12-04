@@ -27,7 +27,9 @@ const styles = {
 
 class Monitors extends Component {
   state = {
-    alarm: 'success',
+    door: 'success',
+    audio: 'success',
+    key: 'success',
     alarmIntervalID: null,
   }
 
