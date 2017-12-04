@@ -8,7 +8,6 @@
 #include <alloca.h> //for volume
 #include <stdbool.h>
 #include <pthread.h>
-
 #include "wave_player.h"
 #include "keypad.h"
 

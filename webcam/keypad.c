@@ -15,8 +15,8 @@
 #define NUM_GPIO 12
 #define GPIO_BASE_DIR "/sys/class/gpio/"
 #define MAX_ERRORS 3
-#define SOURCE_FILE "wave-files/Industrial-Alarm.wav"
-//#define SOURCE_FILE "wave-files/drum.wav"
+#define NUM_ALARMS 2
+#define ALARM_DIR "wave-files/"
 
 static int run = 0;
 static pthread_t keypad_id;
@@ -25,11 +25,15 @@ static const char *GPIO[] = { "88", "89", "86", "87", "10", "9", "8", "78", "76"
 static const char KEYS[] = { '*', '7', '4', '1', '0', '8', '5', '2', '#', '9', '6', '3' };
 static code_t code = { 0, NULL };
 static const int _2s = (int) ((_2S_IN_NS) / NS_DELAY);
+static int errors = 0;
 static int k_alarm = 0;
-static int codeEntered = 0;
+static int code_entered = 0;
+static int selected_alarm = 0;
+static const char *ALARMS[] = { "Industrial-Alarm.wav", "Panic-Alarm-Sound-Effect.wav" };
 
 static void *keypad_reader();
 static void *audio_player();
+static int try_code(char *try);
 static char read_values(int *read, int *last, int *debounce);
 static void copy_code(code_t *dest, const code_t *src);
 
@@ -62,7 +66,7 @@ void Keypad_init()
     fclose(file);
   }
 
-  codeEntered = 0;
+  code_entered = 0;
   k_alarm = 0;
   run = 1;
   pthread_create(&keypad_id, NULL, keypad_reader, NULL);
@@ -97,6 +101,7 @@ void Keypad_setCode(int size, char *new_code)
   new.code = new_code;
 
   copy_code(&code, &new);
+  printf("NEW CODE = %s\n", code.code);
 }
 
 code_t Keypad_getCode()
@@ -106,8 +111,12 @@ code_t Keypad_getCode()
 
 void Keypad_setAlarm(int value)
 {
-  if (value == 0 || value == 1) {
+  if (value == 0) {
     k_alarm = value;
+    printf("No alarm\n");
+  } else if (value == 1) {
+    k_alarm = value;
+    printf("ALARM!!\n");
   } else {
     perror("Invalid value given to Keypad_setAlarm()! (Must be either 0 or 1)");
     k_alarm = 0;
@@ -121,25 +130,82 @@ int Keypad_getAlarm()
 
 int Keypad_getCodeEntered()
 {
-  return codeEntered;
+  return code_entered;
+}
+
+void Keypad_setCodeEntered(int value)
+{
+  if (value == 0 || value == 1)
+    code_entered = value;
+}
+
+int Keypad_tryCode(char *try)
+{
+  int result = try_code(try);
+
+  // for now, just return result
+  return result;
+}
+
+int Keypad_getAlarmSound()
+{
+  return selected_alarm;
+}
+
+void Keypad_setAlarmSound(int new_alarm)
+{
+  if (new_alarm >= 0 && new_alarm < NUM_ALARMS)
+    selected_alarm = new_alarm;
 }
 
 // ========== Private functions ==========
 
+static int try_code(char *try)
+{
+  int result = strcmp(try, code.code);
+
+  if (result == 0) {
+    printf("CORRECT CODE!\n");
+    
+    errors = 0;
+    Keypad_setAlarm(0);
+    code_entered = 1;
+    
+    return 1;
+  } else {
+    printf("INCORRECT CODE!\n");
+    
+    ++errors;
+    if (errors >= MAX_ERRORS) {
+      Keypad_setAlarm(1);
+    }
+    
+    return 0;
+  }
+}
+
+// ---------- Alarm thread ----------
 static void *audio_player()
 {
-  wavedata_t pSound;
-  AudioMixer_readWaveFileIntoMemory(SOURCE_FILE, &pSound);
-
-  while (1) {
-    //sleep(1);
-    //printf("k_alarm = %d\n", k_alarm);
-      if (!working) {
-	AudioMixer_queueSound(&pSound);
-	sleep(3);
-      }
+  wavedata_t pSound[NUM_ALARMS];
+  char buffer[BUFFER_SIZE];
+  
+  for (int i = 0; i < NUM_ALARMS; ++i) {
+    strcpy(buffer, ALARM_DIR);
+    strcat(buffer, ALARMS[i]);
+    AudioMixer_readWaveFileIntoMemory(buffer, &pSound[i]);
   }
-
+  
+  while (run) {
+    if (k_alarm && !working) {
+      // alarm is triggered and webcam is done working
+      // - can't play audio and use webcam at the same time
+      AudioMixer_queueSound(&pSound[selected_alarm]);
+      sleep(2);
+    } else {
+      sleep(1);
+    }
+  }
 
   return NULL;
 }
@@ -161,9 +227,10 @@ static void copy_code(code_t *dest, const code_t *src)
   strcpy(dest->code, src->code);
 }
 
+// ---------- Keypad thread ----------
 static void *keypad_reader()
 {
-  /*struct timespec delay;
+  struct timespec delay;
   delay.tv_sec = 0;
   delay.tv_nsec = NS_DELAY;
   
@@ -172,7 +239,7 @@ static void *keypad_reader()
   int debounce[NUM_GPIO] = {0,0,0,0,0,0,0,0,0,0,0,0};
   int no_input = 0;
   int counter = 0;
-  int errors = 0;
+  //int errors = 0;
   char c = 0;
   char *input = NULL;
 
@@ -188,6 +255,7 @@ static void *keypad_reader()
 	printf("resetting input buffer\n");
 
 	if (counter) {
+	  printf("input buffer not empty, counting as error!\n");
 	  counter = 0;
 	  ++errors;
 
@@ -211,23 +279,7 @@ static void *keypad_reader()
       input[counter] = '\0';
       
       if (counter == code.size) {
-	// check if the code matches
-	if (strcmp(input, code.code) == 0) {
-	  printf("CORRECT CODE!\n");
-	  errors = 0;
-	  Keypad_setAlarm(0);
-	  codeEntered = 1;
-	} else {
-	  printf("INCORRECT CODE!\n");
-	  ++errors;
-
-	  if (errors >= MAX_ERRORS) {
-	    // trigger the alarm
-	    Keypad_setAlarm(1);
-	    printf("ALARM!!\n");
-	  }
-	}
-
+        try_code(input);
 	counter = 0;
       }
     }
@@ -235,20 +287,8 @@ static void *keypad_reader()
     for (int i = 0; i < NUM_GPIO; ++i) {
       last[i] = read[i];
     }
-    }*/
-  
-  int read[NUM_GPIO] = {0,0,0,0,0,0,0,0,0,0,0,0};
-  int last[NUM_GPIO] = {0,0,0,0,0,0,0,0,0,0,0,0};
-  int debounce[NUM_GPIO] = {0,0,0,0,0,0,0,0,0,0,0,0};
-
-  
-  Keypad_setAlarm(1);
-
-  while (1) {
-    read_values(read,last,debounce);
-    sleep(1);
   }
-
+  
   return NULL;
 }
 

@@ -18,6 +18,7 @@
 static int run = 0;
 static pthread_t door_id;
 static const int _30s = (int) (_30S_IN_NS / _250MS_IN_NS);
+static int open = 0;
 
 void *doorReader();
 int getVal();
@@ -58,6 +59,11 @@ void Door_unInit()
   fclose(file);
 }
 
+int Door_isOpen()
+{
+  return open;
+}
+
 void *doorReader()
 {
   struct timespec delay;
@@ -73,6 +79,7 @@ void *doorReader()
     
     if (value == 0) {
       //printf("DOOR: OPEN!\n");
+      open = 1;
 
       if (!Keypad_getCodeEntered()) {
 	++count;
@@ -83,6 +90,7 @@ void *doorReader()
       }
     } else {
       //printf("DOOR: CLOSED!\n");
+      open = 0;
     }
     
   }

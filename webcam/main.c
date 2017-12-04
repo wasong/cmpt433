@@ -10,6 +10,7 @@ Purpose: Runs all threads
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <time.h>
 
 #include "grabber.h"
 #include "keypad.h"
@@ -17,19 +18,32 @@ Purpose: Runs all threads
 #include "audioMixer.h"
 #include "server.h"
 
+void test_keypad() {
+  char code[64] = "";
+  
+  strcpy(code, "1234");
+  Keypad_setCode(4, code);
+
+  sleep(60);
+}
+
 int main(){
 
   AudioMixer_init();
-  server_init()
+  //server_init();
   webcam_init();
   Keypad_init();
   Door_init();
 
-  char code[] = "123456";
-  Keypad_setCode(6, code);
+  test_keypad();
+  
+  //char code[] = "123456";
+  //Keypad_setCode(6, code);
 	
   webcam_join();
-  server_join();
+  //server_join();
+  Keypad_unInit();
+  AudioMixer_cleanup();
 
   return 0;
 }

@@ -6,6 +6,7 @@ void webcam_join(void);
 
 void* webcamThread(void* arg);
 
+int cam_run;
 int working;
 
 #endif

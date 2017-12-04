@@ -17,5 +17,11 @@ void Keypad_setAlarm(int value);
 int Keypad_getAlarm();
 
 int Keypad_getCodeEntered();
+void Keypad_setCodeEntered(int value);
+
+int Keypad_tryCode(char *try);
+
+int Keypad_getAlarmSound();
+void Keypad_setAlarmSound(int alarm);
 
 #endif

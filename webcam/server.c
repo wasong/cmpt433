@@ -1,4 +1,12 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdlib.h>
+
 #include "server.h"
+#include "keypad.h"
+#include "door_sensor.h"
+#include "grabber.h"
 
 #define SIZE 1024
 
@@ -33,6 +41,92 @@ char* base_function() {
 }
 */
 
+char* getPasscode()
+{
+  char *response = (char *) malloc(sizeof(char) * SIZE);
+  memset(response, 0, sizeof(char) * SIZE);
+
+  char buffer[512];
+  code_t code = Keypad_getCode();
+  sprintf(buffer, "%s\n", code.code);
+  strcat(response, "passCode: ");
+  strcat(response, buffer);
+  return response;
+}
+
+char* getAlarm() {
+  char *response = (char *) malloc(sizeof(char) * SIZE);
+  memset(response, 0, sizeof(char) * SIZE);
+
+  char buffer[512];
+  sprintf(buffer, "%d\n", Keypad_getAlarm());
+  strcat(response, "alarm: ");
+  strcat(response, buffer);
+  return response;
+}
+
+char* isDoorOpen() {
+  char *response = (char *) malloc(sizeof(char) * SIZE);
+  memset(response, 0, sizeof(char) * SIZE);
+
+  char buffer[512];
+  sprintf(buffer, "%d\n", Door_isOpen());
+  strcat(response, "door: ");
+  strcat(response, buffer);
+  return response;
+}
+
+char* isCamActive() {
+  char *response = (char *) malloc(sizeof(char) * SIZE);
+  memset(response, 0, sizeof(char) * SIZE);
+
+  char buffer[512];
+  sprintf(buffer, "%d\n", working);
+  strcat(response, "webcam: ");
+  strcat(response, buffer);
+  return response;
+}
+
+// param should be of the format "size code" ie. "4 7890"
+void setPasscode(char *code)
+{
+  char *token = strtok(code, " ");
+  int length = atoi(token);
+  token = strtok(NULL, " ");
+  char *code_val = NULL;
+  strcpy(code_val, token);
+
+  Keypad_setCode(length, code_val);
+}
+
+// param should be an int as a string
+void setAlarm(char *sound)
+{
+  int alarm = atoi(sound);
+
+  Keypad_setAlarmSound(alarm);
+}
+
+char* displayOk(char *msg)
+{
+  char *response = (char *) malloc(sizeof(char) * SIZE);
+  memset(response, 0, sizeof(char)*SIZE);
+  strcat(response, "OK\n");
+  return response;
+}
+
+char* tryCode(char *code)
+{
+  char *response = (char *) malloc(sizeof(char) * SIZE);
+  memset(response, 0, sizeof(char) * SIZE);
+
+  char buffer[512];
+  sprintf(buffer, "%d\n", Keypad_tryCode(code));
+  strcat(response, "result: ");
+  strcat(response, buffer);
+  return response;
+}
+
 char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 {
 	char* respond_to_msg = (char*)malloc(sizeof(char)*SIZE);
@@ -43,13 +137,45 @@ char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 		memset(respond_to_msg, 0, sizeof(char)*SIZE);
 		strcat(respond_to_msg, "Accepted command examples:\n");
 		return respond_to_msg;
-	}
-	// base structure for if statement
-	// if (strcmp(myMsg, "strToCmp\n") == 0) {
-	// 	return someFunc();
-	// }
-	else {
-		return displayError(respond_to_msg);
+	} else if (strcmp(myMsg, "getCode\n") == 0) {
+	  return getPasscode();
+	} else if (strcmp(myMsg, "getAlarm\n") == 0) {
+	  return getAlarm();
+	} else if (strcmp(myMsg, "getDoor\n") == 0) {
+	  return isDoorOpen();
+	} else if (strcmp(myMsg, "getCam\n") == 0) {
+	  return isCamActive();
+	} else {
+	  char *token = strtok(myMsg, " ");
+	  token = strtok(NULL, " ");
+
+	  if (token == NULL)
+	    return displayError(respond_to_msg);
+	  
+	  if (strcmp(token, "setCode") == 0) {
+	    // set passcode
+	    token = strtok(NULL, " ");
+	    if (token != NULL) {
+	      setPasscode(token);
+	      return displayOk(respond_to_msg);
+	    }
+	  } else if (strcmp(token, "setSound") == 0) {
+	    // set alarm sound
+	    token = strtok(NULL, " ");
+	    if (token != NULL) {
+	      setAlarm(token);
+	      return displayOk(respond_to_msg);
+	    }
+	  } else if (strcmp(token, "tryCode") == 0) {
+	    // try code
+	    token = strtok(NULL, " ");
+	    if (token != NULL) {
+	      return tryCode(token);
+	    }
+	  } else {
+	    // unknown command
+	    return displayError(respond_to_msg);
+	  }
 	}
 
 	return NULL;

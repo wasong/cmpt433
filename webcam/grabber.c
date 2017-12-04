@@ -37,6 +37,7 @@ void* webcamThread(void* arg);
 
 _Bool intruderAlert = true;
 int working = 0;
+int cam_run = 0;
 
 struct buffer {
         void   *start;
@@ -59,17 +60,19 @@ static void xioctl(int fh, int request, void *arg)
 
 
 void webcam_init(void){
-    pthread_create(&webcamThreadId, NULL, webcamThread, NULL);
+  cam_run = 1;
+  pthread_create(&webcamThreadId, NULL, webcamThread, NULL);
 }
 
 void webcam_join(){
-    pthread_join(webcamThreadId, NULL);
+  cam_run = 0;
+  pthread_join(webcamThreadId, NULL);
 }
 
 void* webcamThread(void* arg)
 {
 
-   while(1){
+  while(cam_run){
      // printf("\n");
      sleep(1);
      if(Keypad_getAlarm()){
