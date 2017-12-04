@@ -24,7 +24,7 @@ const styles = {
 class Keypad extends Component {
   state = {
     keypadIntervalID: null,
-    keypad: 111111,
+    keypad: null,
     value: '',
   }
 

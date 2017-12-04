@@ -35,7 +35,7 @@ class Monitors extends Component {
     if (!this.state.alarmIntervalID) {
       const alarmIntervalID = setInterval(() => {
         socket.emit('getAlarm', 'getAlarm')
-      }, 2500)
+      }, 1000)
 
       this.setState({
         alarmIntervalID,
