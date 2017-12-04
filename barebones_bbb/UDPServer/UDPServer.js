@@ -11,7 +11,7 @@ const handleUDPConnection = (socket, command, replyCommand) => {
     // Info for connecting to the local process via UDP
     const PORT = 12345
     const HOST = '192.168.7.2'
-    const buffer = new Buffer(data)
+    const buffer = new Buffer(`${data} ${args.length} ${args}`)
 
     const client = dgram.createSocket('udp4')
     client.send(buffer, 0, buffer.length, PORT, HOST, (err, bytes) => {
