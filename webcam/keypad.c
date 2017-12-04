@@ -117,9 +117,8 @@ void Keypad_setAlarm(int value)
   } else if (value == 1) {
     k_alarm = value;
     printf("ALARM!!\n");
-  } else {
-    perror("Invalid value given to Keypad_setAlarm()! (Must be either 0 or 1)");
-    k_alarm = 0;
+    webcam_init();
+    webcam_join();
   }
 }
 
@@ -201,7 +200,7 @@ static void *audio_player()
       // alarm is triggered and webcam is done working
       // - can't play audio and use webcam at the same time
       AudioMixer_queueSound(&pSound[selected_alarm]);
-      sleep(2);
+      sleep(3);
     } else {
       sleep(1);
     }
@@ -321,8 +320,6 @@ static char read_values(int *read, int *last, int *debounce)
       if (debounce[i] == 1)
 	continue;
       
-      //printf("KEY %c PRESSED\n", KEYS[i]);
-
       // accepts only the first button pressed
       for (int j = i + 1; j < NUM_GPIO; ++j) {
 	read[j] = 0;
