@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import Radium from 'radium'
 
-import socket from 'utils/socket'
 import Paper from 'material-ui/Paper'
 import { Tabs, Tab } from 'material-ui/Tabs'
+
+import Logger from '../Logger'
 
 const styles = {
   root: {
@@ -19,27 +20,7 @@ const styles = {
 }
 
 class Featured extends Component {
-  state = {
-    logIntervalID: null,
-  }
-
-  componentDidMount = () => {
-    if (!this.state.logIntervalID) {
-      const logIntervalID = setInterval(() => {
-        socket.emit('prime', 'help')
-      }, 1000)
-
-      this.setState({
-        logIntervalID,
-      })
-    }
-
-    socket.on('default', res => console.log(`result: ${res}`))
-  }
-
-  componentWillUnmount = () => {
-    clearInterval(this.state.logIntervalID)
-  }
+  state = {}
 
   render() {
     return (
@@ -47,7 +28,9 @@ class Featured extends Component {
         <Tabs
           tabItemContainerStyle={styles.tabsContainer}
         >
-          <Tab buttonStyle={styles.tabBtn} label="Logs">Logs</Tab>
+          <Tab buttonStyle={styles.tabBtn} label="Logs">
+            <Logger logs={this.props.logs} />
+          </Tab>
           <Tab buttonStyle={styles.tabBtn} label="Analytics">Analytics</Tab>
         </Tabs>
       </Paper>
