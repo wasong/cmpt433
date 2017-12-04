@@ -8,7 +8,7 @@ const dgram = require('dgram')
 const handleUDPConnection = (socket, command, replyCommand) => {
   socket.on(command, (data) => {
     console.log(`'Command: ${data}`)
-
+    socket.emit(replyCommand, 'Test data')
     // Info for connecting to the local process via UDP
     const PORT = 12345
     const HOST = '192.168.7.2'
@@ -51,7 +51,7 @@ const listen = (server) => {
 
   io.sockets.on('connection', (socket) => {
     // Passed string of command to relay
-    handleUDPConnection(socket, 'prime', 'commandReply')
+    handleUDPConnection(socket, 'prime', 'default')
   })
 }
 

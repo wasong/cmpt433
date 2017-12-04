@@ -11,7 +11,7 @@ const RoundedButton = props => (
   <RaisedButton
     disableTouchRipple
     buttonStyle={styles}
-    style={styles}
+    style={{ ...styles, margin: '0 5px' }}
     overlayStyle={styles}
     {...props}
   />
