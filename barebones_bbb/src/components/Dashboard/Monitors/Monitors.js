@@ -51,9 +51,9 @@ class Monitors extends Component {
   }
 
   handleGetAlarm = (res) => {
-    console.log(res)
+    console.log(res.slice(0, 1))
     this.setState({
-      alarm: res.replace(/\0/g, ''),
+      alarm: parseInt(res.slice(0, 1), 10) ? 'error' : 'success',
     })
   }
 
