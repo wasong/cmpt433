@@ -56,6 +56,7 @@ class Keypad extends Component {
   render() {
     return (
       <div>
+        {this.state.keypad}
         <TextField hintText="Enter new passcode" value={this.state.value} onChange={this.handleOnChange} />
         <RoundedButton onClick={this.handleOnClick} label="Change" />
       </div>
