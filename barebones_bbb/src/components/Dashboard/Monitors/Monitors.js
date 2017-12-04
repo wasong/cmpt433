@@ -71,7 +71,7 @@ class Monitors extends Component {
           <Card statusType={this.state.door}><Door /></Card>
         </Paper>
         <Paper onClick={() => onClick('alarm')} style={styles.paper} zDepth={1}>
-          <Card statusType={this.state.audio}><Alarm /></Card>
+          <Card statusType={this.state.audio}>Alarm</Card>
         </Paper>
         <Paper onClick={() => onClick('keypad')} style={styles.paper} zDepth={1}>
           <Card statusType={this.state.key}>Keypad</Card>

@@ -32,7 +32,7 @@ class Featured extends Component {
           <Tab buttonStyle={styles.tabBtn} label="Logs">
             <Logger logs={this.props.logs} />
           </Tab>
-          <Tab buttonStyle={styles.tabBtn} label="Keypad">
+          <Tab buttonStyle={styles.tabBtn} label="Configuration">
             <Keypad />
           </Tab>
         </Tabs>

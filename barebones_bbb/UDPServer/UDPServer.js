@@ -15,6 +15,8 @@ const handleUDPConnection = (socket, command, replyCommand) => {
 
     if (data === 'setCode') {
       bufferData = `${data} ${args.length ? args.length : ''} ${args}`
+    } else if (data === 'setSound') {
+      bufferData = `${data} ${args}`
     } else {
       bufferData = data
     }
@@ -62,6 +64,8 @@ const listen = (server) => {
     handleUDPConnection(socket, 'setCode', 'setCodeResponse')
     handleUDPConnection(socket, 'getCode', 'getCodeResponse')
     handleUDPConnection(socket, 'getAlarm', 'getAlarmResponse')
+    handleUDPConnection(socket, 'setSound', 'setSoundResponse')
+    handleUDPConnection(socket, 'getSound', 'getSoundResponse')
   })
 }
 
