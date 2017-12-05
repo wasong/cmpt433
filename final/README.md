@@ -1,6 +1,7 @@
 Preliminaries
 =
 - we assume all hardware is installed and ready to be used
+- precompiled files should allow you to skip steps 1 and 2 in *Building Web Application*
 
 Building Web Application
 =
@@ -22,9 +23,9 @@ Steps 1 and 2 below are essentially the same with the difference being installin
     - libjpeg.so
     - libv4l2.so
     - libv4lconvert.so
-
-3. Inside `webcam` folder, run `make`
-4. Start `main` from your target
+3. On the target, run this command `sudo apt-get install imagemagick`
+4. Inside `webcam` folder, run `make`
+5. Start `main` from your target
 
 
 Troubleshooting
