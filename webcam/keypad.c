@@ -157,8 +157,11 @@ int Keypad_getAlarmSound()
 
 void Keypad_setAlarmSound(int new_alarm)
 {
+  
+  printf("trying %d\n", new_alarm);
   if (new_alarm >= 0 && new_alarm < NUM_ALARMS)
     selected_alarm = new_alarm;
+  printf("new alarm  = %d\n", selected_alarm);
 }
 
 // ========== Private functions ==========

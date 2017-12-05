@@ -21,8 +21,6 @@ Purpose: Runs all threads
 void test_keypad() {
   char code[64] = "";
 
-  Keypad_setAlarmSound(1);
-  
   strcpy(code, "1234");
   Keypad_setCode(4, code);
 

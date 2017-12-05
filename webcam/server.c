@@ -52,6 +52,7 @@ char* getPasscode()
   code_t code = Keypad_getCode();
   sprintf(buffer, "%s\n", code.code);
   strcat(response, buffer);
+  //printf("sending %s\n", response);
   return response;
 }
 
@@ -59,9 +60,21 @@ char* getAlarm() {
   char *response = (char *) malloc(sizeof(char) * SIZE);
   memset(response, 0, sizeof(char) * SIZE);
 
-  char buffer[512];
-  sprintf(buffer, "%d\n", Keypad_getAlarm());
-  strcat(response, buffer);
+  if (Door_isOpen())
+    strcat(response, "1");
+  else
+    strcat(response, "0");
+  
+  if (Keypad_getAlarm())
+    strcat(response, "1");
+  else
+    strcat(response, "0");
+
+  if (Keypad_getCodeEntered())
+    strcat(response, "1");
+  else
+    strcat(response, "0");
+
   return response;
 }
 
@@ -89,14 +102,14 @@ char* isCamActive() {
 void setPasscode(char *code)
 {
   code = strtok(NULL, " ");
-  printf("1: %s\n",code);
+  //printf("1: %s\n",code);
   int length = atoi(code);
   code = strtok(NULL, " ");
-  if (isNumber(code)) {
-    printf("2: %s\n", code);
+  //if (isNumber(code)) {
+  // printf("2: %s\n", code);
     Keypad_setCode(length, code);
-  } else
-    printf("Invalid code given to setPasscode()\n");
+    //} else
+    //printf("Invalid code given to setPasscode()\n");
   
 }
 
@@ -148,15 +161,16 @@ char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 	char* respond_to_msg = (char*)malloc(sizeof(char)*SIZE);
 	//printf("Listening...\n");
 	//conditionals for all commands
-	if (strcmp(myMsg, "help\n") == 0)
+	if (strcmp(myMsg, "help") == 0)
 	{
 		memset(respond_to_msg, 0, sizeof(char)*SIZE);
 		strcat(respond_to_msg, "Accepted command examples:\n");
 		return respond_to_msg;
 	} else if (strcmp(myMsg, "getCode") == 0) {
-	  printf("doing getCode\n");
+	  //printf("doing getCode\n");
 	  return getPasscode();
 	} else if (strcmp(myMsg, "getAlarm") == 0) {
+	  //printf("doing getAlarm\n");
 	  return getAlarm();
 	} else if (strcmp(myMsg, "getDoor") == 0) {
 	  return isDoorOpen();
@@ -171,12 +185,13 @@ char* verifyCommand(char* myMsg, int sock, struct sockaddr_storage serverAddr)
 	  if (strcmp(token, "setCode") == 0) {
 	    // set passcode
 	    if (token != NULL) {
-	      printf("am i here\n");
+	      //printf("am i here\n");
 	      setPasscode(token);
 	      return displayOk(respond_to_msg);
 	    }
 	  } else if (strcmp(token, "setSound") == 0) {
 	    // set alarm sound
+	    token = strtok(NULL, " ");
 	    if (token != NULL) {
 	      setAlarm(token);
 	      return displayOk(respond_to_msg);
