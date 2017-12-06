@@ -100,7 +100,7 @@ static void bounceLeds(void)
 			busyWait(DELAY_TIME);
 		}
 
-		for (int pin = LED3_PIN; pin >= LED0_PIN; pin--) {
+		for (int pin = LED2_PIN; pin >= LED1_PIN; pin--) {
 			/* Driving a logic HIGH on the GPIO pin. */
 			GPIOPinWrite(LED_GPIO_BASE,
 					pin,
