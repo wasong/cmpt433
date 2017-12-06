@@ -1,7 +1,6 @@
 Preliminaries
 =
 - we assume all hardware is installed and ready to be used
-- precompiled files should allow you to skip steps 1 and 2 in *Building Web Application*
 
 Building Web Application
 =
