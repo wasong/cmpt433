@@ -25,6 +25,7 @@
  *****************************************************************************/
 static void initializeLeds(void);
 static void bounceLeds(void);
+static void barLeds(void);
 static void driveLedsWithSWFunction(void);
 static void driveLedsWithSetAndClear(void);
 static void driveLedsWithBitTwiddling(void);
@@ -73,6 +74,7 @@ int main()
 	initializeLeds();
 
 	bounceLeds();
+	barLeds();
 	driveLedsWithSWFunction();
 	driveLedsWithSetAndClear();
 	driveLedsWithBitTwiddling();
@@ -81,8 +83,8 @@ int main()
 static void bounceLeds(void)
 {
 	int wdCounter = 0;
-	while(1)
-	{
+	// while(1)
+	// {
 		// Flash each LED individually
 		for (int pin = LED0_PIN; pin <= LED3_PIN; pin++) {
 			/* Driving a logic HIGH on the GPIO pin. */
@@ -107,6 +109,52 @@ static void bounceLeds(void)
 					GPIO_PIN_HIGH);
 
 			busyWait(DELAY_TIME);
+
+			/* Driving a logic LOW on the GPIO pin. */
+			GPIOPinWrite(LED_GPIO_BASE,
+					pin,
+					GPIO_PIN_LOW);
+
+			busyWait(DELAY_TIME);
+		}
+
+		// Hit the watchdog (must #include "watchdog.h"
+		// Each time you hit the WD, must pass it a different number
+		// than the last time you hit it.
+		wdCounter++;
+		WatchdogTimerTriggerSet(SOC_WDT_1_REGS, wdCounter);
+	// }
+}
+
+static void barLeds(void)
+{
+	int wdCounter = 0;
+	while(1)
+	{
+		// Flash each LED individually
+		for (int pin = LED0_PIN; pin <= LED3_PIN; pin++) {
+			/* Driving a logic HIGH on the GPIO pin. */
+			GPIOPinWrite(LED_GPIO_BASE,
+					pin,
+					GPIO_PIN_HIGH);
+
+			busyWait(DELAY_TIME);
+
+			/* Driving a logic LOW on the GPIO pin. */
+			// GPIOPinWrite(LED_GPIO_BASE,
+			// 		pin,
+			// 		GPIO_PIN_LOW);
+			//
+			// busyWait(DELAY_TIME);
+		}
+
+		for (int pin = LED3_PIN; pin >= LED0_PIN; pin--) {
+			/* Driving a logic HIGH on the GPIO pin. */
+			// GPIOPinWrite(LED_GPIO_BASE,
+			// 		pin,
+			// 		GPIO_PIN_HIGH);
+			//
+			// busyWait(DELAY_TIME);
 
 			/* Driving a logic LOW on the GPIO pin. */
 			GPIOPinWrite(LED_GPIO_BASE,
