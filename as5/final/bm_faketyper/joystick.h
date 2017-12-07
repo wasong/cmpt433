@@ -5,5 +5,7 @@ void initJoystick();
 
 void uartInitialize(void);
 void uartBaudRateSet(void);
+void joystickNotifyOnTimeIsr(void);
+void joystickDoBackgroundWork(void);
 
 #endif

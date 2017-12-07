@@ -17,7 +17,7 @@
 //#define DELAY_TIME 0x4000000		// Delay with MMU enabled
 #define DELAY_TIME 0x40000		// Delay witouth MMU and cache
 
-void initializeLeds(void)
+void initLEDS(void)
 {
 	/* Enabling functional clocks for GPIO1 instance. */
 	GPIO1ModuleClkConfig();

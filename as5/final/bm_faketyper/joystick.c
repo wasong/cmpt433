@@ -22,8 +22,10 @@
 #define DELAY_TIME 0x4000000
 #include "hw_cm_per.h"
 
-static void initializeButtonPin(void);
 static _Bool readButtonWithStarterWare(void);
+
+static volatile _Bool lastButtonState = false;
+static volatile _Bool isButtonPressed = false;
 
 void GPIO2ModuleClkConfig(void)
 {
@@ -68,56 +70,39 @@ void GPIO2ModuleClkConfig(void)
            CM_PER_L4LS_CLKSTCTRL_CLKACTIVITY_GPIO_2_GDBCLK));
 }
 
-static void initializeButtonPin(void)
-{
+void initJoystick(void) {
     /* Enabling functional clocks for GPIO2 instance. */
 	GPIO2ModuleClkConfig();
 
-    /* Selecting GPIO1[23] pin for use. */
-    //GPIO1Pin23PinMuxSetup();
+  /* Selecting GPIO1[23] pin for use. */
+  //GPIO1Pin23PinMuxSetup();
 
-    /* Enabling the GPIO module. */
-    GPIOModuleEnable(BUTTON_GPIO_BASE);
+  /* Enabling the GPIO module. */
+  GPIOModuleEnable(BUTTON_GPIO_BASE);
 
-    /* Resetting the GPIO module. */
-    GPIOModuleReset(BUTTON_GPIO_BASE);
+  /* Resetting the GPIO module. */
+  GPIOModuleReset(BUTTON_GPIO_BASE);
 
-    /* Setting the GPIO pin as an input pin. */
-    GPIODirModeSet(BUTTON_GPIO_BASE,
-                   BUTTON_PIN,
-                   GPIO_DIR_INPUT);
+  /* Setting the GPIO pin as an input pin. */
+  GPIODirModeSet(BUTTON_GPIO_BASE,
+                 BUTTON_PIN,
+                 GPIO_DIR_INPUT);
 }
 
-void initJoystick()
+void joystickNotifyOnTimeIsr() {
+  // check state of joystick
+  ConsoleUtilsPrintf("\n\nPress ZEN Cape's joystick left:\n");
+  isButtonPressed = readButtonWithStarterWare();
+}
+
+void joystickDoBackgroundWork()
 {
-	uint32_t counter = 0;
-
-	uartInitialize();
-	ConsoleUtilsPrintf("\n\nPress ZEN Cape's joystick left:\n");
-	initializeButtonPin();
-
-	_Bool lastButtonState = false;
-
-	_Bool isButtonPressed = readButtonWithStarterWare();
-	// _Bool isButtonPressed = readButtonWithBitTwiddling();
-
-	counter++;
-	if (counter % 5000000 == 0) {
-		ConsoleUtilsPrintf("Count = %u, button state: %d\n",
-				counter,
-				isButtonPressed);
-
-		// Hit the watchdog (must #include "watchdog.h"
-		// Each time you hit the WD, must pass it a different number
-		// than the last time you hit it.
-		WatchdogTimerTriggerSet(SOC_WDT_1_REGS, counter);
-	}
-
-	if (lastButtonState != isButtonPressed) {
+  if (lastButtonState != isButtonPressed) {
 		ConsoleUtilsPrintf("> %d\n", isButtonPressed);
-		lastButtonState = isButtonPressed;
-		WatchdogTimerTriggerSet(SOC_WDT_1_REGS, counter);
 	}
+
+  ConsoleUtilsPrintf("> %d\n", isButtonPressed);
+  lastButtonState = isButtonPressed;
 }
 
 static _Bool readButtonWithStarterWare(void)

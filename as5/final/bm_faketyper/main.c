@@ -53,16 +53,18 @@ int main(void) {
 	Timer_init();
 	Watchdog_init();
 	FakeTyper_init();
+	initializeButtonPin();
 
-	initJoystick();
 	initLEDS();
+	initJoystick();
 
 	// Setup callbacks from hardware abstraction modules to application:
 	Serial_setRxIsrCallback(serialRxIsrCallback);
 	Timer_setTimerIsrCallback(FakeTyper_notifyOnTimeIsr);
+	Timer_setTimerIsrCallback(joystickNotifyOnTimeIsr);
 
 	// Display startup messages to console:
-	ConsoleUtilsPrintf("\n --- BareMetal Assignment --- Mohamed Yahye\n");
+	ConsoleUtilsPrintf("\n CMPT 433 Assignment 5 - Vaanyi Igiri, Andrew Song\n");
 	ConsoleUtilsPrintf(" Commands:\n?   : Display this help message.\n0-9 : Set speed 0 (slow) to 9 (fast).\na   : Select pattern A (bounce).\nb   : Select pattern B (bar).\nx   : Stop hitting the watchdog.\nBTN : Push-button to toggle mode.\n");
 
 	// Main loop:
@@ -70,6 +72,7 @@ int main(void) {
 		// Handle background processing
 		doBackgroundSerialWork();
 		FakeTyper_doBackgroundWork();
+		joystickDoBackgroundWork();
 
 		// Timer ISR signals intermittent background activity.
 		if(Timer_isIsrFlagSet()) {
