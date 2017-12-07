@@ -1,10 +1,10 @@
-
 #ifndef _LEDS_H_
 #define _LEDS_H_
 
-void initializeLeds(void);
-void bounceLeds(void);
-void barLeds(void);
+void initLEDS(void);
+
+void bounceLEDPattern(void);
+void barLEDPattern(void);
 void busyWait(unsigned int count);
 
 #endif

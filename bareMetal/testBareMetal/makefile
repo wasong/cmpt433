@@ -89,7 +89,6 @@ APP_LIB=-ldrivers  \
 	-lutils    \
 	-lplatform \
 	-lsystem_config \
-	-lpthread
 
 CFLAGS+=-std=c99 -Wall -Werror
 #

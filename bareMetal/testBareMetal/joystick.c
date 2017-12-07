@@ -8,11 +8,15 @@
 #include "consoleUtils.h"
 #include "joystick.h"
 #include <stdint.h>
-#include <pthread.h>
 
-/*****************************************************************************
-**                INTERNAL MACRO DEFINITIONS
-*****************************************************************************/
+
+/******************************************************************************
+ **              INTERNAL MACRO DEFINITIONS
+ ******************************************************************************/
+#define BAUD_RATE_115200          (115200)
+#define UART_MODULE_INPUT_CLK     (48000000)
+
+
 // Boot btn on BBB: SOC_GPIO_2_REGS, pin 8
 // Down on Zen cape: SOC_GPIO_1_REGS, pin 14  NOTE: Must change other "2" constants to "1" for correct initialization.
 // Left on Zen cape: SOC_GPIO_2_REGS, pin 1
@@ -21,16 +25,11 @@
 #define BUTTON_PIN           (1)
 
 #define DELAY_TIME 0x4000000
-
-#define BAUD_RATE_115200          (115200)
-#define UART_MODULE_INPUT_CLK     (48000000)
-
-// Joystick threading
-void* initJoystickThread(void* arg);
-static pthread_t joystickThreadId;
-static pthread_mutex_t joystickMutex = PTHREAD_MUTEX_INITIALIZER;
-
 #include "hw_cm_per.h"
+
+static void initializeButtonPin(void);
+static _Bool readButtonWithStarterWare(void);
+
 void GPIO2ModuleClkConfig(void)
 {
     /* Writing to MODULEMODE field of CM_PER_GPIO1_CLKCTRL register. */
@@ -98,15 +97,9 @@ static void initializeButtonPin(void)
 /*
 ** The main function. Application starts here.
 */
-void initJoystickThread() {
-  pthread_create(&joystickThreadId, NULL, joystickThread, NULL);
-}
 
-void cleanJoystickThread() {
-	pthread_join(joystickThreadId, NULL);
-}
 
-void* joystickThread()
+void runJoystick()
 {
 	uint32_t counter = 0;
 
@@ -145,15 +138,15 @@ static _Bool readButtonWithStarterWare(void)
 	return GPIOPinRead(BUTTON_GPIO_BASE, BUTTON_PIN) == 0;
 }
 
-static _Bool readButtonWithBitTwiddling(void)
-{
-	uint32_t regValue = HWREG(BUTTON_GPIO_BASE + GPIO_DATAIN);
-	uint32_t mask     = (1 << BUTTON_PIN);
+// static _Bool readButtonWithBitTwiddling(void)
+// {
+// 	uint32_t regValue = HWREG(BUTTON_GPIO_BASE + GPIO_DATAIN);
+// 	uint32_t mask     = (1 << BUTTON_PIN);
 
-	return (regValue & mask) == 0;
-}
+// 	return (regValue & mask) == 0;
+// }
 
-static void uartInitialize()
+ void uartInitialize()
 {
 	/* Configuring the system clocks for UART0 instance. */
 	UART0ModuleClkConfig();
@@ -182,7 +175,7 @@ static void uartInitialize()
 /*
  ** A wrapper function performing Baud Rate settings.
  */
-static void uartBaudRateSet(void)
+ void uartBaudRateSet(void)
 {
 	unsigned int divisorValue = 0;
 

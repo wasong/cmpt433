@@ -1,0 +1,1243 @@
+Archive member included because of file (symbol)
+
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+                              Debug/timer.o (DMTimerEnable)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+                              Debug/joystick.o (GPIOModuleReset)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                              Debug/joystick.o (UARTOperatingModeSelect)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+                              Debug/wdtimer.o (WatchdogTimerEnable)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+                              Debug/joystick.o (ConsoleUtilsSetType)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+                              /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o) (UARTStdioInit)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+                              /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o) (ASCIIToDigit)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+                              Debug/timer.o (DMTimer2ModuleClkConfig)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+                              Debug/leds.o (GPIO1ModuleClkConfig)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+                              Debug/joystick.o (UARTPinMuxSetup)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+                              /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o) (UARTConsoleInit)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+                              Debug/wdtimer.o (WatchdogTimer1ModuleClkConfig)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(init.o)
+                              (Entry)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+                              Debug/serial.o (IntRegister)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+                              /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(init.o) (start_boot)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cp15.o)
+                              /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o) (CP15VectorBaseAddrSet)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+                              /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o) (CPUIntStatus)
+/home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(exceptionhandler.o)
+                              /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o) (IRQHandler)
+/home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_udivsi3.o)
+                              (__aeabi_uidiv)
+/home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_divsi3.o)
+                              (__aeabi_idiv)
+/home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_dvmd_tls.o)
+                              /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_udivsi3.o) (__aeabi_idiv0)
+
+Allocating common symbols
+Common symbol       size              file
+
+fnRAMVectors        0x200             /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+
+Discarded input sections
+
+ .text          0x00000000        0x0 Debug/fakeTyper.o
+ .data          0x00000000        0x0 Debug/fakeTyper.o
+ .bss           0x00000000        0x0 Debug/fakeTyper.o
+ .text.FakeTyper_setMessage
+                0x00000000       0x2c Debug/fakeTyper.o
+ .text          0x00000000        0x0 Debug/joystick.o
+ .data          0x00000000        0x0 Debug/joystick.o
+ .bss           0x00000000        0x0 Debug/joystick.o
+ .text          0x00000000        0x0 Debug/leds.o
+ .data          0x00000000        0x0 Debug/leds.o
+ .bss           0x00000000        0x0 Debug/leds.o
+ .text          0x00000000        0x0 Debug/main.o
+ .data          0x00000000        0x0 Debug/main.o
+ .bss           0x00000000        0x0 Debug/main.o
+ .text          0x00000000        0x0 Debug/serial.o
+ .data          0x00000000        0x0 Debug/serial.o
+ .bss           0x00000000        0x0 Debug/serial.o
+ .text          0x00000000        0x0 Debug/timer.o
+ .data          0x00000000        0x0 Debug/timer.o
+ .bss           0x00000000        0x0 Debug/timer.o
+ .text          0x00000000        0x0 Debug/wdtimer.o
+ .data          0x00000000        0x0 Debug/wdtimer.o
+ .bss           0x00000000        0x0 Debug/wdtimer.o
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerDisable
+                0x00000000       0x6c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerPreScalerClkEnable
+                0x00000000       0xcc /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerCounterGet
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerReloadGet
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerGPOConfigure
+                0x00000000       0xcc /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerCompareSet
+                0x00000000       0x64 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerCompareGet
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerIntRawStatusSet
+                0x00000000       0x34 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerIntRawStatusGet
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerIntStatusGet
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerTriggerSet
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerIntEnableGet
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerResetConfigure
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerReset
+                0x00000000       0x54 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerContextSave
+                0x00000000       0xb8 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerContextRestore
+                0x00000000      0x160 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text.DMTimerPostedModeConfig
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOModuleDisable
+                0x00000000       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIODirModeGet
+                0x00000000       0x5c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOMultiplePinsWrite
+                0x00000000       0x44 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOMultiplePinsRead
+                0x00000000       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOPinIntEnable
+                0x00000000       0x64 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOPinIntDisable
+                0x00000000       0x64 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOIntTypeSet
+                0x00000000      0x564 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOIntTypeGet
+                0x00000000      0x120 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOPinIntStatus
+                0x00000000       0x84 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOPinIntClear
+                0x00000000       0x64 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIORawIntStatus
+                0x00000000       0x74 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOTriggerPinInt
+                0x00000000       0x64 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOWakeupGlobalEnable
+                0x00000000       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOWakeupGlobalDisable
+                0x00000000       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOPinIntWakeUpEnable
+                0x00000000       0x84 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOPinIntWakeUpDisable
+                0x00000000       0x8c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOAutoIdleModeControl
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOIdleModeConfigure
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIOGatingRatioConfigure
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIODebounceFuncControl
+                0x00000000       0x78 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIODebounceTimeConfig
+                0x00000000       0x34 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.GPIORevisionInfoGet
+                0x00000000       0x28 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.gpioContextSave
+                0x00000000       0x5c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text.gpioContextRestore
+                0x00000000       0x5c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTDivisorLatchEnable
+                0x00000000       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTRegConfModeRestore
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTParityModeSet
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTParityModeGet
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTFIFOConfig
+                0x00000000      0x480 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTDMAEnable
+                0x00000000       0x80 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTDMADisable
+                0x00000000       0x54 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTFIFORegisterWrite
+                0x00000000       0xc0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTEnhanFuncEnable
+                0x00000000       0x88 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTEnhanFuncBitValRestore
+                0x00000000       0x8c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTSubConfigMSRSPRModeEn
+                0x00000000      0x124 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTSubConfigTCRTLRModeEn
+                0x00000000      0x124 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTSubConfigXOFFModeEn
+                0x00000000      0x124 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTTCRTLRBitValRestore
+                0x00000000      0x128 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTIntDisable
+                0x00000000      0x110 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTSpaceAvail
+                0x00000000       0x78 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTCharsAvail
+                0x00000000       0x78 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTCharGet
+                0x00000000       0x84 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTCharGetTimeout
+                0x00000000       0xac /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTFIFOCharPut
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTFIFOCharGet
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTFIFOWrite
+                0x00000000       0x78 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTRxErrorGet
+                0x00000000       0x6c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTIntPendingStatusGet
+                0x00000000       0x78 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTFIFOEnableStatusGet
+                0x00000000       0x78 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTAutoRTSAutoCTSControl
+                0x00000000       0xb4 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTSpecialCharDetectControl
+                0x00000000       0x8c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTSoftwareFlowCtrlOptSet
+                0x00000000       0x8c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTPulseShapingControl
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTIdleModeConfigure
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTWakeUpControl
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTAutoIdleModeControl
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTFlowCtrlTrigLvlConfig
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTXON1XOFF1ValProgram
+                0x00000000       0x4c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTXON2XOFF2ValProgram
+                0x00000000       0x4c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTXONAnyFeatureControl
+                0x00000000      0x100 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTLoopbackModeControl
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTModemControlSet
+                0x00000000       0x44 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTModemControlClear
+                0x00000000       0x48 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTModemStatusGet
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTModemStatusChangeCheck
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTResumeOperation
+                0x00000000       0x28 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTWakeUpEventsEnable
+                0x00000000       0x44 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTWakeUpEventsDisable
+                0x00000000       0x48 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTFIFOTrigLvlGranControl
+                0x00000000       0x88 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTDSRInterruptControl
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTTxEmptyIntControl
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTRXCTSDSRWakeUpConfigure
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTRXCTSDSRTransitionStatusGet
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTDMACounterResetControl
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTTxFIFOFullStatusGet
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTTxFIFOLevelGet
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTRxFIFOLevelGet
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTAutobaudParityGet
+                0x00000000       0x6c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTAutobaudWordLenGet
+                0x00000000       0x6c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTAutobaudSpeedGet
+                0x00000000       0x6c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTScratchPadRegWrite
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTScratchPadRegRead
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTModuleVersionNumberGet
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTTxDMAThresholdControl
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text.UARTTxDMAThresholdValConfig
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text.WatchdogTimerRevisionIDGet
+                0x00000000       0x28 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text.WatchdogTimerPreScalerClkEnable
+                0x00000000       0xa8 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text.WatchdogTimerCounterSet
+                0x00000000       0x50 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text.WatchdogTimerCounterGet
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text.WatchdogTimerReloadGet
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text.WatchdogTimerDelaySet
+                0x00000000       0x50 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text.WatchdogTimerDelayGet
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text.WatchdogTimerIntRawStatusSet
+                0x00000000       0x34 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text.WatchdogTimerIntRawStatusGet
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text.WatchdogTimerIntStatusGet
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text.WatchdogTimerIntStatusClear
+                0x00000000       0x34 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text.WatchdogTimerIntEnable
+                0x00000000       0x34 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text.WatchdogTimerIntEnableStatusGet
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text.WatchdogTimerIntDisable
+                0x00000000       0x34 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .text.ConsoleUtilsInit
+                0x00000000       0x18 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .text.ConsoleUtilsScanf
+                0x00000000       0x80 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .text.ConsoleUtilsGets
+                0x00000000       0x74 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .text.ConsoleUtilsPuts
+                0x00000000       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .text.ConsoleUtilsGetChar
+                0x00000000       0xa8 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .text.UARTStdioInit
+                0x00000000       0x18 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .text.UARTStdioRead
+                0x00000000       0xd0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .text.UARTGets
+                0x00000000       0xdc /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .text.UARTPutNum
+                0x00000000      0x178 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .text.UARTPutHexNum
+                0x00000000      0x198 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .text.UARTGetNum
+                0x00000000      0x118 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .text.UARTGetHexNum
+                0x00000000      0x2ec /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .text.UARTGetc
+                0x00000000       0x20 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .text.UARTprintf
+                0x00000000      0x6b8 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .text.UARTScanf
+                0x00000000      0xa68 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .text.ASCIIToDigit
+                0x00000000       0xe8 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .text.DigitToASCII
+                0x00000000       0xb8 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .text.StrToEthrAddr
+                0x00000000      0x184 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .text.EthrAddrToStr
+                0x00000000      0x180 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .text.TimeToStr
+                0x00000000      0x18c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .text.DateToStr
+                0x00000000      0x18c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .debug_info    0x00000000      0x289 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .debug_abbrev  0x00000000       0xce /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .debug_loc     0x00000000      0x108 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .debug_aranges
+                0x00000000       0x48 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .debug_ranges  0x00000000       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .debug_line    0x00000000      0x1a6 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .debug_str     0x00000000      0x18d /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .ARM.attributes
+                0x00000000       0x37 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .debug_frame   0x00000000       0xb0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(ascii.o)
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .text.DMTimer3ModuleClkConfig
+                0x00000000      0x260 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .text.DMTimer4ModuleClkConfig
+                0x00000000      0x268 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .text.DMTimer6ModuleClkConfig
+                0x00000000       0xc4 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .text.DMTimer7ModuleClkConfig
+                0x00000000      0x260 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .text.DMTimer1msModuleClkConfig
+                0x00000000       0xd8 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .text.GPIO1Pin23PinMuxSetup
+                0x00000000       0x24 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .text.GPIO0ModuleClkConfig
+                0x00000000      0x148 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .text.GPIO1PinMuxSetup
+                0x00000000       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .text.GpioPinMuxSetup
+                0x00000000       0x34 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .text.UARTStdioInitExpClk
+                0x00000000       0xd0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .text.UartFIFOConfigure
+                0x00000000       0x64 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .text.UartBaudRateSet
+                0x00000000       0x5c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .text.UARTConsoleInit
+                0x00000000       0x44 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .text.UARTConsoleGetc
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(init.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(init.o)
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntUnRegister
+                0x00000000       0x34 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntSystemDisable
+                0x00000000       0x4c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntIfClkFreeRunSet
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntIfClkAutoGateSet
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntActiveIrqNumGet
+                0x00000000       0x28 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntSpurIrqFlagGet
+                0x00000000       0x28 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntProtectionEnable
+                0x00000000       0x24 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntProtectionDisable
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntSyncClkFreeRunSet
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntSyncClkAutoGateSet
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntFuncClkFreeRunSet
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntFuncClkAutoGateSet
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntCurrIrqPriorityGet
+                0x00000000       0x28 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntPriorityThresholdGet
+                0x00000000       0x28 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntPriorityThresholdSet
+                0x00000000       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntRawStatusGet
+                0x00000000       0x5c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntSoftwareIntSet
+                0x00000000       0x48 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntSoftwareIntClear
+                0x00000000       0x48 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntPendingIrqMaskedStatusGet
+                0x00000000       0x58 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntMasterIRQDisable
+                0x00000000       0x18 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntMasterFIQEnable
+                0x00000000       0x18 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntMasterFIQDisable
+                0x00000000       0x18 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntMasterStatusGet
+                0x00000000       0x20 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntDisable
+                0x00000000       0x3c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntEnable
+                0x00000000       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cp15.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cp15.o)
+ .text          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .text.CPUSwitchToPrivilegedMode
+                0x00000000       0x18 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .text.CPUSwitchToUserMode
+                0x00000000       0x24 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .text.CPUAbortHandler
+                0x00000000       0x14 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .text.CPUIntStatus
+                0x00000000       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .text.CPUirqd  0x00000000       0x24 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .text.CPUfiqd  0x00000000       0x24 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .text.CPUfiqe  0x00000000       0x24 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(exceptionhandler.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(exceptionhandler.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_udivsi3.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_udivsi3.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_divsi3.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_divsi3.o)
+ .data          0x00000000        0x0 /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_dvmd_tls.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+DDR0             0x80000000         0x10000000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD Debug/fakeTyper.o
+LOAD Debug/joystick.o
+LOAD Debug/leds.o
+LOAD Debug/main.o
+LOAD Debug/serial.o
+LOAD Debug/timer.o
+LOAD Debug/wdtimer.o
+LOAD /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a
+LOAD /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a
+LOAD /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a
+LOAD /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a
+LOAD /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/arm-none-eabi/lib//libc.a
+LOAD /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a
+LOAD /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a
+LOAD /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a
+LOAD /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a
+LOAD /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a
+LOAD /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/arm-none-eabi/lib//libc.a
+LOAD /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a
+
+.startcode      0x80000000       0xbc
+                0x80000000                . = ALIGN (0x4)
+ *init.o(.text)
+ .text          0x80000000       0xbc /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(init.o)
+                0x80000000                Entry
+
+.text           0x800000bc     0x3ff8
+                0x800000bc                . = ALIGN (0x4)
+ *(.text*)
+ .text.FakeTyper_init
+                0x800000bc       0x14 Debug/fakeTyper.o
+                0x800000bc                FakeTyper_init
+ .text.FakeTyper_notifyOnTimeIsr
+                0x800000d0       0x24 Debug/fakeTyper.o
+                0x800000d0                FakeTyper_notifyOnTimeIsr
+ .text.FakeTyper_doBackgroundWork
+                0x800000f4       0x9c Debug/fakeTyper.o
+                0x800000f4                FakeTyper_doBackgroundWork
+ .text.GPIO2ModuleClkConfig
+                0x80000190       0xbc Debug/joystick.o
+                0x80000190                GPIO2ModuleClkConfig
+ .text.initializeButtonPin
+                0x8000024c       0x5c Debug/joystick.o
+ .text.joystickThread
+                0x800002a8      0x120 Debug/joystick.o
+                0x800002a8                joystickThread
+ .text.readButtonWithStarterWare
+                0x800003c8       0x3c Debug/joystick.o
+ .text.uartInitialize
+                0x80000404       0xd0 Debug/joystick.o
+                0x80000404                uartInitialize
+ .text.uartBaudRateSet
+                0x800004d4       0x5c Debug/joystick.o
+                0x800004d4                uartBaudRateSet
+ .text.initializeLeds
+                0x80000530       0xb0 Debug/leds.o
+                0x80000530                initializeLeds
+ .text.bounceLeds
+                0x800005e0      0x14c Debug/leds.o
+                0x800005e0                bounceLeds
+ .text.barLeds  0x8000072c       0xec Debug/leds.o
+                0x8000072c                barLeds
+ .text.busyWait
+                0x80000818       0x44 Debug/leds.o
+                0x80000818                busyWait
+ .text.serialRxIsrCallback
+                0x8000085c       0x30 Debug/main.o
+ .text.doBackgroundSerialWork
+                0x8000088c      0x160 Debug/main.o
+ .text.main     0x800009ec      0x11c Debug/main.o
+                0x800009ec                main
+ .text.Serial_init
+                0x80000b08       0xdc Debug/serial.o
+                0x80000b08                Serial_init
+ .text.Serial_setRxIsrCallback
+                0x80000be4       0x2c Debug/serial.o
+                0x80000be4                Serial_setRxIsrCallback
+ .text.UartBaudRateSet
+                0x80000c10       0x5c Debug/serial.o
+ .text.UartInterruptEnable
+                0x80000c6c       0x7c Debug/serial.o
+ .text.UARTIsr  0x80000ce8       0xc8 Debug/serial.o
+ .text.Timer_init
+                0x80000db0       0x7c Debug/timer.o
+                0x80000db0                Timer_init
+ .text.Timer_isIsrFlagSet
+                0x80000e2c       0x28 Debug/timer.o
+                0x80000e2c                Timer_isIsrFlagSet
+ .text.Timer_clearIsrFlag
+                0x80000e54       0x24 Debug/timer.o
+                0x80000e54                Timer_clearIsrFlag
+ .text.Timer_setTimerIsrCallback
+                0x80000e78       0x2c Debug/timer.o
+                0x80000e78                Timer_setTimerIsrCallback
+ .text.DMTimerIsr
+                0x80000ea4       0x88 Debug/timer.o
+ .text.DMTimerAintcConfigure
+                0x80000f2c       0x4c Debug/timer.o
+ .text.DMTimerSetUp
+                0x80000f78       0x5c Debug/timer.o
+ .text.Watchdog_init
+                0x80000fd4       0x84 Debug/wdtimer.o
+                0x80000fd4                Watchdog_init
+ .text.Watchdog_hit
+                0x80001058       0x4c Debug/wdtimer.o
+                0x80001058                Watchdog_hit
+ .text.DMTimerEnable
+                0x800010a4       0x6c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+                0x800010a4                DMTimerEnable
+ .text.DMTimerModeConfigure
+                0x80001110       0xcc /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+                0x80001110                DMTimerModeConfigure
+ .text.DMTimerPreScalerClkDisable
+                0x800011dc       0x6c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+                0x800011dc                DMTimerPreScalerClkDisable
+ .text.DMTimerCounterSet
+                0x80001248       0x64 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+                0x80001248                DMTimerCounterSet
+ .text.DMTimerReloadSet
+                0x800012ac       0x64 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+                0x800012ac                DMTimerReloadSet
+ .text.DMTimerIntStatusClear
+                0x80001310       0x34 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+                0x80001310                DMTimerIntStatusClear
+ .text.DMTimerIntEnable
+                0x80001344       0x34 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+                0x80001344                DMTimerIntEnable
+ .text.DMTimerIntDisable
+                0x80001378       0x34 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+                0x80001378                DMTimerIntDisable
+ .text.DMTimerWritePostedStatusGet
+                0x800013ac       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+                0x800013ac                DMTimerWritePostedStatusGet
+ .text.GPIOModuleReset
+                0x800013d8       0x54 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+                0x800013d8                GPIOModuleReset
+ .text.GPIOModuleEnable
+                0x8000142c       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+                0x8000142c                GPIOModuleEnable
+ .text.GPIODirModeSet
+                0x80001464       0x88 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+                0x80001464                GPIODirModeSet
+ .text.GPIOPinWrite
+                0x800014ec       0x64 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+                0x800014ec                GPIOPinWrite
+ .text.GPIOPinRead
+                0x80001550       0x40 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+                0x80001550                GPIOPinRead
+ .text.UARTOperatingModeSelect
+                0x80001590       0x84 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                0x80001590                UARTOperatingModeSelect
+ .text.UARTDivisorValCompute
+                0x80001614      0x104 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                0x80001614                UARTDivisorValCompute
+ .text.UARTDivisorLatchWrite
+                0x80001718      0x210 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                0x80001718                UARTDivisorLatchWrite
+ .text.UARTDivisorLatchDisable
+                0x80001928       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                0x80001928                UARTDivisorLatchDisable
+ .text.UARTRegConfigModeEnable
+                0x80001960       0x9c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                0x80001960                UARTRegConfigModeEnable
+ .text.UARTBreakCtl
+                0x800019fc       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                0x800019fc                UARTBreakCtl
+ .text.UARTLineCharacConfig
+                0x80001a5c       0xa4 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                0x80001a5c                UARTLineCharacConfig
+ .text.UARTIntEnable
+                0x80001b00      0x130 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                0x80001b00                UARTIntEnable
+ .text.UARTCharPutNonBlocking
+                0x80001c30       0x8c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                0x80001c30                UARTCharPutNonBlocking
+ .text.UARTCharGetNonBlocking
+                0x80001cbc       0x80 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                0x80001cbc                UARTCharGetNonBlocking
+ .text.UARTCharPut
+                0x80001d3c       0x78 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                0x80001d3c                UARTCharPut
+ .text.UARTIntIdentityGet
+                0x80001db4       0x6c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                0x80001db4                UARTIntIdentityGet
+ .text.UARTModuleReset
+                0x80001e20       0x54 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                0x80001e20                UARTModuleReset
+ .text.WatchdogTimerEnable
+                0x80001e74       0x80 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+                0x80001e74                WatchdogTimerEnable
+ .text.WatchdogTimerDisable
+                0x80001ef4       0x80 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+                0x80001ef4                WatchdogTimerDisable
+ .text.WatchdogTimerReset
+                0x80001f74       0x54 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+                0x80001f74                WatchdogTimerReset
+ .text.WatchdogTimerPreScalerClkDisable
+                0x80001fc8       0x58 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+                0x80001fc8                WatchdogTimerPreScalerClkDisable
+ .text.WatchdogTimerReloadSet
+                0x80002020       0x50 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+                0x80002020                WatchdogTimerReloadSet
+ .text.WatchdogTimerTriggerSet
+                0x80002070       0x50 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+                0x80002070                WatchdogTimerTriggerSet
+ .text.WatchdogTimerWritePostedStatusGet
+                0x800020c0       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+                0x800020c0                WatchdogTimerWritePostedStatusGet
+ .text.ConsoleUtilsSetType
+                0x800020f8       0x54 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+                0x800020f8                ConsoleUtilsSetType
+ .text.ConsoleUtilsPrintf
+                0x8000214c       0x6c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+                0x8000214c                ConsoleUtilsPrintf
+ .text.ConsoleUtilsPutChar
+                0x800021b8       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+                0x800021b8                ConsoleUtilsPutChar
+ .text.UARTPuts
+                0x80002218       0xec /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+                0x80002218                UARTPuts
+ .text.UARTPutc
+                0x80002304       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+                0x80002304                UARTPutc
+ .text.UARTwrite
+                0x80002334       0x94 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+                0x80002334                UARTwrite
+ .text.UARTPrintf
+                0x800023c8      0x6ac /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+                0x800023c8                UARTPrintf
+ .text.DMTimer2ModuleClkConfig
+                0x80002a74      0x260 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+                0x80002a74                DMTimer2ModuleClkConfig
+ .text.GPIO1ModuleClkConfig
+                0x80002cd4       0xbc /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+                0x80002cd4                GPIO1ModuleClkConfig
+ .text.UARTPinMuxSetup
+                0x80002d90       0x48 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+                0x80002d90                UARTPinMuxSetup
+ .text.UART0ModuleClkConfig
+                0x80002dd8      0x35c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+                0x80002dd8                UART0ModuleClkConfig
+ .text.UARTConsolePutc
+                0x80003134       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+                0x80003134                UARTConsolePutc
+ .text.WatchdogTimer1ModuleClkConfig
+                0x8000316c      0x248 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+                0x8000316c                WatchdogTimer1ModuleClkConfig
+ .text.IntDefaultHandler
+                0x800033b4       0x14 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .text.IntRegister
+                0x800033c8       0x34 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+                0x800033c8                IntRegister
+ .text.IntAINTCInit
+                0x800033fc       0x90 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+                0x800033fc                IntAINTCInit
+ .text.IntPrioritySet
+                0x8000348c       0x50 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+                0x8000348c                IntPrioritySet
+ .text.IntSystemEnable
+                0x800034dc       0x4c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+                0x800034dc                IntSystemEnable
+ .text.IntMasterIRQEnable
+                0x80003528       0x18 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+                0x80003528                IntMasterIRQEnable
+ .text.start_boot
+                0x80003540       0x24 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+                0x80003540                start_boot
+ .text.CopyVectorTable
+                0x80003564       0x98 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+ .text          0x800035fc      0x488 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cp15.o)
+                0x800035fc                CP15ICacheDisable
+                0x80003618                CP15DCacheDisable
+                0x80003634                CP15ICacheEnable
+                0x80003644                CP15DCacheEnable
+                0x80003654                CP15DCacheFlush
+                0x800036e8                CP15DCacheClean
+                0x8000377c                CP15DCacheCleanFlush
+                0x80003810                CP15ICacheFlush
+                0x80003820                CP15DCacheCleanBuff
+                0x80003874                CP15DCacheCleanFlushBuff
+                0x800038c8                CP15DCacheFlushBuff
+                0x8000392c                CP15ICacheFlushBuff
+                0x80003980                CP15Ttb0Set
+                0x8000398c                CP15TlbInvalidate
+                0x80003998                CP15MMUDisable
+                0x800039b0                CP15MMUEnable
+                0x800039c4                CP15VectorBaseAddrSet
+                0x800039d0                CP15BranchPredictorInvalidate
+                0x800039dc                CP15BranchPredictionEnable
+                0x800039ec                CP15BranchPredictionDisable
+                0x800039fc                CP15DomainAccessClientSet
+                0x80003a0c                CP15ControlFeatureDisable
+                0x80003a20                CP15ControlFeatureEnable
+                0x80003a34                CP15TtbCtlTtb0Config
+                0x80003a44                CP15AuxControlFeatureEnable
+                0x80003a58                CP15AuxControlFeatureDisable
+                0x80003a6c                CP15MainIdPrimPartNumGet
+ .text.CPUirqe  0x80003a84       0x24 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+                0x80003a84                CPUirqe
+ .text          0x80003aa8       0xf0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(exceptionhandler.o)
+                0x80003aa8                SVC_Handler
+                0x80003ad0                IRQHandler
+                0x80003b7c                FIQHandler
+                0x80003b80                UndefInstHandler
+                0x80003b80                AbortHandler
+ .text          0x80003b98      0x114 /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_udivsi3.o)
+                0x80003b98                __udivsi3
+                0x80003b98                __aeabi_uidiv
+                0x80003c8c                __aeabi_uidivmod
+ .text          0x80003cac      0x148 /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_divsi3.o)
+                0x80003cac                __aeabi_idiv
+                0x80003cac                __divsi3
+                0x80003dd4                __aeabi_idivmod
+ .text          0x80003df4        0x4 /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_dvmd_tls.o)
+                0x80003df4                __aeabi_ldiv0
+                0x80003df4                __aeabi_idiv0
+ *(.rodata*)
+ .rodata        0x80003df8       0x58 Debug/joystick.o
+ .rodata        0x80003e50      0x174 Debug/main.o
+ .rodata        0x80003fc4       0x50 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .rodata        0x80004014       0x60 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .rodata.g_pcHex
+                0x80004074        0x4 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .rodata.AM335X_VECTOR_BASE
+                0x80004078        0x4 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+                0x80004078                AM335X_VECTOR_BASE
+ .rodata.vecTbl
+                0x8000407c       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+
+.glue_7         0x800040b4        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x800040b4        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x800040b4        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x800040b4        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x800040b4        0x0
+ .iplt          0x00000000        0x0 Debug/fakeTyper.o
+
+.rel.dyn        0x800040b4        0x0
+ .rel.iplt      0x00000000        0x0 Debug/fakeTyper.o
+
+.data           0x800040b4        0x0
+                0x800040b4                . = ALIGN (0x4)
+ *(.data*)
+
+.igot.plt       0x800040b4        0x0
+ .igot.plt      0x00000000        0x0 Debug/fakeTyper.o
+
+.bss            0x800040b4      0x220
+                0x800040b4                . = ALIGN (0x4)
+                0x800040b4                _bss_start = .
+ *(.bss*)
+ .bss.s_isTimeToPrintChar
+                0x800040b4        0x1 Debug/fakeTyper.o
+ *fill*         0x800040b5        0x3 00
+ .bss.s_message
+                0x800040b8        0x4 Debug/fakeTyper.o
+ .bss.s_rxByte  0x800040bc        0x1 Debug/main.o
+ .bss.stopWatchDog
+                0x800040bd        0x1 Debug/main.o
+ *fill*         0x800040be        0x2 00
+ .bss.g_rxIsrCallback
+                0x800040c0        0x4 Debug/serial.o
+ .bss.s_flagIsr
+                0x800040c4        0x1 Debug/timer.o
+ *fill*         0x800040c5        0x3 00
+ .bss.s_isrCallback
+                0x800040c8        0x4 Debug/timer.o
+ .bss.triggerCounter.4167
+                0x800040cc        0x4 Debug/wdtimer.o
+ .bss.ConsoleType
+                0x800040d0        0x1 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ *(COMMON)
+ *fill*         0x800040d1        0x3 00
+ COMMON         0x800040d4      0x200 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+                0x800040d4                fnRAMVectors
+                0x800042d4                _bss_end = .
+
+.heap           0x800042d4      0x800
+                0x800042d4                . = ALIGN (0x4)
+                0x800042d4                __end__ = .
+                0x800042d4                end = __end__
+                0x800042d4                __HeapBase = __end__
+ *(.heap*)
+                0x80004ad4                . = (. + 0x800)
+ *fill*         0x800042d4      0x800 00
+                0x80004ad4                __HeapLimit = .
+
+.stack          0x80004ad4  0x7fffff8
+                0x80004ad4                . = ALIGN (0x4)
+                0x80004ad4                __StackLimit = .
+ *(.stack*)
+                0x88004acc                . = (. + 0x7fffff8)
+ *fill*         0x80004ad4  0x7fffff8 00
+                0x88004acc                __StackTop = .
+                0x88004acc                _stack = __StackTop
+OUTPUT(Debug/fakeTyper.out elf32-littlearm)
+
+.debug_info     0x00000000     0x43c4
+ .debug_info    0x00000000       0xd5 Debug/fakeTyper.o
+ .debug_info    0x000000d5      0x16b Debug/joystick.o
+ .debug_info    0x00000240      0x144 Debug/leds.o
+ .debug_info    0x00000384      0x105 Debug/main.o
+ .debug_info    0x00000489      0x180 Debug/serial.o
+ .debug_info    0x00000609      0x15b Debug/timer.o
+ .debug_info    0x00000764       0x7d Debug/wdtimer.o
+ .debug_info    0x000007e1      0x5d0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .debug_info    0x00000db1      0x7b3 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .debug_info    0x00001564     0x14ab /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .debug_info    0x00002a0f      0x45c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .debug_info    0x00002e6b      0x29a /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .debug_info    0x00003105      0x69a /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .debug_info    0x0000379f       0xd3 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .debug_info    0x00003872       0xdd /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .debug_info    0x0000394f       0x7e /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+ .debug_info    0x000039cd      0x156 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .debug_info    0x00003b23       0x55 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+ .debug_info    0x00003b78       0xa6 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(init.o)
+ .debug_info    0x00003c1e      0x46f /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .debug_info    0x0000408d       0xe0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+ .debug_info    0x0000416d       0xa6 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cp15.o)
+ .debug_info    0x00004213       0xf8 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .debug_info    0x0000430b       0xb9 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(exceptionhandler.o)
+
+.debug_abbrev   0x00000000     0x11d0
+ .debug_abbrev  0x00000000       0xa0 Debug/fakeTyper.o
+ .debug_abbrev  0x000000a0       0xee Debug/joystick.o
+ .debug_abbrev  0x0000018e       0xc0 Debug/leds.o
+ .debug_abbrev  0x0000024e       0xa6 Debug/main.o
+ .debug_abbrev  0x000002f4       0xf1 Debug/serial.o
+ .debug_abbrev  0x000003e5       0xdb Debug/timer.o
+ .debug_abbrev  0x000004c0       0x60 Debug/wdtimer.o
+ .debug_abbrev  0x00000520      0x122 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .debug_abbrev  0x00000642      0x124 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .debug_abbrev  0x00000766      0x14e /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .debug_abbrev  0x000008b4      0x108 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .debug_abbrev  0x000009bc      0x156 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .debug_abbrev  0x00000b12      0x186 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .debug_abbrev  0x00000c98       0x7a /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .debug_abbrev  0x00000d12       0x7a /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .debug_abbrev  0x00000d8c       0x62 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+ .debug_abbrev  0x00000dee       0xa3 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .debug_abbrev  0x00000e91       0x39 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+ .debug_abbrev  0x00000eca       0x14 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(init.o)
+ .debug_abbrev  0x00000ede      0x1c2 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .debug_abbrev  0x000010a0       0xa4 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+ .debug_abbrev  0x00001144       0x14 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cp15.o)
+ .debug_abbrev  0x00001158       0x64 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .debug_abbrev  0x000011bc       0x14 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(exceptionhandler.o)
+
+.debug_loc      0x00000000     0x2d84
+ .debug_loc     0x00000000       0xb0 Debug/fakeTyper.o
+ .debug_loc     0x000000b0      0x108 Debug/joystick.o
+ .debug_loc     0x000001b8       0xb0 Debug/leds.o
+ .debug_loc     0x00000268       0x84 Debug/main.o
+ .debug_loc     0x000002ec       0xdc Debug/serial.o
+ .debug_loc     0x000003c8      0x134 Debug/timer.o
+ .debug_loc     0x000004fc       0x58 Debug/wdtimer.o
+ .debug_loc     0x00000554      0x478 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .debug_loc     0x000009cc      0x4fc /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .debug_loc     0x00000ec8      0xcb8 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .debug_loc     0x00001b80      0x39c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .debug_loc     0x00001f1c      0x178 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .debug_loc     0x00002094      0x274 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .debug_loc     0x00002308      0x108 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .debug_loc     0x00002410       0xdc /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .debug_loc     0x000024ec       0x58 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+ .debug_loc     0x00002544      0x108 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .debug_loc     0x0000264c       0x2c /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+ .debug_loc     0x00002678      0x554 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .debug_loc     0x00002bcc       0x58 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+ .debug_loc     0x00002c24      0x160 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+
+.debug_aranges  0x00000000      0xa98
+ .debug_aranges
+                0x00000000       0x38 Debug/fakeTyper.o
+ .debug_aranges
+                0x00000038       0x48 Debug/joystick.o
+ .debug_aranges
+                0x00000080       0x38 Debug/leds.o
+ .debug_aranges
+                0x000000b8       0x30 Debug/main.o
+ .debug_aranges
+                0x000000e8       0x40 Debug/serial.o
+ .debug_aranges
+                0x00000128       0x50 Debug/timer.o
+ .debug_aranges
+                0x00000178       0x28 Debug/wdtimer.o
+ .debug_aranges
+                0x000001a0       0xe8 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .debug_aranges
+                0x00000288      0x100 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .debug_aranges
+                0x00000388      0x268 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .debug_aranges
+                0x000005f0       0xc0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .debug_aranges
+                0x000006b0       0x58 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .debug_aranges
+                0x00000708       0x88 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .debug_aranges
+                0x00000790       0x48 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .debug_aranges
+                0x000007d8       0x40 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .debug_aranges
+                0x00000818       0x28 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+ .debug_aranges
+                0x00000840       0x48 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .debug_aranges
+                0x00000888       0x20 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+ .debug_aranges
+                0x000008a8       0x20 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(init.o)
+ .debug_aranges
+                0x000008c8      0x110 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .debug_aranges
+                0x000009d8       0x28 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+ .debug_aranges
+                0x00000a00       0x20 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cp15.o)
+ .debug_aranges
+                0x00000a20       0x58 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .debug_aranges
+                0x00000a78       0x20 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(exceptionhandler.o)
+
+.debug_ranges   0x00000000      0x8e8
+ .debug_ranges  0x00000000       0x28 Debug/fakeTyper.o
+ .debug_ranges  0x00000028       0x38 Debug/joystick.o
+ .debug_ranges  0x00000060       0x28 Debug/leds.o
+ .debug_ranges  0x00000088       0x20 Debug/main.o
+ .debug_ranges  0x000000a8       0x30 Debug/serial.o
+ .debug_ranges  0x000000d8       0x40 Debug/timer.o
+ .debug_ranges  0x00000118       0x18 Debug/wdtimer.o
+ .debug_ranges  0x00000130       0xd8 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .debug_ranges  0x00000208       0xf0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .debug_ranges  0x000002f8      0x258 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .debug_ranges  0x00000550       0xb0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .debug_ranges  0x00000600       0x48 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .debug_ranges  0x00000648       0x78 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .debug_ranges  0x000006c0       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .debug_ranges  0x000006f8       0x30 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .debug_ranges  0x00000728       0x18 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+ .debug_ranges  0x00000740       0x38 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .debug_ranges  0x00000778       0x10 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+ .debug_ranges  0x00000788      0x100 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .debug_ranges  0x00000888       0x18 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+ .debug_ranges  0x000008a0       0x48 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+
+.debug_line     0x00000000     0x2c6c
+ .debug_line    0x00000000       0x7d Debug/fakeTyper.o
+ .debug_line    0x0000007d      0x1b7 Debug/joystick.o
+ .debug_line    0x00000234      0x102 Debug/leds.o
+ .debug_line    0x00000336      0x10f Debug/main.o
+ .debug_line    0x00000445      0x172 Debug/serial.o
+ .debug_line    0x000005b7       0xb4 Debug/timer.o
+ .debug_line    0x0000066b       0x56 Debug/wdtimer.o
+ .debug_line    0x000006c1      0x2f7 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .debug_line    0x000009b8      0x2fe /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .debug_line    0x00000cb6      0x741 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .debug_line    0x000013f7      0x221 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .debug_line    0x00001618      0x1ac /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .debug_line    0x000017c4      0x643 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .debug_line    0x00001e07      0x304 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .debug_line    0x0000210b      0x142 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .debug_line    0x0000224d      0x16a /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+ .debug_line    0x000023b7       0xd2 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .debug_line    0x00002489       0xdc /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+ .debug_line    0x00002565       0x95 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(init.o)
+ .debug_line    0x000025fa      0x2bb /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .debug_line    0x000028b5       0x96 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+ .debug_line    0x0000294b      0x18a /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cp15.o)
+ .debug_line    0x00002ad5       0xde /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .debug_line    0x00002bb3       0xb9 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(exceptionhandler.o)
+
+.debug_str      0x00000000     0x1f42
+ .debug_str     0x00000000      0x107 Debug/fakeTyper.o
+                                0x10c (size before relaxing)
+ .debug_str     0x00000107      0x155 Debug/joystick.o
+                                0x1ff (size before relaxing)
+ .debug_str     0x0000025c       0x45 Debug/leds.o
+                                 0xd9 (size before relaxing)
+ .debug_str     0x000002a1       0x58 Debug/main.o
+                                0x159 (size before relaxing)
+ .debug_str     0x000002f9       0x72 Debug/serial.o
+                                0x1d8 (size before relaxing)
+ .debug_str     0x0000036b       0x9c Debug/timer.o
+                                0x1ab (size before relaxing)
+ .debug_str     0x00000407       0x37 Debug/wdtimer.o
+                                 0xcb (size before relaxing)
+ .debug_str     0x0000043e      0x301 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+                                0x36d (size before relaxing)
+ .debug_str     0x0000073f      0x307 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+                                0x3c6 (size before relaxing)
+ .debug_str     0x00000a46      0x87d /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+                                0x966 (size before relaxing)
+ .debug_str     0x000012c3      0x268 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+                                0x325 (size before relaxing)
+ .debug_str     0x0000152b      0x15d /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+                                0x286 (size before relaxing)
+ .debug_str     0x00001688      0x1a1 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+                                0x2a3 (size before relaxing)
+ .debug_str     0x00001829      0x121 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+                                0x185 (size before relaxing)
+ .debug_str     0x0000194a       0xad /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+                                0x16e (size before relaxing)
+ .debug_str     0x000019f7       0x5f /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+                                0x120 (size before relaxing)
+ .debug_str     0x00001a56       0xa3 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+                                0x19a (size before relaxing)
+ .debug_str     0x00001af9       0x50 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+                                0x111 (size before relaxing)
+ .debug_str     0x00001b49      0x2ea /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+                                0x37c (size before relaxing)
+ .debug_str     0x00001e33       0x70 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+                                0x131 (size before relaxing)
+ .debug_str     0x00001ea3       0x9f /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+                                0x143 (size before relaxing)
+
+.comment        0x00000000       0x70
+ .comment       0x00000000       0x70 Debug/fakeTyper.o
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 Debug/joystick.o
+ .comment       0x00000000       0x71 Debug/leds.o
+ .comment       0x00000000       0x71 Debug/main.o
+ .comment       0x00000000       0x71 Debug/serial.o
+ .comment       0x00000000       0x71 Debug/timer.o
+ .comment       0x00000000       0x71 Debug/wdtimer.o
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+ .comment       0x00000000       0x71 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+
+.ARM.attributes
+                0x00000000       0x3b
+ .ARM.attributes
+                0x00000000       0x37 Debug/fakeTyper.o
+ .ARM.attributes
+                0x00000037       0x37 Debug/joystick.o
+ .ARM.attributes
+                0x0000006e       0x37 Debug/leds.o
+ .ARM.attributes
+                0x000000a5       0x37 Debug/main.o
+ .ARM.attributes
+                0x000000dc       0x37 Debug/serial.o
+ .ARM.attributes
+                0x00000113       0x37 Debug/timer.o
+ .ARM.attributes
+                0x0000014a       0x37 Debug/wdtimer.o
+ .ARM.attributes
+                0x00000181       0x37 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .ARM.attributes
+                0x000001b8       0x37 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .ARM.attributes
+                0x000001ef       0x37 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .ARM.attributes
+                0x00000226       0x37 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .ARM.attributes
+                0x0000025d       0x37 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .ARM.attributes
+                0x00000294       0x37 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .ARM.attributes
+                0x000002cb       0x37 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .ARM.attributes
+                0x00000302       0x37 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .ARM.attributes
+                0x00000339       0x37 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+ .ARM.attributes
+                0x00000370       0x37 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .ARM.attributes
+                0x000003a7       0x37 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+ .ARM.attributes
+                0x000003de       0x23 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(init.o)
+ .ARM.attributes
+                0x00000401       0x3d /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .ARM.attributes
+                0x0000043e       0x3d /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+ .ARM.attributes
+                0x0000047b       0x23 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cp15.o)
+ .ARM.attributes
+                0x0000049e       0x3d /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .ARM.attributes
+                0x000004db       0x23 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(exceptionhandler.o)
+ .ARM.attributes
+                0x000004fe       0x18 /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_udivsi3.o)
+ .ARM.attributes
+                0x00000516       0x18 /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_divsi3.o)
+ .ARM.attributes
+                0x0000052e       0x18 /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_dvmd_tls.o)
+
+.debug_frame    0x00000000     0x1c30
+ .debug_frame   0x00000000       0x74 Debug/fakeTyper.o
+ .debug_frame   0x00000074       0xb4 Debug/joystick.o
+ .debug_frame   0x00000128       0x7c Debug/leds.o
+ .debug_frame   0x000001a4       0x60 Debug/main.o
+ .debug_frame   0x00000204       0x98 Debug/serial.o
+ .debug_frame   0x0000029c       0xc8 Debug/timer.o
+ .debug_frame   0x00000364       0x48 Debug/wdtimer.o
+ .debug_frame   0x000003ac      0x2b4 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(dmtimer.o)
+ .debug_frame   0x00000660      0x2c8 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(gpio_v2.o)
+ .debug_frame   0x00000928      0x778 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(uart_irda_cir.o)
+ .debug_frame   0x000010a0      0x228 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/drivers/Debug/libdrivers.a(watchdog.o)
+ .debug_frame   0x000012c8      0x108 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(consoleUtils.o)
+ .debug_frame   0x000013d0      0x1a8 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/utils/Debug/libutils.a(uartStdio.o)
+ .debug_frame   0x00001578       0xa0 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(dmtimer.o)
+ .debug_frame   0x00001618       0x88 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(gpio.o)
+ .debug_frame   0x000016a0       0x40 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uart.o)
+ .debug_frame   0x000016e0       0xb8 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(uartConsole.o)
+ .debug_frame   0x00001798       0x28 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/beaglebone/platform/Debug/libplatform.a(watchdog.o)
+ .debug_frame   0x000017c0      0x314 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(interrupt.o)
+ .debug_frame   0x00001ad4       0x48 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(startup.o)
+ .debug_frame   0x00001b1c       0xd4 /home/myahye/cmpt433/AM335X_StarterWare//binary/armv7a/gcc/am335x/system_config/Debug/libsystem_config.a(cpu.o)
+ .debug_frame   0x00001bf0       0x20 /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_udivsi3.o)
+ .debug_frame   0x00001c10       0x20 /home/myahye/cmpt433/linaro-gcc/gcc-arm-none-eabi-4_7-2012q4/lib/gcc/arm-none-eabi/4.7.3//libgcc.a(_divsi3.o)

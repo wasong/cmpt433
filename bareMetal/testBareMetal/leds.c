@@ -24,7 +24,7 @@
  **                INTERNAL FUNCTION DEFINITIONS
  *****************************************************************************/
 
-static void initializeLeds(void)
+void initializeLeds(void)
 {
 	/* Enabling functional clocks for GPIO1 instance. */
 	GPIO1ModuleClkConfig();
@@ -53,7 +53,7 @@ static void initializeLeds(void)
 			GPIO_DIR_OUTPUT);
 }
 
-static void bounceLeds(void)
+void bounceLeds(void)
 {
 	int wdCounter = 0;
 	// while(1)
@@ -99,7 +99,7 @@ static void bounceLeds(void)
 	// }
 }
 
-static void barLeds(void)
+void barLeds(void)
 {
 	int wdCounter = 0;
 	while(1)
@@ -134,7 +134,7 @@ static void barLeds(void)
 /*
  ** Busy-wait function
  */
-static void busyWait(volatile unsigned int count)
+void busyWait(volatile unsigned int count)
 {
 	while(count--)
 		;
