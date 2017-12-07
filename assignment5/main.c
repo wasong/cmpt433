@@ -53,7 +53,6 @@ int main(void) {
 	Timer_init();
 	Watchdog_init();
 	FakeTyper_init();
-	initializeButtonPin();
 
 	initLEDS();
 	initJoystick();

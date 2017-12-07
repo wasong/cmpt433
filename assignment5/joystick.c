@@ -7,6 +7,7 @@
 #include "uart_irda_cir.h"
 #include "consoleUtils.h"
 #include "joystick.h"
+#include "leds.h"
 #include <stdint.h>
 
 #define BAUD_RATE_115200          (115200)
@@ -24,8 +25,9 @@
 
 static _Bool readButtonWithStarterWare(void);
 
-static volatile _Bool lastButtonState = false;
 static volatile _Bool isButtonPressed = false;
+// false is BOUNCE, true is BAR
+static volatile _Bool LEDPattern = false;
 
 void GPIO2ModuleClkConfig(void)
 {
@@ -91,18 +93,21 @@ void initJoystick(void) {
 
 void joystickNotifyOnTimeIsr() {
   // check state of joystick
-  ConsoleUtilsPrintf("\n\nPress ZEN Cape's joystick left:\n");
   isButtonPressed = readButtonWithStarterWare();
 }
 
 void joystickDoBackgroundWork()
 {
-  if (lastButtonState != isButtonPressed) {
-		ConsoleUtilsPrintf("> %d\n", isButtonPressed);
+  if (isButtonPressed) {
+    // call led functions
+    if (LEDPattern) {
+      barLEDPattern();
+    } else {
+      bounceLEDPattern();
+    }
+    LEDPattern = !LEDPattern;
+    isButtonPressed = false;
 	}
-
-  ConsoleUtilsPrintf("> %d\n", isButtonPressed);
-  lastButtonState = isButtonPressed;
 }
 
 static _Bool readButtonWithStarterWare(void)
