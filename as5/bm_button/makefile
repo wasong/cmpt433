@@ -1,3 +1,37 @@
+#
+# Copyright (C) 2010 Texas Instruments Incorporated - http://www.ti.com/ 
+#
+# 
+#  Redistribution and use in source and binary forms, with or without 
+#  modification, are permitted provided that the following conditions 
+#  are met:
+#
+#    Redistributions of source code must retain the above copyright 
+#    notice, this list of conditions and the following disclaimer.
+#
+#    Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the 
+#    documentation and/or other materials provided with the   
+#    distribution.
+#
+#    Neither the name of Texas Instruments Incorporated nor the names of
+#    its contributors may be used to endorse or promote products derived
+#    from this software without specific prior written permission.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
+#  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
+#  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+#  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
+#  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+#  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
+#  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+#  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+#  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
+#  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
+#  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
+#******************************************************************************
 
 #
 # Locating the root directory
@@ -28,8 +62,8 @@ DIRS=${DRIVERS_BLD} ${PLATFORM_BLD} ${SYSCONFIG_BLD} ${UTILITY_BLD}
 
 #
 # The application name
-#
-APPNAME=fakeTyper
+# 
+APPNAME=bm_button
 
 #
 # Where the application will be loaded to. This is required to generate
@@ -56,11 +90,11 @@ APP_LIB=-ldrivers  \
 	-lplatform \
 	-lsystem_config
 
-CFLAGS+=-std=c99 -Wall -Werror
+CFLAGS+=-std=c99
 #
 # Rules for building the application and library
 #
-# Clean first because otherwise every other build fails.
+# Clean first because otherwise every other build fails. 
 # (some problem with files in the build directory).
 #all: debug release
 all: clean debug
@@ -92,8 +126,8 @@ bin:
           -Map $(TARGET_MODE)/$(APPNAME).map $(TARGET_MODE)/*.o* \
           $(APP_LIB) -lc -lgcc $(APP_LIB) $(RUNTIMELIB) -T load_script.lds
 	$(BIN) $(BINFLAGS) $(TARGET_MODE)/$(APPNAME).out \
-               $(TARGET_MODE)/$(APPNAME).bin
-	cd $(ROOT)/tools/ti_image/; gcc tiimage.c -o a.out; cd -
+               $(TARGET_MODE)/$(APPNAME).bin 
+	cd $(ROOT)/tools/ti_image/; gcc tiimage.c -o a.out; cd - 
 	       $(ROOT)/tools/ti_image/a.out $(IMG_LOAD_ADDR) NONE \
                $(TARGET_MODE)/$(APPNAME).bin \
                $(TARGET_MODE)/$(APPNAME)_ti.bin; rm -rf $(ROOT)/tools/ti_image/a.out;
@@ -107,3 +141,5 @@ clean:
 
 clean+: clean
 	@make TARGET_MODE=clean lib
+
+
